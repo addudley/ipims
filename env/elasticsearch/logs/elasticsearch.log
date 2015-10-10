@@ -1,0 +1,430 @@
+[2015-10-10 11:31:48,328][WARN ][bootstrap                ] jvm uses the client vm, make sure to run `java` with the server vm for best performance by adding `-server` to the command line
+[2015-10-10 11:31:48,746][INFO ][node                     ] [Penance II] version[1.7.2], pid[11464], build[e43676b/2015-09-14T09:49:53Z]
+[2015-10-10 11:31:48,747][INFO ][node                     ] [Penance II] initializing ...
+[2015-10-10 11:31:48,806][INFO ][plugins                  ] [Penance II] loaded [], sites []
+[2015-10-10 11:31:48,843][INFO ][env                      ] [Penance II] using [1] data paths, mounts [[(C:)]], net usable_space [11.9gb], net total_space [111.6gb], types [NTFS]
+[2015-10-10 11:31:50,553][INFO ][node                     ] [Penance II] initialized
+[2015-10-10 11:31:50,553][INFO ][node                     ] [Penance II] starting ...
+[2015-10-10 11:31:50,712][INFO ][transport                ] [Penance II] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.1.35:9300]}
+[2015-10-10 11:31:50,822][INFO ][discovery                ] [Penance II] elasticsearch/pmIvsgcqSiyfHUtVaWmSEg
+[2015-10-10 11:31:54,587][INFO ][cluster.service          ] [Penance II] new_master [Penance II][pmIvsgcqSiyfHUtVaWmSEg][WinDudley][inet[/192.168.1.35:9300]], reason: zen-disco-join (elected_as_master)
+[2015-10-10 11:31:54,617][INFO ][gateway                  ] [Penance II] recovered [0] indices into cluster_state
+[2015-10-10 11:31:54,643][INFO ][http                     ] [Penance II] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.1.35:9200]}
+[2015-10-10 11:31:54,643][INFO ][node                     ] [Penance II] started
+[2015-10-10 11:32:24,594][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:32:42,765][INFO ][cluster.metadata         ] [Penance II] [haystack] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2015-10-10 11:32:42,936][INFO ][cluster.metadata         ] [Penance II] [haystack] create_mapping [modelresult]
+[2015-10-10 11:32:54,595][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:33:24,594][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:33:45,619][INFO ][cluster.metadata         ] [Penance II] [haystack] update_mapping [modelresult]
+[2015-10-10 11:33:54,594][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:34:24,594][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:34:54,595][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:35:24,595][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:35:53,739][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 11:35:54,596][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:36:24,597][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:36:54,599][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:37:24,598][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:37:54,599][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:38:24,601][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:38:54,602][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:39:24,603][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:39:54,603][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:40:24,604][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:40:54,606][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:41:24,606][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:41:54,607][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:42:24,607][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:42:54,608][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:43:24,608][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:43:54,608][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:44:24,609][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:44:54,610][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:45:24,611][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:45:54,611][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:46:18,787][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 11:46:18,823][INFO ][cluster.metadata         ] [Penance II] [haystack] update_mapping [modelresult] (dynamic)
+[2015-10-10 11:46:24,612][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:46:51,685][INFO ][cluster.metadata         ] [Penance II] [haystack] deleting index
+[2015-10-10 11:46:51,744][INFO ][cluster.metadata         ] [Penance II] [haystack] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2015-10-10 11:46:51,803][INFO ][cluster.metadata         ] [Penance II] [haystack] create_mapping [modelresult]
+[2015-10-10 11:46:51,816][INFO ][cluster.metadata         ] [Penance II] [haystack] update_mapping [modelresult] (dynamic)
+[2015-10-10 11:46:54,613][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:47:24,613][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:47:54,614][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:48:24,614][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:48:54,616][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:49:24,616][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:49:54,617][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:50:24,617][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:50:54,618][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:51:24,618][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:51:54,620][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:52:24,620][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:52:25,071][INFO ][cluster.metadata         ] [Penance II] [haystack] update_mapping [modelresult]
+[2015-10-10 11:52:54,621][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:53:24,621][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:53:54,623][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:54:24,623][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:54:54,626][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:55:07,244][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 11:55:20,732][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 11:55:24,626][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:55:54,627][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:56:24,627][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:56:42,711][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 11:56:42,724][INFO ][cluster.metadata         ] [Penance II] [haystack] update_mapping [modelresult] (dynamic)
+[2015-10-10 11:56:54,628][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:57:24,628][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:57:54,630][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:58:24,630][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:58:54,631][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:59:24,632][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 11:59:54,632][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:00:24,633][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:00:54,635][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:01:24,635][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:01:54,644][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:02:24,638][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:02:54,638][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:03:24,640][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:03:54,640][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:04:24,642][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:04:54,643][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:05:24,643][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:05:54,644][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:06:24,644][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:06:54,644][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:07:24,646][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:07:54,646][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:08:24,647][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:08:54,648][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:09:24,650][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:09:54,650][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:10:24,652][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:10:54,652][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:11:24,653][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:11:54,654][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:12:03,718][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:12:24,654][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:12:54,656][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:13:24,656][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:13:54,656][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:14:24,657][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:14:54,658][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:15:24,658][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:15:54,659][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:16:24,659][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:16:54,660][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:17:11,305][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:17:24,661][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:17:54,662][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:18:24,663][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:18:54,664][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:19:24,665][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:19:54,665][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:20:24,666][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:20:54,667][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:21:15,881][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:21:24,667][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:21:54,669][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:22:24,669][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:22:54,672][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:23:24,673][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:23:54,675][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:23:59,210][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:24:24,675][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:24:54,677][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:25:24,678][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:25:54,186][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:25:54,679][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:26:23,539][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:26:24,679][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:26:54,681][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:27:22,716][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:27:24,681][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:27:54,681][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:28:24,682][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:28:54,683][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:29:24,684][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:29:28,539][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:29:37,539][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:29:54,684][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:30:24,686][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:30:54,686][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:31:24,688][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:31:54,695][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:32:24,689][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:32:54,691][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:33:24,693][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:33:54,694][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:34:24,694][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:34:54,696][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:35:24,696][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:35:54,696][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:36:24,697][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:36:54,698][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:37:24,699][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:37:54,699][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:38:12,601][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:38:24,700][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:38:54,700][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:39:24,702][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:39:54,703][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:40:24,704][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:40:54,705][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:41:24,706][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:41:54,706][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:42:24,707][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:42:54,707][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:43:24,708][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:43:54,709][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:44:24,710][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:44:54,710][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:45:24,711][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:45:54,711][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:46:24,713][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:46:54,714][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:47:24,715][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:47:54,716][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:48:24,716][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:48:54,717][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:49:24,719][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:49:54,719][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:50:24,720][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:50:54,720][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:51:24,721][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:51:54,721][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:52:24,722][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:52:54,723][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:53:24,723][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:53:54,723][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:54:24,724][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:54:54,724][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:55:11,811][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 12:55:24,726][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:55:54,726][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:56:24,728][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:56:54,728][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:57:24,729][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:57:54,729][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:58:24,731][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:58:54,731][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:59:24,733][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 12:59:54,734][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:00:24,736][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:00:54,738][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:01:24,738][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:01:54,745][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:02:24,739][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:02:48,563][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 13:02:54,739][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:03:24,741][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:03:54,743][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:04:24,743][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:04:54,745][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:05:24,746][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:05:54,746][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:06:24,746][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:06:54,748][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:07:24,749][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:07:54,750][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:08:24,751][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:08:54,751][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:09:24,752][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:09:54,753][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:10:24,754][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:10:54,755][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:11:24,755][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:11:54,756][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:12:24,757][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:12:54,757][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:13:24,758][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:13:54,759][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:14:24,759][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:14:54,760][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:15:24,761][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:15:54,762][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:16:24,763][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:16:54,764][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:17:24,764][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:17:54,765][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:18:17,560][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 13:18:24,766][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:18:54,766][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:19:24,766][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:19:54,766][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:20:24,768][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:20:54,769][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:21:24,770][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:21:54,771][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:22:24,772][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:22:54,773][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:23:24,774][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:23:54,774][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:24:24,776][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:24:54,776][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:25:24,778][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:25:54,778][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:26:24,779][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:26:54,781][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:27:24,782][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:27:54,782][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:28:24,783][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:28:29,359][DEBUG][action.admin.indices.mapping.put] [Penance II] failed to put mappings on indices [[haystack]], type [modelresult]
+org.elasticsearch.index.mapper.MergeMappingException: Merge failed with failures {[mapper [last_name] has different index_analyzer, mapper [first_name] has different index_analyzer]}
+	at org.elasticsearch.cluster.metadata.MetaDataMappingService$4.execute(MetaDataMappingService.java:511)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:374)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-10 13:28:54,784][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:29:24,785][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node
+[2015-10-10 13:29:54,785][INFO ][cluster.routing.allocation.decider] [Penance II] low disk watermark [85%] exceeded on [pmIvsgcqSiyfHUtVaWmSEg][Penance II] free: 11.9gb[10.7%], replicas will not be assigned to this node

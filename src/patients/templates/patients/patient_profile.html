@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<h1> {{ patient.get_full_name }} </h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Details</h3>
+  </div>
+  <div class="panel-body">
+    <b>DOB:</b> {{ patient.dob }}
+  </div>
+</div>
+{% endblock %}
