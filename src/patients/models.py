@@ -34,8 +34,8 @@ class Patient(models.Model):
 	health_insurance_id = models.CharField(max_length = 30)
 
 	# Medical History
-	medical_background_information = models.ManyToManyField(MedicalBackgroundChoice)
-	allergies = models.ManyToManyField(Allergy)
+	medical_background_information = models.ManyToManyField(MedicalBackgroundChoice, blank=True)
+	allergies = models.ManyToManyField(Allergy, blank=True)
 
 	def get_full_name(self):
 		# returns the patient's full name (ex: Doe, John)

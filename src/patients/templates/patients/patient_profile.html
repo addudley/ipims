@@ -16,39 +16,39 @@
 	    <b>Phone:</b> {{ patient.phone }}<br/>
 	    <b>Email:</b> {{ patient.email }}<br/>
 	    <b>Insurance Provider:</b> {{ patient.health_insurance_provider }}<br/>
-	    <b>Insurance ID:</b> {{ patient.dob }} <br/><br/>
+	    <b>Insurance ID:</b> {{ patient.health_insurance_id }} <br/><br/>
 	  </div>
 	</div>
 	</div>
 </div>
-{% if allergies %}
 <div class="row">
 	<div class="col-sm-6">
 	    <ul class="list-group">
 	    	<li class="list-group-item active">Allergies</li>
-	    {% for allergy in allergies %}
+	    	{% if allergies %}
+	   		{% for allergy in allergies %}
 	    	<li class="list-group-item">{{ allergy }}</li>
-	    {% endfor %}
+	    	{% endfor %}
+	    	{% else %}
+	    	<li class="list-group-item">No known allergies.</li>
+	    	{% endif %}
 	    </ul>
 	    </div>
-	    {% else %}
-	    <p> No known allergies.</p>
 </div>
-{% endif %}
+
 <div class="row">
 	<div class="col-sm-6">
-	  {% if medical_history %}
-	    <div class="col-sm-6">
 	    <ul class="list-group">
 	    	<li class="list-group-item active">Medical History</li>
-	    {% for medical_history_item in medical_history %}
+	    	{% if medical_history %}
+	   		{% for medical_history_item in medical_history %}
 	    	<li class="list-group-item">{{ medical_history_item }}</li>
-	    {% endfor %}
+	    	{% endfor %}
 	    </ul>
-	    </div>
-	    {% else %}
-	    <p> No known allergies.</p>
-	    {% endif %}
+	    	{% else %}
+	    	<li class="list-group-item">No medical history.</li>
+	    	{% endif %}
 	</div>
 </div>
+<a class="btn btn-default" href="update/">Update</a>
 {% endblock %}

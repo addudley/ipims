@@ -16,7 +16,7 @@
             <li><a href="/profile/{{ request.user.pk }}">Patient Profile</a></li>
             <li><a href="#about">Schedule an appointment</a></li>
             {% elif request.user.is_authenticated and request.user.is_staff == True %}
-            <li><a href="#about">Doctor Dashboard</a></li>
+           {# <li><a href="#about">Doctor Dashboard</a></li> #}
             <li><a href="/search/">Search for Patient</a></li>
             <li><a href="/patient/add/">New Patient Registration</a></li>
             {% else %}
