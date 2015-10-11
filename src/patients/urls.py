@@ -5,7 +5,7 @@ from patients import views
 
 urlpatterns = [
 	url(r'^(?P<pk>[0-9]+)/$',
-        views.profile,
+        views.patientProfile,
         name='patient_profile'),
     url(r'^(?P<pk>[0-9]+)/update/$',
     	views.PatientUpdate.as_view(success_url="/"), name='patient_update_form'),

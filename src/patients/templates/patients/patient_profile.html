@@ -4,12 +4,51 @@
 
 {% block content %}
 <h1> {{ patient.get_full_name }} </h1>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Details</h3>
-  </div>
-  <div class="panel-body">
-    <b>DOB:</b> {{ patient.dob }}
-  </div>
+<div class="row">
+<div class="col-sm-6">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Details</h3>
+	  </div>
+	  <div class="panel-body">
+	    <b>DOB:</b> {{ patient.dob }}<br/>
+	    <b>SSN:</b> {{ patient.ssn }}<br/>
+	    <b>Phone:</b> {{ patient.phone }}<br/>
+	    <b>Email:</b> {{ patient.email }}<br/>
+	    <b>Insurance Provider:</b> {{ patient.health_insurance_provider }}<br/>
+	    <b>Insurance ID:</b> {{ patient.dob }} <br/><br/>
+	  </div>
+	</div>
+	</div>
+</div>
+{% if allergies %}
+<div class="row">
+	<div class="col-sm-6">
+	    <ul class="list-group">
+	    	<li class="list-group-item active">Allergies</li>
+	    {% for allergy in allergies %}
+	    	<li class="list-group-item">{{ allergy }}</li>
+	    {% endfor %}
+	    </ul>
+	    </div>
+	    {% else %}
+	    <p> No known allergies.</p>
+</div>
+{% endif %}
+<div class="row">
+	<div class="col-sm-6">
+	  {% if medical_history %}
+	    <div class="col-sm-6">
+	    <ul class="list-group">
+	    	<li class="list-group-item active">Medical History</li>
+	    {% for medical_history_item in medical_history %}
+	    	<li class="list-group-item">{{ medical_history_item }}</li>
+	    {% endfor %}
+	    </ul>
+	    </div>
+	    {% else %}
+	    <p> No known allergies.</p>
+	    {% endif %}
+	</div>
 </div>
 {% endblock %}

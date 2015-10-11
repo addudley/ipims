@@ -5,17 +5,15 @@
     <h2>Search</h2>
 
     <form method="get" action=".">
-        <table>
+    <div class="col-lg-6">
+    <div class="input-group">
             {{ form|crispy }}
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <input type="submit" value="Search">
-                </td>
-            </tr>
-        </table>
-
+            <span class="input-group-btn">
+             <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </span>
+      </div></div></form>
         {% if query %}
+        </br></br><p>
             <h3>Results</h3>
 
             {% for result in page.object_list %}
@@ -36,5 +34,6 @@
         {% else %}
             {# Show some example queries to run, maybe query syntax, something else? #}
         {% endif %}
+        </p>
     </form>
 {% endblock %}

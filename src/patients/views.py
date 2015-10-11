@@ -1,25 +1,27 @@
 from django.shortcuts import render, render_to_response, RequestContext
 from haystack.query import SearchQuerySet
 from haystack.forms import SearchForm
-
+from .forms import PatientRegistrationForm
 # Create your views here.
 
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DetailView
 from haystack.generic_views import SearchView
 from .models import Patient
 
 class PatientNew(CreateView):
 	model = Patient
-	fields = ('__all__')
+	form_class = PatientRegistrationForm
 
 class PatientUpdate(UpdateView):
 	model = Patient
-	fields = ('__all__')
 	template_name_suffix = '_update_form'
+	form_class = PatientRegistrationForm
 
-def profile(request, pk):
+def patientProfile(request, pk):
     patient = Patient.objects.get(pk=pk)
-    context = {'patient': patient}
+    allergies = patient.allergies.all()
+    medical_history = patient.medical_background_information.all()
+    context = {'patient': patient, 'allergies': allergies, 'medical_history': medical_history}
     return render(request, 'patients/patient_profile.html', context)
 
 class PatientSearchView(SearchView):
