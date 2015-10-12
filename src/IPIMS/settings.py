@@ -132,3 +132,4 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # User Registration/Login
 LOGIN_REDIRECT_URL = '/'
+SITE_ID = 1
