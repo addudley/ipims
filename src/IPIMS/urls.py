@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^patient/', include('patients.urls')),
     url(r'^search/', SearchView(form_class=SearchForm)),
+    url(r'^appointments/', include('appointments.urls')),
 ]

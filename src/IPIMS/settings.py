@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -43,7 +44,9 @@ INSTALLED_APPS = (
     'default',
     'patients',
     'haystack',
-    'elasticsearch'
+    'elasticsearch',
+    'smart_selects',
+    'appointments',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -126,3 +129,6 @@ HAYSTACK_CONNECTIONS = {
 }
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+# User Registration/Login
+LOGIN_REDIRECT_URL = '/'

@@ -40,3 +40,6 @@ class Patient(models.Model):
 	def get_full_name(self):
 		# returns the patient's full name (ex: Doe, John)
 		return '%s, %s' % (self.last_name, self.first_name)
+
+	def __str__(self):
+		return self.get_full_name()
