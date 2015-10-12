@@ -50,5 +50,19 @@
 	    	{% endif %}
 	</div>
 </div>
-<a class="btn btn-default" href="update/">Update</a>
+<a class="btn btn-default" href="update/">Update Patient Information</a><br/><br/>
+<div class="row">
+	<div class="col-sm-6">
+	    <ul class="list-group">
+	    	<li class="list-group-item active">Current Health Conditions</li>
+	    	<li class="list-group-item">Nausea: {{ current_health_condition.nausea_level }}</li>
+	   		<li class="list-group-item">Headache: {{ current_health_condition.headache_level }}</li>
+	   		<li class="list-group-item">Sore throat: {{ current_health_condition.sore_throat_level }}</li>
+	   		<li class="list-group-item">Abdominal pain: {{ current_health_condition.abdominal_pain_level }}</li>
+	   		<li class="list-group-item">Constipation: {{ current_health_condition.constipation_level }}</li>
+	   		<li class="list-group-item">Lack of appetite: {{ current_health_condition.lack_of_appetite_level }}</li>
+	    </ul>
+	</div>
+</div>
+<a class="btn btn-default" href="health/">Update Current Health Conditions</a>
 {% endblock %}
