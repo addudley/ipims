@@ -3,9 +3,10 @@
 {% load i18n %}
 
 {% block content %}
+<h1>Schedule Appointment</h1>
 <form method='POST' action=''>
 	{% csrf_token %}
 	{{ form|crispy }}
-	<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
+	<input class = "btn btn-primary" type="submit" value="{% trans 'Schedule' %}" />
 </form>
 {% endblock %}
