@@ -1,0 +1,11 @@
+Django==1.8.4
+django-clever-selects==0.6.9
+django-crispy-forms==1.5.2
+django-haystack==2.4.0
+django-localflavor==1.1
+django-localflavor-us==1.1
+django-registration-redux==1.2
+django-smart-selects==1.1.1
+elasticsearch==1.7.0
+urllib3==1.12
+wheel==0.24.0
