@@ -23,3 +23,955 @@
 [2015-10-12 00:11:26,680][INFO ][cluster.routing.allocation.decider] [Damion Hellstrom] low disk watermark [85%] exceeded on [DN4LhCzFS1mgCUQG26rrlQ][Damion Hellstrom] free: 11.8gb[10.6%], replicas will not be assigned to this node
 [2015-10-12 00:11:56,680][INFO ][cluster.routing.allocation.decider] [Damion Hellstrom] low disk watermark [85%] exceeded on [DN4LhCzFS1mgCUQG26rrlQ][Damion Hellstrom] free: 11.8gb[10.6%], replicas will not be assigned to this node
 [2015-10-12 00:12:26,680][INFO ][cluster.routing.allocation.decider] [Damion Hellstrom] low disk watermark [85%] exceeded on [DN4LhCzFS1mgCUQG26rrlQ][Damion Hellstrom] free: 11.8gb[10.6%], replicas will not be assigned to this node
+[2015-10-18 16:57:13,772][WARN ][bootstrap                ] jvm uses the client vm, make sure to run `java` with the server vm for best performance by adding `-server` to the command line
+[2015-10-18 16:57:13,863][INFO ][node                     ] [Coldblood] version[1.7.2], pid[7572], build[e43676b/2015-09-14T09:49:53Z]
+[2015-10-18 16:57:13,864][INFO ][node                     ] [Coldblood] initializing ...
+[2015-10-18 16:57:13,929][INFO ][plugins                  ] [Coldblood] loaded [], sites []
+[2015-10-18 16:57:13,960][INFO ][env                      ] [Coldblood] using [1] data paths, mounts [[(C:)]], net usable_space [11.5gb], net total_space [111.6gb], types [NTFS]
+[2015-10-18 16:57:15,650][INFO ][node                     ] [Coldblood] initialized
+[2015-10-18 16:57:15,650][INFO ][node                     ] [Coldblood] starting ...
+[2015-10-18 16:57:15,793][INFO ][transport                ] [Coldblood] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.1.35:9300]}
+[2015-10-18 16:57:15,893][INFO ][discovery                ] [Coldblood] elasticsearch/wJxhncm1RQuVxlpeKOTZOQ
+[2015-10-18 16:57:19,659][INFO ][cluster.service          ] [Coldblood] new_master [Coldblood][wJxhncm1RQuVxlpeKOTZOQ][WinDudley][inet[/192.168.1.35:9300]], reason: zen-disco-join (elected_as_master)
+[2015-10-18 16:57:19,707][INFO ][gateway                  ] [Coldblood] recovered [2] indices into cluster_state
+[2015-10-18 16:57:19,727][INFO ][http                     ] [Coldblood] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.1.35:9200]}
+[2015-10-18 16:57:19,727][INFO ][node                     ] [Coldblood] started
+[2015-10-18 16:57:19,856][DEBUG][action.search.type       ] [Coldblood] All shards failed for phase: [query]
+org.elasticsearch.action.NoShardAvailableActionException: [haystack][4] null
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.start(TransportSearchTypeAction.java:160)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:62)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:52)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:100)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:43)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.client.node.NodeClient.execute(NodeClient.java:98)
+	at org.elasticsearch.client.FilterClient.execute(FilterClient.java:66)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.execute(BaseRestHandler.java:92)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:338)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:53)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:225)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:170)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:121)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:83)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:327)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.elasticsearch.common.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.elasticsearch.common.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:74)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-18 16:57:19,886][DEBUG][action.search.type       ] [Coldblood] All shards failed for phase: [query]
+org.elasticsearch.action.NoShardAvailableActionException: [haystack][4] null
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.start(TransportSearchTypeAction.java:160)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:62)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:52)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:100)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:43)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.client.node.NodeClient.execute(NodeClient.java:98)
+	at org.elasticsearch.client.FilterClient.execute(FilterClient.java:66)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.execute(BaseRestHandler.java:92)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:338)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:53)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:225)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:170)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:121)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:83)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:327)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.elasticsearch.common.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.elasticsearch.common.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:74)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-18 16:57:19,901][DEBUG][action.search.type       ] [Coldblood] All shards failed for phase: [query]
+org.elasticsearch.action.NoShardAvailableActionException: [haystack][4] null
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.start(TransportSearchTypeAction.java:160)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:62)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:52)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:100)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:43)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.client.node.NodeClient.execute(NodeClient.java:98)
+	at org.elasticsearch.client.FilterClient.execute(FilterClient.java:66)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.execute(BaseRestHandler.java:92)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:338)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:53)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:225)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:170)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:121)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:83)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:327)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.elasticsearch.common.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.elasticsearch.common.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:74)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-18 16:57:19,910][DEBUG][action.search.type       ] [Coldblood] All shards failed for phase: [query]
+org.elasticsearch.action.NoShardAvailableActionException: [haystack][4] null
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.start(TransportSearchTypeAction.java:160)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:62)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:52)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:100)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:43)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.client.node.NodeClient.execute(NodeClient.java:98)
+	at org.elasticsearch.client.FilterClient.execute(FilterClient.java:66)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.execute(BaseRestHandler.java:92)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:338)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:53)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:225)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:170)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:121)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:83)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:327)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.elasticsearch.common.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.elasticsearch.common.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:74)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-18 16:57:19,920][DEBUG][action.search.type       ] [Coldblood] All shards failed for phase: [query]
+org.elasticsearch.action.NoShardAvailableActionException: [haystack][4] null
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.start(TransportSearchTypeAction.java:160)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:62)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:52)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:100)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:43)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:75)
+	at org.elasticsearch.client.node.NodeClient.execute(NodeClient.java:98)
+	at org.elasticsearch.client.FilterClient.execute(FilterClient.java:66)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.execute(BaseRestHandler.java:92)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:338)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:53)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:225)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:170)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:121)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:83)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:327)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.elasticsearch.common.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.elasticsearch.common.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.elasticsearch.common.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.elasticsearch.common.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:74)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.elasticsearch.common.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.elasticsearch.common.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-18 16:57:20,119][WARN ][indices.cluster          ] [Coldblood] [[haystack][3]] marking and sending shard failed due to [failed recovery]
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [haystack][3] failed to fetch index version after copying it over
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:161)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [haystack][3] shard allocated for local recovery (post api), should exist, but doesn't, current files: [segments.gen, segments_a, write.lock, _c.cfe, _c.cfs, _c.si]
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:135)
+	... 4 more
+Caused by: java.io.FileNotFoundException: C:\IPIMS\env\elasticsearch\data\elasticsearch\nodes\0\indices\haystack\3\index\segments_e (The system cannot find the file specified)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at org.apache.lucene.store.SimpleFSDirectory.openInput(SimpleFSDirectory.java:58)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.elasticsearch.index.store.Store$StoreDirectory.openInput(Store.java:733)
+	at org.apache.lucene.store.Directory.openChecksumInput(Directory.java:113)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:341)
+	at org.apache.lucene.index.SegmentInfos$1.doBody(SegmentInfos.java:462)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:923)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:769)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:458)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:89)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:166)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:152)
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:126)
+	... 4 more
+[2015-10-18 16:57:20,123][WARN ][cluster.action.shard     ] [Coldblood] [haystack][3] received shard failed for [haystack][3], node[wJxhncm1RQuVxlpeKOTZOQ], [P], s[INITIALIZING], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-10-18T23:57:19.673Z]], indexUUID [wb79tuLTSxK59blBFKMyeg], reason [shard failure [failed recovery][IndexShardGatewayRecoveryException[[haystack][3] failed to fetch index version after copying it over]; nested: IndexShardGatewayRecoveryException[[haystack][3] shard allocated for local recovery (post api), should exist, but doesn't, current files: [segments.gen, segments_a, write.lock, _c.cfe, _c.cfs, _c.si]]; nested: FileNotFoundException[C:\IPIMS\env\elasticsearch\data\elasticsearch\nodes\0\indices\haystack\3\index\segments_e (The system cannot find the file specified)]; ]]
+[2015-10-18 16:57:20,141][WARN ][cluster.action.shard     ] [Coldblood] [haystack][3] received shard failed for [haystack][3], node[wJxhncm1RQuVxlpeKOTZOQ], [P], s[INITIALIZING], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-10-18T23:57:19.673Z]], indexUUID [wb79tuLTSxK59blBFKMyeg], reason [master [Coldblood][wJxhncm1RQuVxlpeKOTZOQ][WinDudley][inet[/192.168.1.35:9300]] marked shard as initializing, but shard is marked as failed, resend shard failure]
+[2015-10-18 16:57:20,143][WARN ][indices.cluster          ] [Coldblood] [[haystack][4]] marking and sending shard failed due to [failed recovery]
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [haystack][4] failed to fetch index version after copying it over
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:161)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [haystack][4] shard allocated for local recovery (post api), should exist, but doesn't, current files: [segments.gen, segments_6, write.lock, _3.cfe, _3.cfs, _3.si]
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:135)
+	... 4 more
+Caused by: java.io.FileNotFoundException: C:\IPIMS\env\elasticsearch\data\elasticsearch\nodes\0\indices\haystack\4\index\segments_8 (The system cannot find the file specified)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at org.apache.lucene.store.SimpleFSDirectory.openInput(SimpleFSDirectory.java:58)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.elasticsearch.index.store.Store$StoreDirectory.openInput(Store.java:733)
+	at org.apache.lucene.store.Directory.openChecksumInput(Directory.java:113)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:341)
+	at org.apache.lucene.index.SegmentInfos$1.doBody(SegmentInfos.java:462)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:923)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:769)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:458)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:89)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:166)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:152)
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:126)
+	... 4 more
+[2015-10-18 16:57:20,147][WARN ][cluster.action.shard     ] [Coldblood] [haystack][4] received shard failed for [haystack][4], node[wJxhncm1RQuVxlpeKOTZOQ], [P], s[INITIALIZING], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-10-18T23:57:19.673Z]], indexUUID [wb79tuLTSxK59blBFKMyeg], reason [shard failure [failed recovery][IndexShardGatewayRecoveryException[[haystack][4] failed to fetch index version after copying it over]; nested: IndexShardGatewayRecoveryException[[haystack][4] shard allocated for local recovery (post api), should exist, but doesn't, current files: [segments.gen, segments_6, write.lock, _3.cfe, _3.cfs, _3.si]]; nested: FileNotFoundException[C:\IPIMS\env\elasticsearch\data\elasticsearch\nodes\0\indices\haystack\4\index\segments_8 (The system cannot find the file specified)]; ]]
+[2015-10-18 16:57:20,148][WARN ][indices.cluster          ] [Coldblood] [[haystack][0]] marking and sending shard failed due to [failed recovery]
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [haystack][0] failed to fetch index version after copying it over
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:161)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [haystack][0] shard allocated for local recovery (post api), should exist, but doesn't, current files: [segments.gen, segments_6, write.lock, _9.cfe, _9.cfs, _9.si, _a.cfe, _a.cfs, _a.si]
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:135)
+	... 4 more
+Caused by: java.io.FileNotFoundException: C:\IPIMS\env\elasticsearch\data\elasticsearch\nodes\0\indices\haystack\0\index\segments_9 (The system cannot find the file specified)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(Unknown Source)
+	at java.io.RandomAccessFile.<init>(Unknown Source)
+	at org.apache.lucene.store.SimpleFSDirectory.openInput(SimpleFSDirectory.java:58)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.apache.lucene.store.FilterDirectory.openInput(FilterDirectory.java:80)
+	at org.elasticsearch.index.store.Store$StoreDirectory.openInput(Store.java:733)
+	at org.apache.lucene.store.Directory.openChecksumInput(Directory.java:113)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:341)
+	at org.apache.lucene.index.SegmentInfos$1.doBody(SegmentInfos.java:462)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:923)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:769)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:458)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:89)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:166)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:152)
+	at org.elasticsearch.index.gateway.local.LocalIndexShardGateway.recover(LocalIndexShardGateway.java:126)
+	... 4 more
+[2015-10-18 16:57:20,151][WARN ][cluster.action.shard     ] [Coldblood] [haystack][0] received shard failed for [haystack][0], node[wJxhncm1RQuVxlpeKOTZOQ], [P], s[INITIALIZING], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-10-18T23:57:19.673Z]], indexUUID [wb79tuLTSxK59blBFKMyeg], reason [shard failure [failed recovery][IndexShardGatewayRecoveryException[[haystack][0] failed to fetch index version after copying it over]; nested: IndexShardGatewayRecoveryException[[haystack][0] shard allocated for local recovery (post api), should exist, but doesn't, current files: [segments.gen, segments_6, write.lock, _9.cfe, _9.cfs, _9.si, _a.cfe, _a.cfs, _a.si]]; nested: FileNotFoundException[C:\IPIMS\env\elasticsearch\data\elasticsearch\nodes\0\indices\haystack\0\index\segments_9 (The system cannot find the file specified)]; ]]
+[2015-10-18 16:57:20,154][WARN ][cluster.action.shard     ] [Coldblood] [haystack][0] received shard failed for [haystack][0], node[wJxhncm1RQuVxlpeKOTZOQ], [P], s[INITIALIZING], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-10-18T23:57:19.673Z]], indexUUID [wb79tuLTSxK59blBFKMyeg], reason [master [Coldblood][wJxhncm1RQuVxlpeKOTZOQ][WinDudley][inet[/192.168.1.35:9300]] marked shard as initializing, but shard is marked as failed, resend shard failure]
+[2015-10-18 16:57:43,775][INFO ][cluster.metadata         ] [Coldblood] [haystack] deleting index
+[2015-10-18 16:57:43,803][WARN ][action.bulk              ] [Coldblood] unexpected error during the primary phase for action [indices:data/write/bulk[s]]
+java.lang.NullPointerException
+	at org.elasticsearch.action.bulk.TransportShardBulkAction.shards(TransportShardBulkAction.java:128)
+	at org.elasticsearch.action.support.replication.TransportShardReplicationOperationAction$PrimaryPhase.doRun(TransportShardReplicationOperationAction.java:354)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:36)
+	at org.elasticsearch.action.support.replication.TransportShardReplicationOperationAction$PrimaryPhase$3.onNewClusterState(TransportShardReplicationOperationAction.java:504)
+	at org.elasticsearch.cluster.ClusterStateObserver$ObserverClusterStateListener.clusterChanged(ClusterStateObserver.java:177)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:498)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:204)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-10-18 16:57:43,838][INFO ][cluster.metadata         ] [Coldblood] [haystack] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2015-10-18 16:57:43,911][INFO ][cluster.metadata         ] [Coldblood] [haystack] create_mapping [modelresult]
+[2015-10-18 16:57:43,963][INFO ][cluster.metadata         ] [Coldblood] [haystack] update_mapping [modelresult] (dynamic)
+[2015-10-18 16:57:49,668][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 16:58:19,665][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 16:58:49,666][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 16:59:19,666][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 16:59:49,667][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:00:19,668][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:00:49,669][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:01:19,669][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:01:49,670][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:02:19,670][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:02:49,670][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:03:19,671][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:03:49,672][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:04:19,674][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:04:49,675][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:05:19,674][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:05:49,675][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:06:19,675][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:06:49,676][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:07:19,677][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:07:49,678][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:08:19,679][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:08:49,679][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:09:19,680][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:09:49,681][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:10:19,681][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:10:49,682][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:11:19,683][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:11:49,685][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:12:19,684][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:12:49,685][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:13:19,687][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:13:49,688][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:14:19,688][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:14:49,688][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:15:19,689][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:15:49,691][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:16:19,691][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:16:49,692][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:17:19,693][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:17:49,694][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:18:19,694][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:18:49,696][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:19:19,697][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:19:49,698][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:20:19,699][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:20:49,699][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:21:19,700][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:21:49,701][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:22:19,702][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:22:49,702][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:23:19,702][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:23:49,703][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:24:19,704][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:24:49,705][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:25:19,707][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:25:49,708][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:26:19,708][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:26:49,710][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:27:19,717][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:27:49,711][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:28:19,712][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:28:49,712][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:29:19,713][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:29:49,714][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:30:19,714][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:30:49,715][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:31:19,717][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:31:49,716][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:32:19,717][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:32:49,718][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:33:19,719][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:33:49,719][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:34:19,721][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:34:49,721][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:35:19,722][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:35:49,724][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:36:19,723][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:36:49,724][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:37:19,724][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:37:49,725][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:38:19,726][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:38:49,726][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:39:19,727][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:39:49,729][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:40:19,729][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:40:49,729][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:41:19,730][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:41:49,730][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:42:19,731][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:42:49,731][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:43:19,733][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:43:49,733][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:44:19,733][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:44:49,734][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:45:19,735][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:45:49,735][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:46:19,735][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:46:49,738][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:47:19,738][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:47:49,740][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:48:19,740][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:48:49,741][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:49:19,742][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:49:49,743][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:50:19,744][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:50:49,744][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:51:19,745][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:51:49,745][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:52:19,746][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:52:49,747][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:53:19,748][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:53:49,749][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:54:19,749][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:54:49,750][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:55:19,750][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:55:49,752][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:56:19,753][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:56:49,755][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:57:19,762][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:57:49,757][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:58:19,757][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:58:49,758][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:59:19,759][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 17:59:49,760][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:00:19,761][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:00:49,762][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:01:19,763][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:01:49,763][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:02:19,764][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:02:49,765][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:03:19,766][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:03:49,766][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:04:19,767][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:04:49,767][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:05:19,768][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:05:49,769][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:06:19,770][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:06:49,771][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:07:19,771][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:07:49,772][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:08:19,773][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:08:49,774][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:09:19,775][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:09:49,775][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:10:19,776][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:10:49,778][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:11:19,777][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:11:49,779][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:12:19,779][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:12:49,780][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:13:19,781][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:13:49,781][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:14:19,782][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:14:49,783][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:15:19,782][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:15:49,783][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:16:19,785][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:16:49,785][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:17:19,786][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:17:49,787][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:18:19,788][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:18:49,789][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:19:19,789][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:19:49,790][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:20:19,790][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:20:49,790][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:21:19,792][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:21:49,793][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:22:19,793][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:22:49,793][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:23:19,794][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:23:49,795][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:24:19,795][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:24:49,796][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:25:19,797][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:25:49,798][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:26:19,798][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:26:49,799][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:27:19,806][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:27:49,801][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:28:19,802][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:28:49,803][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:29:19,804][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:29:49,804][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:30:19,804][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:30:49,806][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:31:19,806][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:31:49,807][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:32:19,807][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:32:49,809][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:33:19,808][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:33:49,810][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:34:19,810][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:34:49,811][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:35:19,812][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:35:49,812][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:36:19,813][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:36:49,815][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:37:19,815][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:37:49,817][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:38:19,816][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:38:49,819][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:39:19,820][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:39:49,820][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:40:19,820][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:40:49,821][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:41:19,822][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:41:49,823][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:42:19,823][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:42:49,823][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:43:19,824][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:43:49,825][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:44:19,826][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:44:49,826][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:45:19,827][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:45:49,828][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:46:19,829][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:46:49,829][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:47:19,829][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:47:49,831][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:48:19,832][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:48:49,832][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:49:19,834][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:49:49,835][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:50:19,835][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:50:49,834][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:51:19,836][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:51:49,837][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:52:19,838][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:52:49,839][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:53:19,840][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:53:49,840][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:54:19,840][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:54:49,841][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:55:19,842][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:55:49,843][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:56:19,846][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:56:49,847][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:57:19,857][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:57:49,849][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:58:19,849][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:58:49,851][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:59:19,852][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 18:59:49,854][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:00:19,855][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:00:49,854][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:01:19,855][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:01:49,855][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:02:19,855][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:02:49,856][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:03:19,857][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:03:49,857][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:04:19,857][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:04:49,859][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:05:19,860][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:05:49,861][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:06:19,863][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:06:49,862][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:07:19,863][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:07:49,864][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:08:19,865][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:08:49,866][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:09:19,866][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:09:49,867][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:10:19,869][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:10:49,868][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:11:19,869][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:11:49,870][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:12:19,871][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:12:49,871][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:13:19,872][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:13:49,873][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:14:19,873][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:14:49,874][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:15:19,875][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:15:49,875][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:16:19,875][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:16:49,877][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:17:19,879][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:17:49,880][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:18:19,881][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:18:49,882][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:19:19,882][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:19:49,883][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:20:19,885][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:20:49,884][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:21:19,885][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:21:49,887][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:22:19,887][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:22:49,887][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:23:19,889][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:23:49,889][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:24:19,890][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:24:49,891][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:25:19,892][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:25:49,891][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:26:19,892][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:26:49,894][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:27:19,899][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:27:49,895][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:28:19,896][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:28:49,897][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:29:19,897][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:29:49,897][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:30:19,899][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:30:49,899][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:31:19,900][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:31:49,901][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:32:19,903][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:32:49,904][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:33:19,903][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:33:49,904][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:34:19,905][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:34:49,906][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:35:19,906][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:35:49,908][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:36:19,908][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:36:49,908][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:37:19,909][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:37:49,909][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:38:19,910][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:38:49,912][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:39:19,912][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:39:49,913][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:40:19,914][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:40:49,915][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:41:19,916][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:41:49,916][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:42:19,918][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:42:49,919][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:43:19,919][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:43:49,921][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:44:19,922][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:44:49,922][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:45:19,922][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:45:49,922][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:46:19,923][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:46:49,924][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:47:19,925][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:47:49,927][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:48:19,925][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:48:49,926][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:49:19,927][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:49:49,928][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:50:19,929][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:50:49,929][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:51:19,929][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:51:49,930][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:52:19,931][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:52:49,932][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:53:19,933][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:53:49,935][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:54:19,936][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:54:49,938][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:55:19,937][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:55:49,939][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:56:19,939][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:56:49,940][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:57:19,946][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:57:49,941][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:58:19,943][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:58:49,943][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:59:19,943][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 19:59:49,944][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:00:19,945][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:00:49,946][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:01:19,947][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:01:49,947][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:02:19,950][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:02:49,950][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:03:19,951][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:03:49,952][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:04:19,953][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:04:49,953][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:05:19,955][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:05:49,955][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:06:19,956][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:06:49,957][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:07:19,958][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:07:49,959][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:08:19,959][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:08:49,962][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:09:19,962][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:09:49,962][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:10:19,964][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:10:49,964][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:11:19,966][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:11:49,966][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:12:19,966][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:12:49,969][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:13:19,969][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:13:49,972][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:14:19,972][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:14:49,972][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:15:19,972][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:15:49,974][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:16:19,974][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:16:49,975][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:17:19,977][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:17:49,976][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:18:19,977][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:18:49,977][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:19:19,979][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:19:49,980][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:20:19,980][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:20:49,982][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:21:19,983][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:21:49,983][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:22:19,983][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:22:49,983][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:23:19,984][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:23:49,984][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:24:19,985][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:24:49,987][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:25:19,987][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:25:49,987][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:26:19,987][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:26:49,987][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:27:19,994][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:27:49,989][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:28:19,990][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:28:49,991][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:29:19,991][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:29:49,991][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:30:19,994][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:30:49,994][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:31:19,995][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:31:49,996][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:32:19,996][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:32:49,997][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:33:19,998][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:33:50,000][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:34:20,002][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:34:50,004][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:35:20,005][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:35:50,006][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:36:20,007][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:36:50,008][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:37:20,008][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:37:50,008][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:38:20,009][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:38:50,009][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:39:20,010][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:39:50,010][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:40:20,011][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:40:50,014][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:41:20,014][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:41:50,014][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:42:20,015][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:42:50,015][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:43:20,018][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:43:50,019][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:44:20,020][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:44:50,020][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:45:20,021][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:45:50,022][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:46:20,023][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:46:50,024][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:47:20,023][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:47:50,024][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:48:20,025][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:48:50,026][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:49:20,026][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:49:50,027][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:50:20,027][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:50:50,029][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:51:20,030][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:51:50,031][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:52:20,032][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:52:50,032][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:53:20,033][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:53:50,035][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:54:20,035][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:54:50,037][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:55:20,038][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:55:50,040][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:56:20,042][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:56:50,042][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:57:20,048][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:57:50,042][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:58:20,044][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:58:50,044][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:59:20,046][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 20:59:50,046][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:00:20,047][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:00:50,049][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:01:20,051][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:01:50,051][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:02:20,051][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:02:50,052][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:03:20,052][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:03:50,054][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:04:20,055][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:04:50,056][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:05:20,057][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:05:50,059][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:06:20,058][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:06:50,060][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:07:20,061][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:07:50,062][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:08:20,063][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:08:50,063][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:09:20,065][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:09:50,066][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:10:20,067][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:10:50,068][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:11:20,070][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:11:50,072][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:12:20,072][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:12:50,072][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:13:20,074][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:13:50,074][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:14:20,075][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:14:50,076][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:15:20,075][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:15:50,076][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:16:20,076][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:16:50,078][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:17:20,077][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:17:50,079][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:18:20,080][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:18:50,081][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:19:20,081][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:19:50,082][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:20:20,082][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:20:50,084][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:21:20,086][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:21:50,086][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:22:20,087][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:22:50,088][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:23:20,088][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:23:50,088][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:24:20,089][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:24:50,090][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:25:20,091][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node
+[2015-10-18 21:25:50,091][INFO ][cluster.routing.allocation.decider] [Coldblood] low disk watermark [85%] exceeded on [wJxhncm1RQuVxlpeKOTZOQ][Coldblood] free: 11.5gb[10.3%], replicas will not be assigned to this node

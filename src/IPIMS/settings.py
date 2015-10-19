@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'elasticsearch',
     'smart_selects',
     'appointments',
+    'notifications',
 )
 
 MIDDLEWARE_CLASSES = (

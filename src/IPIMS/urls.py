@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^patient/', include('patients.urls')),
     url(r'^search/', SearchView(form_class=SearchForm)),
     url(r'^appointments/', include('appointments.urls')),
+    url(r'^inbox/notifications/', include('notifications.urls', namespace="notifications")),
 ]

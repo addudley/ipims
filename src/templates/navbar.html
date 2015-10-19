@@ -1,4 +1,6 @@
  <!-- Static navbar -->
+ {% load notifications_tags %}
+ {% notifications_unread as unread %}
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -37,6 +39,10 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if request.user.is_authenticated %}
+              <!-- <li><a href="#">Alerts <span class="badge">{% live_notify_badge %}</span></a></li> -->
+              <li><a href="/inbox/notifications/">Alerts <span class="badge">{% live_notify_badge %}</span>
+              {% live_notify_list classes="dropdown-menu" %}
+              </a></li>
               <li><a href="{% url 'auth_logout' %}">Logout</a></li>
               {% else %}
               <li><a href="{% url 'registration_register' %}">Register</a></li>
