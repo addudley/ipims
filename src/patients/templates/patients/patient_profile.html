@@ -8,61 +8,124 @@
 <div class="col-sm-6">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Details</h3>
+		<h3 class="panel-title">Details</h3>
 	  </div>
 	  <div class="panel-body">
-	    <b>DOB:</b> {{ patient.dob }}<br/>
-	    <b>SSN:</b> {{ patient.ssn }}<br/>
-	    <b>Phone:</b> {{ patient.phone }}<br/>
-	    <b>Email:</b> {{ patient.email }}<br/>
-	    <b>Insurance Provider:</b> {{ patient.health_insurance_provider }}<br/>
-	    <b>Insurance ID:</b> {{ patient.health_insurance_id }} <br/><br/>
+		<b>DOB:</b> {{ patient.dob }}<br/>
+		<b>SSN:</b> {{ patient.ssn }}<br/>
+		<b>Phone:</b> {{ patient.phone }}<br/>
+		<b>Email:</b> {{ patient.email }}<br/>
+		<b>Insurance Provider:</b> {{ patient.health_insurance_provider }}<br/>
+		<b>Insurance ID:</b> {{ patient.health_insurance_id }} <br/><br/>
 	  </div>
 	</div>
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-6">
-	    <ul class="list-group">
-	    	<li class="list-group-item active">Allergies</li>
-	    	{% if allergies %}
-	   		{% for allergy in allergies %}
-	    	<li class="list-group-item">{{ allergy }}</li>
-	    	{% endfor %}
-	    	{% else %}
-	    	<li class="list-group-item">No known allergies.</li>
-	    	{% endif %}
-	    </ul>
-	    </div>
+		<ul class="list-group">
+			<li class="list-group-item active">Allergies</li>
+			{% if allergies %}
+			{% for allergy in allergies %}
+			<li class="list-group-item">{{ allergy }}</li>
+			{% endfor %}
+			{% else %}
+			<li class="list-group-item">No known allergies.</li>
+			{% endif %}
+		</ul>
+		</div>
 </div>
 
 <div class="row">
 	<div class="col-sm-6">
-	    <ul class="list-group">
-	    	<li class="list-group-item active">Medical History</li>
-	    	{% if medical_history %}
-	   		{% for medical_history_item in medical_history %}
-	    	<li class="list-group-item">{{ medical_history_item }}</li>
-	    	{% endfor %}
-	    </ul>
-	    	{% else %}
-	    	<li class="list-group-item">No medical history.</li>
-	    	{% endif %}
+		<ul class="list-group">
+			<li class="list-group-item active">Medical History</li>
+			{% if medical_history %}
+			{% for medical_history_item in medical_history %}
+			<li class="list-group-item">{{ medical_history_item }}</li>
+			{% endfor %}
+		</ul>
+			{% else %}
+			<li class="list-group-item">No medical history.</li>
+			{% endif %}
 	</div>
 </div>
 <a class="btn btn-default" href="update/">Update Patient Information</a><br/><br/>
 <div class="row">
 	<div class="col-sm-6">
-	    <ul class="list-group">
-	    	<li class="list-group-item active">Current Health Conditions</li>
-	    	<li class="list-group-item">Nausea: {{ current_health_condition.nausea_level }}</li>
-	   		<li class="list-group-item">Headache: {{ current_health_condition.headache_level }}</li>
-	   		<li class="list-group-item">Sore throat: {{ current_health_condition.sore_throat_level }}</li>
-	   		<li class="list-group-item">Abdominal pain: {{ current_health_condition.abdominal_pain_level }}</li>
-	   		<li class="list-group-item">Constipation: {{ current_health_condition.constipation_level }}</li>
-	   		<li class="list-group-item">Lack of appetite: {{ current_health_condition.lack_of_appetite_level }}</li>
-	    </ul>
+		<ul class="list-group">
+			<li class="list-group-item active">Current Health Conditions     <a href="health/">update</a></li>
+			<li class="list-group-item">Nausea: {{ current_health_condition.nausea_level }}</li>
+			<li class="list-group-item">Headache: {{ current_health_condition.headache_level }}</li>
+			<li class="list-group-item">Sore throat: {{ current_health_condition.sore_throat_level }}</li>
+			<li class="list-group-item">Abdominal pain: {{ current_health_condition.abdominal_pain_level }}</li>
+			<li class="list-group-item">Constipation: {{ current_health_condition.constipation_level }}</li>
+			<li class="list-group-item">Lack of appetite: {{ current_health_condition.lack_of_appetite_level }}</li>
+		</ul>
 	</div>
 </div>
 <a class="btn btn-default" href="health/">Update Current Health Conditions</a>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h2>Appointments</h2>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Doctor</th>
+					<th>Health Concern</th>
+				</tr>
+			</thead>
+			<tbody>
+					{% if appointments %}
+					{% for appointment in appointments %}
+					<tr class="clickable-row" data-href='/appointments/{{ appointment.pk }}'>
+						<td> {{ appointment.date }}</td>
+						<td> {{ appointment.doctor }} </td>
+						<td> {{ appointment.health_condition }} </td></tr>
+					{% endfor %}
+					{% else %}
+			<tr><td>No appointments scheduled.</td></tr>
+			{% endif %}
+			</tbody></table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<a class="btn btn-default" href="/appointments/add/">Schedule Appointment</a>
+		<a class="btn btn-danger" href="/appointments/emergency/">Emergency Room</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h2>Prescriptions</h2>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Medication</th>
+					<th>Dosage</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+					{% if prescriptions %}
+					{% for prescription in prescriptions %}
+					<tr class="clickable-row" data-href='/appointments/{{ appointment.pk }}'>
+						<td> {{ prescription.medication }}</td>
+						<td> {{ prescription.dosage }} </td>
+						<td> {{ prescription.quantity }} </td></tr>
+					{% endfor %}
+					{% else %}
+			<tr><td>No medication has been prescribed.</td></tr>
+			{% endif %}
+			</tbody></table>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<a class="btn btn-default" href="/prescriptions/prescribe/{{ patient.pk }}">Prescribe Medication</a>
+	</div>
+</div>
 {% endblock %}

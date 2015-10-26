@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'smart_selects',
     'appointments',
     'notifications',
+    'prescriptions',
 )
 
 MIDDLEWARE_CLASSES = (
