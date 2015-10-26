@@ -1,0 +1,5 @@
+.table-hover > tbody > tr:hover {
+	background-color: #b5e2ff;
+	cursor: pointer; 
+	cursor: hand;
+}

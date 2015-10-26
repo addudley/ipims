@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="row"><div class="col-md-8">
+<div class="list-group">
+  <div class="list-group-item active">
+    Appointments
+  </div>
+  {% for appointment in object_list %}
+  	<a href="{{ appointment.pk }}" class="list-group-item">{{ appointment.date.ctime }} {{ appointment.patient.last_name }}, {{ appointment.patient.first_name }}</a>
+  {% empty %}
+  	<li class="list-group-item">No appointments scheduled.</li>
+  {% endfor %}
+  </div></div></div>
+  <div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+	<a class="btn btn-default" href="add/">Schedule Appointment</a>
+	<a class="btn btn-danger" href="emergency/">Emergency Room</a>
+  </div></div>
+{% endblock %}

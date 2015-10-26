@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+<div class="col-sm-6">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Appointment Details</h3>
+	  </div>
+	  <div class="panel-body">
+	    <b>Patient:</b> <a href="{% url 'patient_profile' appointment.patient.pk %}">{{ appointment.patient }}</a><br/>
+	    <b>Date:</b> {{ appointment.date }}<br/>
+	    <b>Health Condition:</b> {{ appointment.health_condition }}<br/>
+	    <b>Doctor:</b> {{ appointment.doctor }}<br/>
+	  </div>
+	</div>
+	<a class="btn btn-default" href="delete/">Cancel Appointment</a> <a class="btn btn-primary" href="edit/">Edit Appointment</a>
+	</div>
+</div>
+{% endblock %}

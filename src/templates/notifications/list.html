@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+<ul class="notifications">
+  {% if notifications.unread %}
+  {% for notice in notifications.unread %}
+    {% include 'notifications/notice.html' %}
+  {% endfor %}
+  {% else %}
+		<div class="alert alert-success" role="alert">No new alerts.</div>
+  {% endif %}
+</ul>
+{% endblock %}

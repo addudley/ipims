@@ -1,0 +1,350 @@
+[
+{
+    "pk": 1,
+    "fields": {
+        "description": "Heart/Chest pain"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 2,
+    "fields": {
+        "description": "Heart Disease"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 3,
+    "fields": {
+        "description": "Stroke"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 4,
+    "fields": {
+        "description": "Diabetes"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 5,
+    "fields": {
+        "description": "History of drug abuse"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 6,
+    "fields": {
+        "description": "Tuberculosis"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 7,
+    "fields": {
+        "description": "Headaches"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 8,
+    "fields": {
+        "description": "Anemia"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 9,
+    "fields": {
+        "description": "Fainting/Dizziness"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 10,
+    "fields": {
+        "description": "Thyroid problems"
+    },
+    "model": "patients.medicalbackgroundchoice"
+},
+{
+    "pk": 1,
+    "fields": {
+        "description": "Acetaminophen"
+    },
+    "model": "patients.allergy"
+},
+{
+    "pk": 2,
+    "fields": {
+        "description": "Penicillin"
+    },
+    "model": "patients.allergy"
+},
+{
+    "pk": 3,
+    "fields": {
+        "description": "Sulfa"
+    },
+    "model": "patients.allergy"
+},
+{
+    "pk": 4,
+    "fields": {
+        "description": "Codeine"
+    },
+    "model": "patients.allergy"
+},
+{
+    "pk": 5,
+    "fields": {
+        "description": "Vicoden"
+    },
+    "model": "patients.allergy"
+},
+{
+    "pk": 6,
+    "fields": {
+        "description": "Latex"
+    },
+    "model": "patients.allergy"
+},
+{
+    "pk": 7,
+    "fields": {
+        "description": "Epinephrin"
+    },
+    "model": "patients.allergy"
+},
+{
+    "pk": 1,
+    "fields": {
+        "health_insurance_provider": "Blue Cross / Blue Shield",
+        "medical_background_information": [],
+        "abdominal_pain_level": "0",
+        "lack_of_appetite_level": "0",
+        "health_insurance_id": "XBH156511185",
+        "ssn": "000-00-0001",
+        "address": "1234 W Fake St",
+        "headache_level": "0",
+        "city": "Glendale",
+        "state": "AZ",
+        "constipation_level": "0",
+        "dob": "1980-01-11",
+        "last_name": "Doe",
+        "sore_throat_level": "0",
+        "allergies": [],
+        "first_name": "John",
+        "nausea_level": "0",
+        "sleepiness_level": "0",
+        "insomnia_level": "0",
+        "zip_code": 85310,
+        "phone_number": "null",
+        "email": "null"
+    },
+    "model": "patients.patient"
+},
+{
+    "pk": 2,
+    "fields": {
+        "health_insurance_provider": "Blue Cross / Blue Shield",
+        "medical_background_information": [],
+        "abdominal_pain_level": "0",
+        "lack_of_appetite_level": "0",
+        "health_insurance_id": "XBH48912614",
+        "ssn": "000-00-0002",
+        "address": "1234 W Fake St",
+        "headache_level": "0",
+        "city": "Glendale",
+        "state": "AZ",
+        "constipation_level": "0",
+        "dob": "1965-12-11",
+        "last_name": "Doe",
+        "sore_throat_level": "0",
+        "allergies": [],
+        "first_name": "Mary",
+        "nausea_level": "0",
+        "sleepiness_level": "0",
+        "insomnia_level": "0",
+        "zip_code": 85310,
+        "phone_number": "555-555-5555",
+        "email": "fake@faketyfakefake.io"
+    },
+    "model": "patients.patient"
+},
+{
+    "pk": 3,
+    "fields": {
+        "health_insurance_provider": "Aetna",
+        "medical_background_information": [
+            2,
+            4,
+            7,
+            9
+        ],
+        "abdominal_pain_level": "0",
+        "lack_of_appetite_level": "0",
+        "health_insurance_id": "W0234 48894-01",
+        "ssn": "55-555-1234",
+        "address": "14559 W Yamakasi Dr",
+        "headache_level": "0",
+        "city": "Surprise",
+        "state": "AZ",
+        "constipation_level": "0",
+        "dob": "1987-01-10",
+        "last_name": "Dudley",
+        "sore_throat_level": "0",
+        "allergies": [
+            2,
+            3
+        ],
+        "first_name": "Sarah",
+        "nausea_level": "0",
+        "sleepiness_level": "0",
+        "insomnia_level": "0",
+        "zip_code": 85379,
+        "phone_number": "623-555-5555",
+        "email": "sarahmdudley@gmail.com"
+    },
+    "model": "patients.patient"
+},
+{
+    "pk": 4,
+    "fields": {
+        "health_insurance_provider": "Aetna",
+        "medical_background_information": [
+            1,
+            5,
+            8,
+            9
+        ],
+        "abdominal_pain_level": "0",
+        "lack_of_appetite_level": "0",
+        "health_insurance_id": "XBH78945 4841-22",
+        "ssn": "111-11-1111",
+        "address": "7458 E Crest Lan",
+        "headache_level": "3",
+        "city": "Tempe",
+        "state": "AK",
+        "constipation_level": "0",
+        "dob": "1950-02-19",
+        "last_name": "Smith",
+        "sore_throat_level": "3",
+        "allergies": [
+            6
+        ],
+        "first_name": "Will",
+        "nausea_level": "0",
+        "sleepiness_level": "0",
+        "insomnia_level": "3",
+        "zip_code": 78941,
+        "phone_number": "456-789-1145",
+        "email": "willsmith@yahoo.com"
+    },
+    "model": "patients.patient"
+},
+{
+    "pk": 5,
+    "fields": {
+        "health_insurance_provider": "Humana",
+        "medical_background_information": [
+            1,
+            2,
+            5
+        ],
+        "abdominal_pain_level": "0",
+        "lack_of_appetite_level": "0",
+        "health_insurance_id": "IDKMYBFFJILL",
+        "ssn": "444-44-4444",
+        "address": "5225 Figueroa Mountain Road",
+        "headache_level": "3",
+        "city": "Los Olivos",
+        "state": "CA",
+        "constipation_level": "4",
+        "dob": "1958-08-29",
+        "last_name": "Jackson",
+        "sore_throat_level": "3",
+        "allergies": [
+            1
+        ],
+        "first_name": "Michael",
+        "nausea_level": "0",
+        "sleepiness_level": "0",
+        "insomnia_level": "0",
+        "zip_code": 93441,
+        "phone_number": "555-777-4444",
+        "email": "moonwalking4life@imstillalive.com"
+    },
+    "model": "patients.patient"
+},
+{
+    "pk": 6,
+    "fields": {
+        "health_insurance_provider": "Aetna",
+        "medical_background_information": [
+            3,
+            4
+        ],
+        "abdominal_pain_level": "0",
+        "lack_of_appetite_level": "0",
+        "health_insurance_id": "10011451",
+        "ssn": "111-11-8994",
+        "address": "1234 W Fake St",
+        "headache_level": "0",
+        "city": "Glendale",
+        "state": "AZ",
+        "constipation_level": "0",
+        "dob": "1989-02-22",
+        "last_name": "Person",
+        "sore_throat_level": "0",
+        "allergies": [
+            3,
+            4
+        ],
+        "first_name": "Example",
+        "nausea_level": "0",
+        "sleepiness_level": "0",
+        "insomnia_level": "0",
+        "zip_code": 85310,
+        "phone_number": "114-444-5555",
+        "email": "notreal@fake.com"
+    },
+    "model": "patients.patient"
+},
+{
+    "pk": 7,
+    "fields": {
+        "health_insurance_provider": "Federal Employees Health Benefits Program",
+        "medical_background_information": [
+            2,
+            9,
+            10
+        ],
+        "abdominal_pain_level": "0",
+        "lack_of_appetite_level": "0",
+        "health_insurance_id": "SDH 48156148",
+        "ssn": "601-88-4059",
+        "address": "1600 Pennsylvania Ave NW",
+        "headache_level": "4",
+        "city": "Washington",
+        "state": "DC",
+        "constipation_level": "3",
+        "dob": "1961-08-04",
+        "last_name": "Obama",
+        "sore_throat_level": "0",
+        "allergies": [
+            6
+        ],
+        "first_name": "Barack",
+        "nausea_level": "0",
+        "sleepiness_level": "3",
+        "insomnia_level": "4",
+        "zip_code": 20500,
+        "phone_number": "202-456-1111",
+        "email": "Barack.Obama@whitehouse.gov"
+    },
+    "model": "patients.patient"
+}
+]

@@ -1,0 +1,295 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "groups": [],
+        "last_name": "",
+        "date_joined": "2015-10-10T15:42:19.040Z",
+        "email": "addudley@asu.edu",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$jxqzALybDzpp$5+u3S5LUdIRWLOBpAfvm6kyiSfmNYvJBQTuWI988WLc=",
+        "username": "admin",
+        "last_login": "2015-10-12T04:21:00.138Z",
+        "first_name": "",
+        "is_superuser": true,
+        "is_staff": true
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "groups": [],
+        "last_name": "Sharma",
+        "date_joined": "2015-10-11T19:54:48Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$qLMtn0FiGA8f$lU6d0MqmqBrRrGFWV8MAgLWZIq+P2ScztUvbHJOHnLI=",
+        "username": "Shreyas",
+        "last_login": null,
+        "first_name": "Shreyas",
+        "is_superuser": false,
+        "is_staff": true
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "groups": [],
+        "last_name": "Aw",
+        "date_joined": "2015-10-11T19:55:25Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$oNXkWEtjpx1l$CiXD296eNOrw8H16tjSO/WOy2jRSkgmfZlyG+Om5+os=",
+        "username": "Tik",
+        "last_login": null,
+        "first_name": "Tik",
+        "is_superuser": false,
+        "is_staff": false
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "groups": [],
+        "last_name": "Ngu",
+        "date_joined": "2015-10-11T19:55:50Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$NV0gWo52rMgE$g7TksNwi7NQmzrekGmu5jqLjH7buRxXXoQkSwhdXlp0=",
+        "username": "Ming",
+        "last_login": null,
+        "first_name": "Ming",
+        "is_superuser": false,
+        "is_staff": true
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "groups": [],
+        "last_name": "Lincoln",
+        "date_joined": "2015-10-11T19:56:08Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$XIbIiK3uYvZk$JxIb5FJMu2qxF22CtxEmPlQf8cHkYR8et7hzYXQwgA8=",
+        "username": "Josh",
+        "last_login": null,
+        "first_name": "Josh",
+        "is_superuser": false,
+        "is_staff": true
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "groups": [],
+        "last_name": "Deng",
+        "date_joined": "2015-10-11T19:56:36Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$LHX7KE4GYQ5k$XN6vml03KgdGJ9buEsWMhWw8r2ajVAkIs+I06VWac4c=",
+        "username": "Kai",
+        "last_login": null,
+        "first_name": "Kai",
+        "is_superuser": false,
+        "is_staff": true
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "groups": [],
+        "last_name": "Carlisle",
+        "date_joined": "2015-10-11T19:56:58Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$fufJsBkFepzo$mJnhnTgf5q0W5BoOn7qsZd7Q49WxJQbm5XqabtvyeQg=",
+        "username": "Bill",
+        "last_login": null,
+        "first_name": "Bill",
+        "is_superuser": false,
+        "is_staff": false
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "groups": [],
+        "last_name": "Al Junaibi",
+        "date_joined": "2015-10-11T19:57:32Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$b63pNAZergHk$PM/KN0C6eYA+i1cKmE8uiAJIakYF5sFfQREcHbkg23E=",
+        "username": "Naser",
+        "last_login": null,
+        "first_name": "Naser",
+        "is_superuser": false,
+        "is_staff": false
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "groups": [],
+        "last_name": "Mudarres",
+        "date_joined": "2015-10-11T19:58:36Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$gEgU8gr8N8zK$3tlJbG9vMd30ikfISU1wpYE0r5/7+A4w5k1FbTuSVU4=",
+        "username": "Abdulmajeed",
+        "last_login": null,
+        "first_name": "Abduljeed",
+        "is_superuser": false,
+        "is_staff": true
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "groups": [],
+        "last_name": "Saba",
+        "date_joined": "2015-10-11T19:59:15Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$5I0rALZH2vTY$aSuO8+PZTtIAVNSjYQc1m68rKwkEl4vX+shxK8JB7ds=",
+        "username": "Gabe",
+        "last_login": null,
+        "first_name": "Gabe",
+        "is_superuser": false,
+        "is_staff": true
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+        "groups": [],
+        "last_name": "Dudley",
+        "date_joined": "2015-10-11T20:00:07Z",
+        "email": "",
+        "user_permissions": [],
+        "is_active": true,
+        "password": "pbkdf2_sha256$20000$VQO8EOBxHgbI$khlKVoVYm2nbJAk1S33RQKgqY98GeqIvCg+UfAyz7jI=",
+        "username": "Andy",
+        "last_login": null,
+        "first_name": "Andy",
+        "is_superuser": false,
+        "is_staff": true
+    }
+},
+{
+    "model": "appointments.appointment",
+    "pk": 1,
+    "fields": {
+        "health_condition": 7,
+        "patient": 2,
+        "doctor": 11,
+        "date": "1989-01-22T07:00:00Z"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 3,
+    "fields": {
+        "doctors": [
+            2,
+            4
+        ],
+        "description": "condition_3"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 4,
+    "fields": {
+        "doctors": [
+            3,
+            5
+        ],
+        "description": "condition_4"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 5,
+    "fields": {
+        "doctors": [
+            3,
+            5
+        ],
+        "description": "condition_5"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 6,
+    "fields": {
+        "doctors": [
+            6
+        ],
+        "description": "condition_6"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 7,
+    "fields": {
+        "doctors": [
+            6,
+            7
+        ],
+        "description": "condition_7"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 8,
+    "fields": {
+        "doctors": [
+            6,
+            7
+        ],
+        "description": "condition_8"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 9,
+    "fields": {
+        "doctors": [
+            7
+        ],
+        "description": "condition_9"
+    }
+},
+{
+    "model": "appointments.healthcondition",
+    "pk": 10,
+    "fields": {
+        "doctors": [
+            8
+        ],
+        "description": "condition_10"
+    }
+}
+]

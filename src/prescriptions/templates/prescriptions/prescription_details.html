@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+<div class="col-sm-6">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Prescription Details</h3>
+	  </div>
+	  <div class="panel-body">
+	    <b>Date:</b> {{ prescription.date }}<br/>
+	    <b>Patient:</b> <a href="{% url 'patient_profile' prescription.patient.pk %}">{{ prescription.patient }}</a><br/>
+	    <b>Medication:</b> {{ prescription.medication }} {{ prescription.dosage }}mg<br/>
+	    <b>Quantity:</b> {{ prescription.quantity }}<br/>
+		<b>Doctor:</b> {{ prescription.doctor }}<br/>
+		<b>Filled on:</b> {% if prescription.filled_on  %}
+		test
+
+		{% else %}
+		[not filled]
+		{% endif %}
+
+	  </div>
+	</div>
+	<a class="btn btn-default" href="delete/">Cancel Prescription</a> <a class="btn btn-primary" href="edit/">Edit Prescription</a>
+	</div>
+</div>
+{% endblock %}
