@@ -1,4 +1,10 @@
 $(document).ready(function($) {
+	$(':disabled').each(
+    function()
+    {
+        $(this).after('<input type="hidden" name="' + $(this).attr('name') + '" value="' + $(this).val() + '" />');
+    }
+);
     $(".clickable-row").click(function() {
         window.document.location = $(this).data("href");
     });

@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=C:\IPIMS\env"
+set "VIRTUAL_ENV=c:\ipims\env"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"

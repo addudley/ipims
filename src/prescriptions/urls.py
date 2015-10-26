@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
 	url(r'^prescribe/(?P<patient>[0-9]+)/$',
-		login_required(views.Prescribe.as_view(success_url="/")), name='prescribe_form'),
+		login_required(views.prescribe), name='prescribe_form'),
 	url(r'^(?P<pk>[0-9]+)/$',
 		login_required(views.PrescriptionDetailsView.as_view()), name='prescription_details'),
 	url(r'^(?P<pk>[0-9]+)/edit/$',

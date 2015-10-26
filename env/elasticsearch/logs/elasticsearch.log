@@ -561,3 +561,18 @@
 [2015-10-26 04:40:19,105][INFO ][cluster.routing.allocation.decider] [M] low disk watermark [85%] exceeded on [LlPls5ZIQKmMTwo8oioJ-w][M] free: 11.3gb[10.2%], replicas will not be assigned to this node
 [2015-10-26 04:40:49,105][INFO ][cluster.routing.allocation.decider] [M] low disk watermark [85%] exceeded on [LlPls5ZIQKmMTwo8oioJ-w][M] free: 11.3gb[10.2%], replicas will not be assigned to this node
 [2015-10-26 04:41:19,107][INFO ][cluster.routing.allocation.decider] [M] low disk watermark [85%] exceeded on [LlPls5ZIQKmMTwo8oioJ-w][M] free: 11.3gb[10.2%], replicas will not be assigned to this node
+[2015-10-26 10:13:58,845][INFO ][node                     ] [Marrow] version[1.7.2], pid[20120], build[e43676b/2015-09-14T09:49:53Z]
+[2015-10-26 10:13:58,927][INFO ][node                     ] [Marrow] initializing ...
+[2015-10-26 10:14:01,180][INFO ][plugins                  ] [Marrow] loaded [], sites []
+[2015-10-26 10:14:01,594][INFO ][env                      ] [Marrow] using [1] data paths, mounts [[OSDisk (C:)]], net usable_space [144.6gb], net total_space [232.8gb], types [NTFS]
+[2015-10-26 10:14:15,589][INFO ][node                     ] [Marrow] initialized
+[2015-10-26 10:14:15,590][INFO ][node                     ] [Marrow] starting ...
+[2015-10-26 10:14:15,970][INFO ][transport                ] [Marrow] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/10.206.193.55:9300]}
+[2015-10-26 10:14:16,286][INFO ][discovery                ] [Marrow] elasticsearch/vaclCLvmQiqsrslbaVYnEg
+[2015-10-26 10:14:20,532][INFO ][cluster.service          ] [Marrow] new_master [Marrow][vaclCLvmQiqsrslbaVYnEg][EN4063626][inet[/10.206.193.55:9300]], reason: zen-disco-join (elected_as_master)
+[2015-10-26 10:14:20,781][INFO ][gateway                  ] [Marrow] recovered [0] indices into cluster_state
+[2015-10-26 10:14:20,788][INFO ][http                     ] [Marrow] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/10.206.193.55:9200]}
+[2015-10-26 10:14:20,789][INFO ][node                     ] [Marrow] started
+[2015-10-26 10:14:53,329][INFO ][cluster.metadata         ] [Marrow] [haystack] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2015-10-26 10:14:53,979][INFO ][cluster.metadata         ] [Marrow] [haystack] create_mapping [modelresult]
+[2015-10-26 10:15:01,736][INFO ][cluster.metadata         ] [Marrow] [haystack] update_mapping [modelresult] (dynamic)
