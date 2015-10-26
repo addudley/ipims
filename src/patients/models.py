@@ -16,6 +16,8 @@ class Allergy(models.Model):
 		return self.description
 
 class Patient(models.Model):
+	profile_picture = models.ImageField(upload_to = 'images/', blank=True, null=True)
+
 	first_name = models.CharField(max_length = 30)
 	last_name = models.CharField(max_length = 30)
 	dob = models.DateField()

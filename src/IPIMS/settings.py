@@ -135,3 +135,6 @@ HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 # User Registration/Login
 LOGIN_REDIRECT_URL = '/'
 SITE_ID = 1
+
+# Images
+MEDIA_ROOT = os.path.join(STATICFILES_DIRS[0], "")

@@ -3,10 +3,14 @@
 {% load i18n %}
 
 {% block content %}
-<h1>Schedule Appointment</h1>
-<form method='POST' action=''>
-	{% csrf_token %}
-	{{ form|crispy }}
-	<input class = "btn btn-primary" type="submit" value="{% trans 'Schedule' %}" />
-</form>
+<div class="row">
+	<div class="col-md-5">
+		<h1>Schedule Appointment</h1>
+		<form method='POST' action=''>
+			{% csrf_token %}
+			{{ form|crispy }}
+			<input class = "btn btn-primary" type="submit" value="{% trans 'Schedule' %}" />
+		</form>
+	</div>
+</div>
 {% endblock %}

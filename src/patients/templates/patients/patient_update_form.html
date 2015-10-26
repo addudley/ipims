@@ -3,9 +3,13 @@
 {% load i18n %}
 
 {% block content %}
-<form method='POST' action=''>
-	{% csrf_token %}
-	{{ form|crispy }}
-	<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
-</form>
+<div class="row">
+	<div class="col-md-5">
+		<form method='POST' action='' enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form|crispy }}
+			<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
+		</form>
+	</div>
+</div>
 {% endblock %}

@@ -4,9 +4,14 @@ from django.forms.widgets import CheckboxSelectMultiple, RadioSelect
 from django.utils.safestring import mark_safe
 from django import forms
 
+from crispy_forms.helper import FormHelper, Layout
+
+from crispy_forms.layout import Submit
+
 # Create the form class.
 
 class PatientRegistrationForm(ModelForm):
+
 
 	class Meta:
 		model = Patient
@@ -16,6 +21,13 @@ class PatientRegistrationForm(ModelForm):
 			'medical_background_information': CheckboxSelectMultiple,
 			'allergies': CheckboxSelectMultiple
 		}
+
+	def __init__(self, *args, **kwargs):
+		super(PatientRegistrationForm, self).__init__(*args, **kwargs)
+		self.helper = FormHelper(self)
+		self.helper.layout.append(Submit('save', 'save'))
+		self.helper.layout = Layout('name',)
+			
 
 class CurrentHealthConditionForm(ModelForm):
 	class Meta:
