@@ -49,6 +49,9 @@ INSTALLED_APPS = (
     'appointments',
     'notifications',
     'prescriptions',
+    'stats',
+    'googlecharts',
+    'qsstats',
 )
 
 MIDDLEWARE_CLASSES = (

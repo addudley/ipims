@@ -13,4 +13,5 @@ urlpatterns = [
 	url(r'^(?P<pk>[0-9]+)/edit/$',
 		login_required(views.EditPrescriptionView.as_view()), name='edit_prescription'),
 		url(r'^(?P<id>\d+)/delete', login_required(views.delete)),
+		url(r'^(?P<id>\d+)/fill', login_required(views.fill)),
 ]

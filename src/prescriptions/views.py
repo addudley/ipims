@@ -73,3 +73,10 @@ def delete(request, id):
 	patient_id = prescription.patient.pk
 	prescription.delete()
 	return HttpResponseRedirect('/patient/' + str(patient_id))
+
+def fill(request, id):
+	prescription = get_object_or_404(Prescription, pk=id)
+	patient_id = prescription.patient.pk
+	prescription.filled_on = datetime.datetime.now()
+	prescription.save()
+	return HttpResponseRedirect('/prescriptions/' + str(id))

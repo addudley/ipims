@@ -8,6 +8,8 @@ $(document).ready(function($) {
     $(".clickable-row").click(function() {
         window.document.location = $(this).data("href");
     });
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
 });
 
 function my_special_notification_callback(data) {
@@ -15,4 +17,5 @@ function my_special_notification_callback(data) {
         msg = data.unread_list[i];
         console.log(msg);
     }
+ 
 }

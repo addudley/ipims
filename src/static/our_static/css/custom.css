@@ -3,4 +3,8 @@
 	cursor: pointer; 
 	cursor: hand;
 }
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
 

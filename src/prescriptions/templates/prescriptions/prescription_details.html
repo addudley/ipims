@@ -16,15 +16,17 @@
 	    <b>Quantity:</b> {{ prescription.quantity }}<br/>
 		<b>Doctor:</b> {{ prescription.doctor }}<br/>
 		<b>Filled on:</b> {% if prescription.filled_on  %}
-		test
-
+		{{ prescription.filled_on }}
 		{% else %}
 		[not filled]
 		{% endif %}
 
 	  </div>
 	</div>
-	<a class="btn btn-default" href="delete/">Cancel Prescription</a> <a class="btn btn-primary" href="edit/">Edit Prescription</a>
+	{% if prescription.filled_on  %}
+	{% else %}
+	<a class="btn btn-default" href="fill/">Fill</a> 
+	<a class="btn btn-default" href="delete/">Cancel Prescription</a> <a class="btn btn-primary" href="edit/">Edit Prescription</a>	{% endif %}
 	</div>
 </div>
 {% endblock %}

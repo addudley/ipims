@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load stat_tags %}
+
+{% block extrahead %}
+    <!-- Load in jQuery and HighCharts -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="{% static 'highcharts/js/modules/exporting.js' %}"></script>
+{% endblock %}
+
+{% block heading %}
+    <h1 align="center">Analysis</h1>
+{% endblock %}
+
+{% block content %}
+    <h1 align="center">Statistical Analysis Report</h1>
+    <div class="row">
+    <h2>Analysis of Patient Population</h1>
+    {% for i in series_length|get_range %}
+    <div class="col-md-3 col-xs-4 {% if i == 0 %}col-md-offset-1 {% endif %}">
+    <div id="{{ chartID|lookup:i }}" class="chart" style="height:100%; width:100%"></div>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block overwrite %}
+<!-- Overwrite the base.html jQuery load and put in head for Highcharts to work -->
+{% endblock %}
+
+{% block extrajs %}
+<!-- Maps the Python template context variables from views.py to the Highchart js variables -->
+<script>
+
+</script>
+<!-- Highchart js. Variable map shown above -->
+<script>
+$(document).ready(function() {
+    var series_length = {{ series_length }}
+    {% for i in series_length|get_range %}
+    var chart_id = '{{ chartID|lookup:i}}'
+    var chart = {{ chart|lookup:i|safe}}
+    var title = {{ title|lookup:i|safe }}
+    var series = [{{ series|lookup:i|safe }}]
+    $({{ chartID|lookup:i}}).highcharts({
+        chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: title,
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+             credits: {
+             enabled: false,
+             text: "test"
+            },
+            series: series,
+            exporting: { enabled: false }
+
+        });
+{% endfor %}
+});
+
+</script>
+{% endblock %}

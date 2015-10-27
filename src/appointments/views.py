@@ -23,7 +23,7 @@ def scheduleAppointment(request, patient_pk):
 				patient=patient_instance, 
 				date=form.cleaned_data['date'], 
 				health_condition=HealthCondition.objects.get(pk = request.POST.get("health_condition", "")),
-				doctor=request.user)
+				doctor=form.cleaned_data['doctor'])
 			return HttpResponseRedirect('/appointments/' + str(p.pk) )
 
 		else:

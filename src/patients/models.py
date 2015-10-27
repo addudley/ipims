@@ -16,11 +16,33 @@ class Allergy(models.Model):
 		return self.description
 
 class Patient(models.Model):
+
+	# Patient Sex Constants
+	MALE = 'm'
+	FEMALE = 'f'
+	SEX_CHOICES = ((MALE, 'Male'), (FEMALE, 'Female'))
+
+	# Patient Ethnicity Constansts
+	WHITE = 'wh'
+	BLACK = 'bl'
+	NATIVE_AMERICAN = 'na'
+	HISPANIC = 'hi'
+	ASIAN = 'as'
+	OTHER = 'o'
+	ETHNICITY_CHOICES = ((WHITE, 'White'), 
+						(BLACK, 'Black'), 
+						(NATIVE_AMERICAN, 'Native American'), 
+						(HISPANIC, 'Hispanic'),
+						(ASIAN, 'Asian'),
+						(OTHER, 'Other'))
+
 	profile_picture = models.ImageField(upload_to = 'images/', blank=True, null=True)
 
 	first_name = models.CharField(max_length = 30)
 	last_name = models.CharField(max_length = 30)
 	dob = models.DateField()
+	sex = models.CharField(max_length=1, choices=SEX_CHOICES)
+	ethnicity = models.CharField(max_length=2, choices=ETHNICITY_CHOICES)
 	ssn = models.CharField(max_length = 11)
 	phone_number = PhoneNumberField(default = 'null')
 	email = models.EmailField(default = 'null')

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load googlecharts %}
+
+{% block content %}
+{# container #}
+<div class="row">
+    <h2>Patient Population Analysis</h2>
+    <div class="col-md-4">
+        <h3>Male vs Female</h3>
+        <div id="out"></div>
+    </div>
+</div>
+<div class="chart">
+{% googlecharts %}
+    {# named data and options can be reused #}
+    {% data values "out_data" %}
+        {% col "string" "Name" %}"{{ val }}"{% endcol %}
+        {% col "number" "Value" %}{{ val }}{% endcol %}
+    {% enddata %}
+
+    {# you can also use global javascript variables here, #}
+    {# and call functions #}
+    {% options "out_options" %}
+        kind: "PieChart",
+        options: {
+            width: 300,
+            height: 240,
+              animation:{
+    duration: 1000,
+    easing: 'out',
+  }
+            }
+    {% endoptions %}
+    {# chart is assembled from container, data and options #}
+    {% graph "out" "out_data" "out_options" %}
+{% endgooglecharts %}
+
+{% endblock %}
