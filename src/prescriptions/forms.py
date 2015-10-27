@@ -9,13 +9,8 @@ class PrescribeForm(forms.Form):
 		instance = getattr(self, 'instance', None)
 		self.fields['patient'].widget.attrs['readonly'] = True 
 		self.fields['doctor'].widget.attrs['disabled'] = 'disabled' 
+		self.fields['date'].widget.attrs['readonly'] = True
 
-	def clean_sku(self):
-		instance = getattr(self, 'instance', None)
-		if instance and instance.pk:
-			return instance.doctor
-		else:
-			return self.cleaned_data['doctor']
 
 	date = forms.DateTimeField()
 	patient = forms.CharField()
@@ -35,10 +30,5 @@ class EditPrescriptionForm(ModelForm):
 		instance = getattr(self, 'instance', None)
 		self.fields['readonly_patient'].initial = instance.patient
 		self.fields['readonly_patient'].widget.attrs['readonly'] = True
-
-	def clean_sku(self):
-		instance = getattr(self, 'instance', None)
-		if instance and instance.pk:
-			return instance.patient
-		else:
-			return self.cleaned_data['sku']
+		self.fields['date'].widget.attrs['readonly'] = True
+		self.fields['doctor'].widget.attrs['disabled'] = 'disabled' 

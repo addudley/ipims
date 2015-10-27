@@ -6,9 +6,11 @@ from django.shortcuts import render_to_response
 from django.contrib.auth.models import User
 from .models import *
 from .forms import *
+import datetime
 
 # Create your views here.
 def prescribe(request, patient):
+
 	if request.method == 'POST':
 		form = PrescribeForm(request.POST)
 
@@ -20,24 +22,23 @@ def prescribe(request, patient):
 				dosage=form.cleaned_data['dosage'],
 				quantity=form.cleaned_data['quantity'],
 				doctor=request.user)
-			return render(request, 'prescriptions/prescribe_form.html', {
-        'form': form,
-    })
+			return HttpResponseRedirect('/prescriptions/' + str(p.pk) )
 
 		else:
 			return render(request, 'prescriptions/prescribe_form.html', {
-        'form': form,})
+		'form': form,})
 			
-	data = {'patient': Patient.objects.get(pk=patient), 'doctor': request.user}
+	data = {'patient': Patient.objects.get(pk=patient), 
+			'doctor': request.user, 
+			'date': datetime.datetime.now()}
 	form = PrescribeForm(initial=data)
 
-	def get_success_url(self):
-		pk = self.object.pk
-		return '/prescriptions/' + str(pk) + '/'
+
 
 	return render(request, 'prescriptions/prescribe_form.html', {
-        'form': form,
-    })
+		'form': form,
+		'patient': Patient.objects.get(pk=patient)
+	})
 
 class EditPrescriptionView(UpdateView):
 	model = Prescription

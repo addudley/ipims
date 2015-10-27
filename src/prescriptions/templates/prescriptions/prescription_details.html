@@ -2,6 +2,7 @@
 {% load i18n %}
 
 {% block content %}
+<a class="btn btn-default" href="{% url 'patient_profile' prescription.patient.pk %}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  Back to Profile</a><p></p>
 <div class="row">
 <div class="col-sm-6">
 	<div class="panel panel-default">

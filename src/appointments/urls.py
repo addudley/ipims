@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from appointments import views
 
 urlpatterns = [
-	url(r'^add/$', 
-    	login_required(views.ScheduleAppointment.as_view(success_url="/")), name='schedule_appointment_form'),
+	url(r'^add/(?P<patient_pk>[0-9]+)/$', 
+    	login_required(views.scheduleAppointment), name='schedule_appointment_form'),
 	url(r'^(?P<pk>[0-9]+)/edit', 
     	login_required(views.EditAppointment.as_view(success_url="/")), name='schedule_appointment_form'),
 	url(r'^emergency/$', 

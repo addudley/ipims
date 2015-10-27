@@ -7,22 +7,37 @@ from django.http import HttpResponseRedirect
 from django.views.generic.list import ListView
 from django.utils import timezone
 
-from .models import Appointment, Emergency
+import datetime
+
+from .models import Appointment, Emergency, HealthCondition
+from patients.models import Patient
 from .forms import ScheduleAppointmentForm, EditAppointmentForm, EmergencyForm
 
-class ScheduleAppointment(CreateView):
-	model = Appointment
-	form_class = ScheduleAppointmentForm
-	template_name = 'appointments/schedule_appointment_form.html'
+def scheduleAppointment(request, patient_pk):
+	if request.method == 'POST':
+		form = ScheduleAppointmentForm(request.POST)
 
-	def form_valid(self, form):
-		self.object = form.save()
-		return HttpResponseRedirect(self.get_success_url())
+		if form.is_valid():
+			patient_instance = Patient.objects.get(pk=patient_pk)
+			p = Appointment.objects.create(
+				patient=patient_instance, 
+				date=form.cleaned_data['date'], 
+				health_condition=HealthCondition.objects.get(pk = request.POST.get("health_condition", "")),
+				doctor=request.user)
+			return HttpResponseRedirect('/appointments/' + str(p.pk) )
 
-	def get_success_url(self):
-		return reverse('appointment_details', kwargs={
-			'pk': self.object.pk
-			})
+		else:
+			return render(request, 'appointments/schedule_appointment_form.html', {
+		'form': form,})
+			
+	data = {'patient': Patient.objects.get(pk=patient_pk), 
+			'date': datetime.datetime.now()}
+	form = ScheduleAppointmentForm(initial=data)
+
+	return render(request, 'appointments/schedule_appointment_form.html', {
+		'form': form,
+		'patient': Patient.objects.get(pk=patient_pk)
+	})
 
 class EditAppointment(UpdateView):
 	model = Appointment

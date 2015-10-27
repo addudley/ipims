@@ -576,3 +576,19 @@
 [2015-10-26 10:14:53,329][INFO ][cluster.metadata         ] [Marrow] [haystack] creating index, cause [api], templates [], shards [5]/[1], mappings []
 [2015-10-26 10:14:53,979][INFO ][cluster.metadata         ] [Marrow] [haystack] create_mapping [modelresult]
 [2015-10-26 10:15:01,736][INFO ][cluster.metadata         ] [Marrow] [haystack] update_mapping [modelresult] (dynamic)
+[2015-10-26 14:13:23,386][WARN ][bootstrap                ] jvm uses the client vm, make sure to run `java` with the server vm for best performance by adding `-server` to the command line
+[2015-10-26 14:13:23,991][INFO ][node                     ] [Arkon] version[1.7.2], pid[5052], build[e43676b/2015-09-14T09:49:53Z]
+[2015-10-26 14:13:23,991][INFO ][node                     ] [Arkon] initializing ...
+[2015-10-26 14:13:24,136][INFO ][plugins                  ] [Arkon] loaded [], sites []
+[2015-10-26 14:13:24,255][INFO ][env                      ] [Arkon] using [1] data paths, mounts [[OSDisk (C:)]], net usable_space [583.9gb], net total_space [931.5gb], types [NTFS]
+[2015-10-26 14:13:28,736][INFO ][node                     ] [Arkon] initialized
+[2015-10-26 14:13:28,737][INFO ][node                     ] [Arkon] starting ...
+[2015-10-26 14:13:29,094][INFO ][transport                ] [Arkon] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/10.206.123.109:9300]}
+[2015-10-26 14:13:29,457][INFO ][discovery                ] [Arkon] elasticsearch/8BYIc-caTImfy7E-AKMPAQ
+[2015-10-26 14:13:33,253][INFO ][cluster.service          ] [Arkon] new_master [Arkon][8BYIc-caTImfy7E-AKMPAQ][en4056189150][inet[/10.206.123.109:9300]], reason: zen-disco-join (elected_as_master)
+[2015-10-26 14:13:33,354][INFO ][gateway                  ] [Arkon] recovered [0] indices into cluster_state
+[2015-10-26 14:13:33,472][INFO ][http                     ] [Arkon] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/10.206.123.109:9200]}
+[2015-10-26 14:13:33,472][INFO ][node                     ] [Arkon] started
+[2015-10-26 14:13:43,847][INFO ][cluster.metadata         ] [Arkon] [haystack] creating index, cause [api], templates [], shards [5]/[1], mappings []
+[2015-10-26 14:13:44,282][INFO ][cluster.metadata         ] [Arkon] [haystack] create_mapping [modelresult]
+[2015-10-26 14:13:44,712][INFO ][cluster.metadata         ] [Arkon] [haystack] update_mapping [modelresult] (dynamic)

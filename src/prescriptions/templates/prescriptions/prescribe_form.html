@@ -9,7 +9,16 @@
 		<form method='POST' action=''>
 			{% csrf_token %}
 			{{ form|crispy }}
-			<input class = "btn btn-primary" type="submit" value="{% trans 'Prescribe' %}" />
+			<div class="pull-right" >
+				<div class="row">
+					<div class="col-md-4">
+						<a href="/patient/{{ patient.pk }}">cancel</a>
+					</div>
+					<div class="col-md-2">
+						<input class = "btn btn-primary" type="submit" value="{% trans 'Prescribe' %}" />
+					</div>
+				</div>
+			</div>
 		</form>
 	</div>
 </div>
