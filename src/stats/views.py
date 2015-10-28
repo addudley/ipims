@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from patients.models import Patient
 
-from .analysis_funcs import ChartData
+from .analysis_funcs import PatientData, AdmissionData
 
 # Create your views here.
 def statisticalAnalysis(request):
@@ -19,8 +19,8 @@ def statisticalAnalysis(request):
 ###################################################
 def plot(request, chart_type='pie'):
 
-	data = ChartData.check_patient_data() # returns patient data
-	
+	data = PatientData.check_patient_data() # returns patient data
+	admission_data = AdmissionData.check_admission_data()
 	# Require one entry in series list for each graph
 	series = [
 	{"name": 'Sex', "data" : data['sex']},

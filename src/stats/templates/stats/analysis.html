@@ -7,6 +7,10 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="{% static 'highcharts/js/modules/exporting.js' %}"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+    <script src="http://www.highcharts.com/joomla/media/com_demo/js/highslide-full.min.js"></script>
+    <script src="http://www.highcharts.com/joomla/media/com_demo/js/highslide.config.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.highcharts.com/joomla/media/com_demo/highslide.css" />
 {% endblock %}
 
 {% block heading %}
@@ -23,6 +27,12 @@
     </div>
     {% endfor %}
     </div>
+    <div class="row">
+    <h2>Admission Rates</h1>
+    <div class="col-md-12"> 
+    <div id="admission" class="chart" style="height:100%; width:100%"></div>
+    </div>
+    </div>
 {% endblock %}
 
 {% block overwrite %}
@@ -30,11 +40,7 @@
 {% endblock %}
 
 {% block extrajs %}
-<!-- Maps the Python template context variables from views.py to the Highchart js variables -->
-<script>
-
-</script>
-<!-- Highchart js. Variable map shown above -->
+<!-- Highchart.js -->
 <script>
 $(document).ready(function() {
     var series_length = {{ series_length }}
@@ -73,6 +79,103 @@ $(document).ready(function() {
 
         });
 {% endfor %}
+
+    // Get the CSV and create the chart
+        $('#admission').highcharts({
+
+
+            title: {
+                text: 'Daily visits at www.highcharts.com'
+            },
+
+            subtitle: {
+                text: 'Source: Google Analytics'
+            },
+
+            xAxis: {
+                tickInterval: 7 * 24 * 3600 * 1000, // one week
+                tickWidth: 0,
+                gridLineWidth: 1,
+                labels: {
+                    align: 'left',
+                    x: 3,
+                    y: -3
+                }
+            },
+
+            yAxis: [{ // left y axis
+                title: {
+                    text: null
+                },
+                labels: {
+                    align: 'left',
+                    x: 3,
+                    y: 16,
+                    format: '{value:.,0f}'
+                },
+                showFirstLabel: false
+            }, { // right y axis
+                linkedTo: 0,
+                gridLineWidth: 0,
+                opposite: true,
+                title: {
+                    text: null
+                },
+                labels: {
+                    align: 'right',
+                    x: -3,
+                    y: 16,
+                    format: '{value:.,0f}'
+                },
+                showFirstLabel: false
+            }],
+
+            legend: {
+                align: 'left',
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                borderWidth: 0
+            },
+
+            tooltip: {
+                shared: true,
+                crosshairs: true
+            },
+
+            plotOptions: {
+                series: {
+                    cursor: 'pointer',
+                    point: {
+                        events: {
+                            click: function (e) {
+                                hs.htmlExpand(null, {
+                                    pageOrigin: {
+                                        x: e.pageX || e.clientX,
+                                        y: e.pageY || e.clientY
+                                    },
+                                    headingText: this.series.name,
+                                    maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+                                        this.y + ' visits',
+                                    width: 200
+                                });
+                            }
+                        }
+                    },
+                    marker: {
+                        lineWidth: 1
+                    }
+                }
+            },
+
+            series: [{
+            name: 'Tokyo',
+            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: 'London',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
 });
 
 </script>

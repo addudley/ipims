@@ -1,8 +1,11 @@
 from patients.models import Patient
+from appointments.models import Appointment
 from datetime import date
+import datetime
 
 
-class ChartData(object):
+class PatientData(object):
+	# Get patient data for pie charts
 	def check_patient_data():
 		data = {'sex': [['Male', 0], ['Female', 0]],
 				'ethnicity': [['White', 0], 
@@ -68,6 +71,23 @@ class ChartData(object):
 				data['age_group'][8][1] += 1
 			else:
 				data['age_group'][9][1] += 1
+		return data
+
+class AdmissionData(object):
+	def check_admission_data():
+		#get comma seperated values for appointments and hospital admission
+		current_year = datetime.datetime.today().year
+		appointments = Appointment.objects.filter(date__range=[str(current_year) + "-01-01", str(current_year) + "-12-31"])
+		start_date = datetime.date(current_year, 1, 1)
+		end_date = datetime.date(current_year, 12, 31)
+		delta = end_date-start_date
+		print(delta)
+		data = {}
+		# Create a key for each day in current year
+		for i in range(delta.days + 1):
+			data[start_date+datetime.timedelta(days=i)] = 0
+		for appointment in appointments:
+			data[appointment.date.date()] += 1
 		return data
 
 def calculate_age(born):
