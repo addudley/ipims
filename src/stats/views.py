@@ -18,8 +18,11 @@ def statisticalAnalysis(request):
 #       plot(): generates data for highcharts
 ###################################################
 def plot(request, chart_type='pie'):
-
+	###################################
+	#       Patient Info Pie Charts
+	###################################
 	data = PatientData.check_patient_data() # returns patient data
+	total_patients = data['total']
 	admission_data = AdmissionData.check_admission_data()
 	# Require one entry in series list for each graph
 	series = [
@@ -45,6 +48,18 @@ def plot(request, chart_type='pie'):
 	# List of titles for each chart
 	title = [{"text": 'Male vs Female'}, {"text": 'Ethnicity'}, {"text": 'Age group'}]
 
+	###################################
+	#      Admission Line Chart
+	###################################
+	admission_csv = AdmissionData.check_admission_data()
+	admission_series = [{"name": 'Admissions', "data" : admission_csv}]
 
-	return render(request, 'stats/analysis.html', {'chartID': chartID, 'series_length': series_length, 'chart': chart, 'series': series, 'title': title})
+	return render(request, 'stats/analysis.html', 
+							{'chartID': chartID, 
+							'series_length': series_length, 
+							'chart': chart, 
+							'series': series, 
+							'title': title, 
+							'admission_csv': admission_csv,
+							'total_patients': total_patients})
 

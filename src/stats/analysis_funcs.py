@@ -2,7 +2,7 @@ from patients.models import Patient
 from appointments.models import Appointment
 from datetime import date
 import datetime
-
+import collections
 
 class PatientData(object):
 	# Get patient data for pie charts
@@ -23,7 +23,8 @@ class PatientData(object):
 								['60-69', 0],
 								['70-79', 0],
 								['80-89', 0],
-								['90+', 0]]
+								['90+', 0]],
+				'total': 0
 								}
 
 		patients = Patient.objects.all()
@@ -71,6 +72,8 @@ class PatientData(object):
 				data['age_group'][8][1] += 1
 			else:
 				data['age_group'][9][1] += 1
+
+			data['total'] += 1
 		return data
 
 class AdmissionData(object):
@@ -82,15 +85,20 @@ class AdmissionData(object):
 		end_date = datetime.date(current_year, 12, 31)
 		delta = end_date-start_date
 		print(delta)
-		data = {}
+		data = []
+		csv='Appointments\\n'
 		# Create a key for each day in current year
 		for i in range(delta.days + 1):
-			data[start_date+datetime.timedelta(days=i)] = 0
+			date = start_date+datetime.timedelta(days=i)
+			data.append((date.strftime('%m/%d/%y'), 0))
+		od = collections.OrderedDict(data)
 		for appointment in appointments:
-			data[appointment.date.date()] += 1
-		return data
+			od[appointment.date.date().strftime('%m/%d/%y')] += 1
+
+		for date, count in od.items():
+			csv = csv + date + ',' + str(count) + '\\n'
+		return csv
 
 def calculate_age(born):
     today = date.today()
     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
-

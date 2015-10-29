@@ -18,22 +18,48 @@
 {% endblock %}
 
 {% block content %}
-    <h1 align="center">Statistical Analysis Report</h1>
-    <div class="row">
-    <h2>Analysis of Patient Population</h1>
-    {% for i in series_length|get_range %}
-    <div class="col-md-3 col-xs-4 {% if i == 0 %}col-md-offset-1 {% endif %}">
-    <div id="{{ chartID|lookup:i }}" class="chart" style="height:100%; width:100%"></div>
+
+    <div class="row"><div class="col-md-9 col-md-offset-1"><div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Analysis of Patient Population</h3></div>
+    <div class="panel-body">
+    <div class="row panel-body">
+        <div class="col-md-3 col-md-offset-0">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">{{ total_patients }}</span> Total patients 
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">            
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">?</span> Something here 
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3">            
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="badge">?</span> And something here 
+                </li>
+            </ul>
+        </div>
     </div>
+    <div class="row">
+        {% for i in series_length|get_range %}
+        <div class="col-md-4 col-xs-4 {#{% if i == 0 %}col-md-offset-1 {% endif %}#}">
+            <div id="{{ chartID|lookup:i }}" class="chart" style="height:100%; width:100%"></div>
+        </div>
     {% endfor %}
-    </div>
-    <div class="row">
-    <h2>Admission Rates</h1>
+    </div></div></div>
+    <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Admission Rates</h3></div>
+    <div class="panel-body">
     <div class="col-md-12"> 
     <div id="admission" class="chart" style="height:100%; width:100%"></div>
     </div>
-    </div>
-{% endblock %}
+    </div></div></div></div>
+    {% endblock %}
 
 {% block overwrite %}
 <!-- Overwrite the base.html jQuery load and put in head for Highcharts to work -->
@@ -78,103 +104,70 @@ $(document).ready(function() {
             exporting: { enabled: false }
 
         });
-{% endfor %}
-
+    {% endfor %}
     // Get the CSV and create the chart
         $('#admission').highcharts({
+            data: {
+                csv: '{{ admission_csv }}'
+            },
 
-
+                                    chart: {
+                zoomType: 'x'
+            },
             title: {
-                text: 'Daily visits at www.highcharts.com'
+                text: 'Appointments'
             },
-
             subtitle: {
-                text: 'Source: Google Analytics'
+                text: document.ontouchstart === undefined ?
+                        'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
             },
-
             xAxis: {
-                tickInterval: 7 * 24 * 3600 * 1000, // one week
-                tickWidth: 0,
-                gridLineWidth: 1,
-                labels: {
-                    align: 'left',
-                    x: 3,
-                    y: -3
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Admission Rates'
                 }
             },
-
-            yAxis: [{ // left y axis
-                title: {
-                    text: null
-                },
-                labels: {
-                    align: 'left',
-                    x: 3,
-                    y: 16,
-                    format: '{value:.,0f}'
-                },
-                showFirstLabel: false
-            }, { // right y axis
-                linkedTo: 0,
-                gridLineWidth: 0,
-                opposite: true,
-                title: {
-                    text: null
-                },
-                labels: {
-                    align: 'right',
-                    x: -3,
-                    y: 16,
-                    format: '{value:.,0f}'
-                },
-                showFirstLabel: false
-            }],
-
             legend: {
-                align: 'left',
-                verticalAlign: 'top',
-                y: 20,
-                floating: true,
-                borderWidth: 0
+                enabled: false
             },
-
-            tooltip: {
-                shared: true,
-                crosshairs: true
-            },
-
             plotOptions: {
-                series: {
-                    cursor: 'pointer',
-                    point: {
-                        events: {
-                            click: function (e) {
-                                hs.htmlExpand(null, {
-                                    pageOrigin: {
-                                        x: e.pageX || e.clientX,
-                                        y: e.pageY || e.clientY
-                                    },
-                                    headingText: this.series.name,
-                                    maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
-                                        this.y + ' visits',
-                                    width: 200
-                                });
-                            }
-                        }
+                area: {
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
                     },
                     marker: {
-                        lineWidth: 1
-                    }
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
                 }
             },
 
             series: [{
-            name: 'Tokyo',
-            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }, {
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-        }]
+                type: 'area',
+                name: 'Admission Rates',
+                data: '{{ admission_csv }}'
+            }],
+            credits: {
+             enabled: false,
+             text: "test"
+            },
     });
 });
 
