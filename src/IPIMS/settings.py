@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'stats',
     'googlecharts',
     'qsstats',
+    'labreports',
 )
 
 MIDDLEWARE_CLASSES = (
