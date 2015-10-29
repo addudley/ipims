@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<a class="btn btn-default" href="{% url 'patient_profile' labreport.patient.pk %}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  Back to Profile</a><p></p>
+<div class="row">
+<div class="col-sm-6">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Lab Report</h3>
+	  </div>
+	  <div class="panel-body">
+	    <b>Request date:</b> {{ labreport.request_date }}</a><br/>
+	    <b>Patient:</b> <a href="{% url 'patient_profile' labreport.patient.pk %}">{{ labreport.patient }}</a><br/>
+	    <b>Lab test:</b> {{ labreport.lab_test }}<br/>
+	    <b>Status:</b> {{ labreport.get_status_display }}<br/>
+	    <b>Note's from Doctor:</b> {{ labreport.doctor_notes }}<br />
+	    <b>Results:</b> {{ labreport.results }}<br />
+
+	  </div>
+	</div>
+	<!-- <a class="btn btn-default" href="delete/">Cancel Appointment</a> <a class="btn btn-primary" href="edit/">Edit Appointment</a> -->
+	</div>
+</div>
+{% endblock %}

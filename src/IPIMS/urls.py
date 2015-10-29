@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^inbox/notifications/', include('notifications.urls', namespace="notifications")),
     url(r'^prescriptions/', include('prescriptions.urls', namespace="prescriptions")),
     url(r'^stats/', 'stats.views.statisticalAnalysis'),
-    url(r'^hc/', 'stats.views.plot')
+    url(r'^hc/', 'stats.views.plot'),
+    url(r'labs/', include('labreports.urls', namespace = "labreports"))
 ]
