@@ -11,3 +11,51 @@
 .clickable {
 	cursor: pointer;
 }
+
+.row-search {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #d5d5d5;
+	margin-bottom: 10px;
+}
+
+.col-search > h3 {
+	margin-top: 10px;
+}
+
+.col-search > h3 > a {
+}
+
+.row-search-nav {
+	margin-top: 7px;
+	margin-left: 3px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 0px;
+	background-color: whitesmoke
+}
+
+.search-results {
+	margin-left: 20px
+}
+
+div.row-search-bar {
+	background-color: #043D5D;
+	margin-top: 30px;
+	margin-bottom: 0px;
+	margin: auto;
+	padding: 10px
+
+}
+
+.navbar-default {
+  background-color: #449BB5;
+}
+
+.nav.navbar-nav li a {
+    color: white;
+}
+
+.navbar-header a.navbar-brand{
+	color: white;
+}

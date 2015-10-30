@@ -43,8 +43,9 @@
   <body>
    {% include 'navbar.html' %}
    {% notifications_unread as unread %}
+   {% block searchbar %}
+   {% endblock %}
     <div class="container">
-
       {% block content %}
       {% endblock %}
 

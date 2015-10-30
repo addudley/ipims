@@ -65,6 +65,9 @@ class Patient(models.Model):
 		# returns the patient's full name (ex: Doe, John)
 		return '%s, %s' % (self.last_name, self.first_name)
 
+	def get_ssn(self):
+		return 'xxx-xx' + self.ssn[6:]
+
 	DISCOMFORT_LEVELS = (('0', '0'),('1', '1'),('2', '2'),('3', '3'),('4', '4'),('5', '5'))
 	nausea_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Nausea')
 	headache_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Headache')
