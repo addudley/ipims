@@ -14,8 +14,9 @@
 	    <b>Patient:</b> <a href="{% url 'patient_profile' labreport.patient.pk %}">{{ labreport.patient }}</a><br/>
 	    <b>Lab test:</b> {{ labreport.lab_test }}<br/>
 	    <b>Status:</b> {{ labreport.get_status_display }}<br/>
-	    <b>Note's from Doctor:</b> {{ labreport.doctor_notes }}<br />
-	    <b>Results:</b> {{ labreport.results }}<br />
+	    <b>Lab request notes:</b>
+	    <div class="well well-sm">{{ labreport.doctor_notes }}</div><br />
+	    <b>Results:</b> {{ labreport.results }}
 
 	  </div>
 	</div>

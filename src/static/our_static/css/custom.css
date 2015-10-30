@@ -59,3 +59,7 @@ div.row-search-bar {
 .navbar-header a.navbar-brand{
 	color: white;
 }
+
+.well {
+	margin-bottom: 0px;
+}
