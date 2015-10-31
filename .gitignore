@@ -1,2 +1,4 @@
 env/elasticsearch/data/
 env/elasticsearch/logs/
+*.pyc
+*~
