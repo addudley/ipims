@@ -4,12 +4,17 @@
 
 {% block content %}
 <div class="row">
-	<div class="col-md-5">
-		<form method='POST' action='' enctype="multipart/form-data">
-			{% csrf_token %}
-			{{ form|crispy }}
-			<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
-		</form>
+	<div class="col-md-7">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2>Update Patient Information</h2>
+				<form method='POST' action='' enctype="multipart/form-data">
+					{% csrf_token %}
+					{{ form|crispy }}
+					<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
+				</form>
+			</div>
+		</div>
 	</div>
 </div>
 {% endblock %}

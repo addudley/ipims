@@ -3,14 +3,19 @@
 {% load i18n %}
 
 {% block content %}
-<h1>Patient Registration Form</h1>
+
 <div class="row">
-	<div class="col-md-5">
-		<form method='POST' action=''>
-			{% csrf_token %}
-			{{ form|crispy }}
-			<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
-		</form>
+	<div class="col-md-7">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2>Patient Registration Form</h2>
+				<form method='POST' action=''>
+					{% csrf_token %}
+					{{ form|crispy }}
+					<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
+				</form>
+			</div>
+		</div>
 	</div>
 </div>
 {% endblock %}

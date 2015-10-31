@@ -16,11 +16,20 @@
 	    <b>Status:</b> {{ labreport.get_status_display }}<br/>
 	    <b>Lab request notes:</b>
 	    <div class="well well-sm">{{ labreport.doctor_notes }}</div><br />
-	    <b>Results:</b> {{ labreport.results }}
+	    {% if labreport.status == 'c' %}
+	    <b>Results:</b>
+	    <div class="well well-sm">{{ labreport.results }}</div>
+	    {% endif %}
 
 	  </div>
 	</div>
-	<!-- <a class="btn btn-default" href="delete/">Cancel Appointment</a> <a class="btn btn-primary" href="edit/">Edit Appointment</a> -->
+	{% if labreport.status == 'r'  %}
+		<a class="btn btn-default" href="delete/">Cancel Lab Request</a> 
+		<a class="btn btn-primary" href="edit/">Edit Lab Request</a>	
+	{% else %}
+
+	{% endif %}
+	</div>
 	</div>
 </div>
 {% endblock %}

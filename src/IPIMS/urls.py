@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.contrib import admin
-
+from django.contrib.auth.decorators import login_required
 # Haystack Search
 from haystack.forms import SearchForm
 from haystack.views import SearchView
@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^$', 'default.views.home', name='home'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^patient/', include('patients.urls')),
-    url(r'^search/', SearchView(form_class=SearchForm)),
+    url(r'^search/', login_required(SearchView(form_class=SearchForm))),
     url(r'^appointments/', include('appointments.urls')),
     url(r'^inbox/notifications/', include('notifications.urls', namespace="notifications")),
     url(r'^prescriptions/', include('prescriptions.urls', namespace="prescriptions")),

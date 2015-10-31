@@ -5,26 +5,30 @@
 {% block content %}
 <div class="row">
 	<div class="col-md-5">
-		<h1>Edit Appointment</h1>
-		<div class="form-group"><label class="control-label">Patient</label>
-			<div class="controls">
-			{# Display Patient's Name (Read-only) #}
-				<input class="form-control" name="patient" type="text" value="{{ form.instance.patient }}" disabled="true">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2>Edit Appointment</h2>
+				<div class="form-group"><label class="control-label">Patient</label>
+					<div class="controls">
+						{# Display Patient's Name (Read-only) #}
+						<input class="form-control" name="patient" type="text" value="{{ form.instance.patient }}" disabled="true">
+					</div>
+				</div>
+				<form method='POST' action=''>
+					{% csrf_token %}
+					{{ form|crispy }}
+					<div class="row">
+						<div class="col-md-7 col-sm-9 col-xs-5"></div>
+						<div class="col-md-2 col-sm-1 col-xs-3">
+							<a href="/appointments/{{ appointment.pk }}">Cancel</a>
+						</div>
+						<div class="col-md-2 col-sm-2" col-xs-2>
+							<input class = "btn btn-primary" type="submit" value="{% trans 'Schedule' %}" />
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
-		<form method='POST' action=''>
-			{% csrf_token %}
-			{{ form|crispy }}
-			<div class="row">
-				<div class="col-md-7 col-sm-9 col-xs-5"></div>
-				<div class="col-md-2 col-sm-1 col-xs-3">
-				<a href="/appointments/{{ appointment.pk }}">Cancel</a>
-				</div>
-				<div class="col-md-2 col-sm-2" col-xs-2>
-					<input class = "btn btn-primary" type="submit" value="{% trans 'Schedule' %}" />
-					</div>
-			</div>
-		</form>
 	</div>
 </div>
 {% endblock %}

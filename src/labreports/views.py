@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from .models import LabReport, LabTest
 from patients.models import Patient
@@ -46,3 +46,22 @@ def requestLab(request, patient):
 		'form': form,
 		'patient': Patient.objects.get(pk=patient)
 	})
+
+class EditLabRequestView(UpdateView):
+	model = LabReport
+	form_class = EditLabRequestForm
+	template_name = 'labreports/edit_lab_request.html'
+
+	def form_valid(self, form):
+		self.object = form.save()
+		return HttpResponseRedirect(self.get_success_url())
+
+	def get_success_url(self):
+		pk = self.object.pk
+		return '/labs/' + str(pk) + '/'
+
+def delete(request, pk):
+	lab_report = get_object_or_404(LabReport, pk=pk)
+	patient_pk = lab_report.patient.pk
+	lab_report.delete()
+	return HttpResponseRedirect('/patient/' + str(patient_pk))
