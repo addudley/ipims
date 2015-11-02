@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<a class="btn btn-default" href="{% url 'patient_profile' record.patient.pk %}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  Back to Profile</a><p></p>
+<div class="row">
+<div class="col-sm-6">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Medical Record</h3>
+	  </div>
+	  <div class="panel-body">
+	    <b>Patient:</b>  <a href="{% url 'patient_profile' record.patient.pk %}">{{ record.patient }}</a><br/>
+	    <b>Date created:</b> {{ record.date_created }}<br/>
+	    <b>Doctor:</b> {{ record.doctor }}<br/>
+	    <b>Health condition:</b> {{ record.health_condition }}<br/>
+	    <b>Notes:</b>
+	    <div class="well well-sm">{{ record.notes|linebreaks }}</div>
+	    <b>Resolved?:</b> {% if record.resolved == 1 %} Yes {% else %} No {% endif %}
+
+	  </div>
+	</div>
+	{% if labreport.status == 'r'  %}
+		<a class="btn btn-default" href="delete/">Cancel Lab Request</a> 
+		<a class="btn btn-primary" href="edit/">Edit Lab Request</a>	
+	{% else %}
+
+	{% endif %}
+	</div>
+	</div>
+</div>
+{% endblock %}

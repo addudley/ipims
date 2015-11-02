@@ -13,7 +13,9 @@ urlpatterns = [
 	url(r'^(?P<pk>[0-9]+)/delete/$',
 		login_required(views.delete), name="delete_lab_report"),
 	url(r'^(?P<pk>[0-9]+)/edit/$',
-		login_required(views.EditLabRequestView.as_view()), name="edit_lab_request")
+		login_required(views.EditLabRequestView.as_view()), name="edit_lab_request"),
+	url(r'^(?P<pk>[0-9]+)/update/$',
+		login_required(views.UpdateLabReportView.as_view()), name="update_lab_report")
 	# url(r'^(?P<pk>[0-9]+)/health/$',
 	# 	login_required(views.CurrentHealthCondition.as_view()), name='patient_health_condition_form'),
 ]

@@ -60,6 +60,19 @@ class EditLabRequestView(UpdateView):
 		pk = self.object.pk
 		return '/labs/' + str(pk) + '/'
 
+class UpdateLabReportView(UpdateView):
+	model = LabReport
+	form_class = UpdateLabReportForm
+	template_name = 'labreports/update_lab_report.html'
+
+	def form_valid(self, form):
+		self.object = form.save()
+		return HttpResponseRedirect(self.get_success_url())
+
+	def get_success_url(self):
+		pk = self.object.pk
+		return '/labs/' + str(pk) + '/'
+
 def delete(request, pk):
 	lab_report = get_object_or_404(LabReport, pk=pk)
 	patient_pk = lab_report.patient.pk

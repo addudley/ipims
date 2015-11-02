@@ -3,63 +3,88 @@
 {% load stat_tags %}
 
 {% block extrahead %}
-    <!-- Load in jQuery and HighCharts -->
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="{% static 'highcharts/js/modules/exporting.js' %}"></script>
-    <script src="http://code.highcharts.com/modules/data.js"></script>
-    <script src="http://www.highcharts.com/joomla/media/com_demo/js/highslide-full.min.js"></script>
-    <script src="http://www.highcharts.com/joomla/media/com_demo/js/highslide.config.js" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="http://www.highcharts.com/joomla/media/com_demo/highslide.css" />
+<!-- Load in jQuery and HighCharts -->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="{% static 'highcharts/js/modules/exporting.js' %}"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+<script src="http://www.highcharts.com/joomla/media/com_demo/js/highslide-full.min.js"></script>
+<script src="http://www.highcharts.com/joomla/media/com_demo/js/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="http://www.highcharts.com/joomla/media/com_demo/highslide.css" />
 {% endblock %}
 
 {% block heading %}
-    <h1 align="center">Analysis</h1>
+<h1 align="center">Analysis</h1>
 {% endblock %}
 
 {% block content %}
 
-    <div class="row"><div class="col-md-9 col-md-offset-1"><div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">Analysis of Patient Population</h3></div>
-    <div class="panel-body">
-    <div class="row panel-body">
-        <div class="col-md-3 col-md-offset-0">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <span class="badge">{{ total_patients }}</span> Total patients 
-                </li>
-            </ul>
+<div class="row">
+    <div class="col-md-9 col-md-offset-1">
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Analysis of Patient Population + </h3></div>
+            <div class="panel-body">
+                <div class="row panel-body">
+                    <div class="col-md-3 col-md-offset-0">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge">{{ total_patients }}</span> Total patients 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">            
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge">?</span> Something here 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">            
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge">?</span> And something here 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for i in series_length|get_range %}
+                    <div class="col-md-4 col-xs-4 {#{% if i == 0 %}col-md-offset-1 {% endif %}#}">
+                        <div id="{{ chartID|lookup:i }}" class="chart" style="height:100%; width:100%"></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        <div class="col-md-3">            
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <span class="badge">?</span> Something here 
-                </li>
-            </ul>
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Analysis of Health Outcomes</h3></div>
+            <div class="panel-body">
+                <div class="row">
+                    {% for i in health_outcomes_series_length|get_range %}
+                    <div class="col-md-4 col-xs-4 {#{% if i == 0 %}col-md-offset-1 {% endif %}#}">
+                        <div id="{{ health_outcomes_chartID|lookup:i }}" class="chart" style="height:100%; width:100%"></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-        <div class="col-md-3">            
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <span class="badge">?</span> And something here 
-                </li>
-            </ul>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Admission Rates</h3></div>
+            <div class="panel-body">
+                <div class="col-md-12"> 
+                    <div id="admission" class="chart" style="height:100%; width:100%"></div>
+                </div>
+            </div>
         </div>
+
     </div>
-    <div class="row">
-        {% for i in series_length|get_range %}
-        <div class="col-md-4 col-xs-4 {#{% if i == 0 %}col-md-offset-1 {% endif %}#}">
-            <div id="{{ chartID|lookup:i }}" class="chart" style="height:100%; width:100%"></div>
-        </div>
-    {% endfor %}
-    </div></div></div>
-    <div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">Admission Rates</h3></div>
-    <div class="panel-body">
-    <div class="col-md-12"> 
-    <div id="admission" class="chart" style="height:100%; width:100%"></div>
-    </div>
-    </div></div></div></div>
-    {% endblock %}
+</div>
+{% endblock %}
 
 {% block overwrite %}
 <!-- Overwrite the base.html jQuery load and put in head for Highcharts to work -->
@@ -68,15 +93,18 @@
 {% block extrajs %}
 <!-- Highchart.js -->
 <script>
-$(document).ready(function() {
-    var series_length = {{ series_length }}
-    {% for i in series_length|get_range %}
-    var chart_id = '{{ chartID|lookup:i}}'
-    var chart = {{ chart|lookup:i|safe}}
-    var title = {{ title|lookup:i|safe }}
-    var series = [{{ series|lookup:i|safe }}]
-    $({{ chartID|lookup:i}}).highcharts({
-        chart: {
+    $(document).ready(function() {
+        // 
+        //     Generate 'Analysis of Patient Population' charts
+        // 
+        var series_length = {{ series_length }}
+        {% for i in series_length|get_range %}
+        var chart_id = '{{ chartID|lookup:i}}'
+        var chart = {{ chart|lookup:i|safe}}
+        var title = {{ title|lookup:i|safe }}
+        var series = [{{ series|lookup:i|safe }}]
+        $({{ chartID|lookup:i}}).highcharts({
+            chart: {
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: false,
@@ -96,79 +124,124 @@ $(document).ready(function() {
                     showInLegend: true
                 }
             },
-             credits: {
-             enabled: false,
-             text: "test"
-            },
-            series: series,
-            exporting: { enabled: false }
+            credits: {
+               enabled: false,
+               text: "test"
+           },
+           series: series,
+           exporting: { enabled: false }
 
-        });
-    {% endfor %}
-    // Get the CSV and create the chart
-        $('#admission').highcharts({
-            data: {
-                csv: '{{ admission_csv }}'
-            },
+       });
+        {% endfor %}
 
-                                    chart: {
-                zoomType: 'x'
+
+    // 
+    //     Generate 'Analysis of Health Outcomes' charts
+    // 
+        var series_length = {{ health_outcomes_series_length }}
+        {% for i in health_outcomes_series_length|get_range %}
+        var chart_id = '{{ health_outcomes_chartID|lookup:i}}'
+        var chart = {{ health_outcomes_chart|lookup:i|safe }}
+        var title = {{ health_outcomes_title|lookup:i|safe }}
+        var series = [{{ health_outcomes_series|lookup:i|safe }}]
+        $({{ health_outcomes_chartID|lookup:i}}).highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
             },
-            title: {
-                text: 'Appointments'
-            },
-            subtitle: {
-                text: document.ontouchstart === undefined ?
-                        'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-            },
-            xAxis: {
-                type: 'datetime'
-            },
-            yAxis: {
-                title: {
-                    text: 'Admission Rates'
-                }
-            },
-            legend: {
-                enabled: false
+            title: title,
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
             },
             plotOptions: {
-                area: {
-                    fillColor: {
-                        linearGradient: {
-                            x1: 0,
-                            y1: 0,
-                            x2: 0,
-                            y2: 1
-                        },
-                        stops: [
-                            [0, Highcharts.getOptions().colors[0]],
-                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                        ]
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
                     },
-                    marker: {
-                        radius: 2
-                    },
-                    lineWidth: 1,
-                    states: {
-                        hover: {
-                            lineWidth: 1
-                        }
-                    },
-                    threshold: null
+                    showInLegend: true
                 }
             },
-
-            series: [{
-                type: 'area',
-                name: 'Admission Rates',
-                data: '{{ admission_csv }}'
-            }],
             credits: {
-             enabled: false,
-             text: "test"
-            },
-    });
+               enabled: false,
+               text: "test"
+           },
+           series: series,
+           exporting: { enabled: false }
+
+       });
+    {% endfor %}
+
+    // 
+    //     Generate 'Admission Rates' charts
+    // 
+    // Get the CSV and create the chart
+    $('#admission').highcharts({
+        data: {
+            csv: '{{ admission_csv }}'
+        },
+
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Appointments'
+        },
+        subtitle: {
+            text: document.ontouchstart === undefined ?
+            'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+        },
+        xAxis: {
+            type: 'datetime'
+        },
+        yAxis: {
+            title: {
+                text: 'Admission Rates'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                    [0, Highcharts.getOptions().colors[0]],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 1,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
+            }
+        },
+
+        series: [{
+            type: 'area',
+            name: 'Admission Rates',
+            data: '{{ admission_csv }}'
+        }],
+        credits: {
+           enabled: false,
+           text: "test"
+       },
+   });
 });
 
 </script>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from patients.models import Patient
 
-from .analysis_funcs import PatientData, AdmissionData
+from .analysis_funcs import PatientData, AdmissionData, HealthOutcomesData
 
 # Create your views here.
 def statisticalAnalysis(request):
@@ -46,7 +46,7 @@ def plot(request, chart_type='pie'):
 		chart.append({"renderTo": chartID[i], "type": chart_type})
 
 	# List of titles for each chart
-	title = [{"text": 'Male vs Female'}, {"text": 'Ethnicity'}, {"text": 'Age group'}]
+	title = [{"text": 'Sex'}, {"text": 'Ethnicity'}, {"text": 'Age group'}]
 
 	###################################
 	#      Admission Line Chart
@@ -54,12 +54,50 @@ def plot(request, chart_type='pie'):
 	admission_csv = AdmissionData.check_admission_data()
 	admission_series = [{"name": 'Admissions', "data" : admission_csv}]
 
+	###################################
+	#       Line Chart
+	###################################
+	health_outcomes_data = HealthOutcomesData.check_health_outcomes_data() # returns patient data
+	# Require one entry in series list for each graph
+	health_outcomes_series = [
+	{"name": 'Overall Health Outcomes', "data" : health_outcomes_data['overall']},
+		]
+
+	health_outcomes_series_length = len(health_outcomes_series) # length of series - used to iteratively create divs and jQuery in analysis template 
+
+	# Generate a chartID for each chart in series
+	# Used as div id / jQuery selector in analysis template
+	health_outcomes_chartID = [] 
+	for i in range(0, health_outcomes_series_length):
+		health_outcomes_chartID.append("health_outcomes_chart_" + str(i))
+
+	# Generate a chart for each chart in series
+	# Used as a field in highcharts
+	health_outcomes_chart = []
+	for i in range(0, health_outcomes_series_length):
+		health_outcomes_chart.append({"renderTo": health_outcomes_chartID[i], "type": chart_type})
+
+	# List of titles for each chart
+	health_outcomes_title = [{"text": 'Overall'}]
+
+
+	###################################
+	#    Return data to template
+	###################################
 	return render(request, 'stats/analysis.html', 
 							{'chartID': chartID, 
 							'series_length': series_length, 
 							'chart': chart, 
 							'series': series, 
 							'title': title, 
-							'admission_csv': admission_csv,
-							'total_patients': total_patients})
 
+							'admission_csv': admission_csv,
+							'total_patients': total_patients,
+
+							'health_outcomes_chartID': health_outcomes_chartID,
+							'health_outcomes_chart': health_outcomes_chart,
+							'health_outcomes_series_length': health_outcomes_series_length,
+							'health_outcomes_series': health_outcomes_series,
+							'health_outcomes_title': health_outcomes_title
+
+							})

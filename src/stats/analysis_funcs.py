@@ -1,5 +1,6 @@
 from patients.models import Patient
 from appointments.models import Appointment
+from records.models import Record
 from datetime import date
 import datetime
 import collections
@@ -98,6 +99,20 @@ class AdmissionData(object):
 		for date, count in od.items():
 			csv = csv + date + ',' + str(count) + '\\n'
 		return csv
+
+class HealthOutcomesData(object):
+	def check_health_outcomes_data():
+		data = {'overall': [['Resolved', 0], 
+							['Unresolved', 0]]}
+		records = Record.objects.all()
+
+		for record in records:
+			if record.resolved == True:
+				data['overall'][0][1] += 1
+			else:
+				data['overall'][1][1] += 1
+
+		return data
 
 def calculate_age(born):
     today = date.today()

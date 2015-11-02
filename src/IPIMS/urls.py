@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^prescriptions/', include('prescriptions.urls', namespace="prescriptions")),
     url(r'^stats/', 'stats.views.statisticalAnalysis'),
     url(r'^hc/', 'stats.views.plot'),
-    url(r'labs/', include('labreports.urls', namespace = "labreports"))
+    url(r'^labs/', include('labreports.urls', namespace = "labreports")),
+    url(r'^records/', include('records.urls', namespace="records")),
 ]

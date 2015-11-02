@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-5">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h2>Update Lab Report</h2>
+				<form method='POST' action=''>
+					{% csrf_token %}
+					{{ form|crispy }}
+					<div class="pull-right" >
+						<div class="row">
+							<div class="col-md-4">
+								<a href="/labs/{{ object.pk }}">cancel</a>
+							</div>
+							<div class="col-md-2">
+								<input class = "btn btn-primary" type="submit" value="{% trans 'Prescribe' %}" />
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

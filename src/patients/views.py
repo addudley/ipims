@@ -14,6 +14,7 @@ from .models import Patient
 from appointments.models import Appointment
 from prescriptions.models import Prescription
 from labreports.models import LabReport
+from records.models import Record
 
 from notifications import notify
 from django.contrib.auth.models import User
@@ -90,12 +91,14 @@ def patientProfile(request, pk):
 	appointments = Appointment.objects.filter(patient=pk)
 	prescriptions = Prescription.objects.filter(patient=pk)
 	lab_reports = LabReport.objects.filter(patient=pk)
+	records = Record.objects.filter(patient=pk)
 	context = {'patient': patient, 'allergies': allergies, 
 				'medical_history': medical_history, 
 				'current_health_condition': current_health_condition,
 				'appointments': appointments,
 				'prescriptions': prescriptions,
 				'lab_reports': lab_reports,
+				'records': records
 				}
 	return render(request, 'patients/patient_profile.html', context)
 

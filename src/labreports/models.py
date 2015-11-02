@@ -16,7 +16,7 @@ class LabReport(models.Model):
 
 	STATUS_CHOICES = ((REQUESTED, 'Requested'), (IN_PROGRESS, 'In Progress'), (COMPLETE, 'Complete'))
 
-	request_date = models.DateField(("Date"), default=datetime.date.today)
+	request_date = models.DateField(("Lab Request Date"), default=datetime.date.today)
 	doctor = models.ForeignKey(User, related_name="doctor")
 	patient = models.ForeignKey(Patient)
 	lab_test = models.ForeignKey('LabTest')
@@ -24,7 +24,7 @@ class LabReport(models.Model):
 	doctor_notes = models.TextField(blank=True, null=True)
 	results = models.TextField(blank=True, null=True)
 	lab_technician = models.ForeignKey(User, blank=True, null=True, related_name="lab_technician")
-	update_date = models.DateField(("Date"), blank=True, null=True)
+	update_date = models.DateField(("Last updated"), blank=True, null=True)
 
 	def __str__(self):
 		return 'lab_report_' + str(self.pk)
