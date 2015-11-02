@@ -15,4 +15,3 @@ class AppointmentDetailsViewTestCase(TestCase):
 		appointment = resp.context['appointment']
 		self.assertEqual(appointment.id, 1)
 		self.assertEqual(resp.status_code, 200)
-

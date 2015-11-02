@@ -16,7 +16,6 @@ class LabReportDetails(DetailView):
 		return context
 
 def requestLab(request, patient):
-
 	if request.method == 'POST':
 		form = RequestLabForm(request.POST)
 
