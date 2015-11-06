@@ -1,4 +1,5 @@
 env/elasticsearch/data/
 env/elasticsearch/logs/
+__pycache__/
 *.pyc
 *~
