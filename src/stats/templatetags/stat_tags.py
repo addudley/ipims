@@ -1,4 +1,7 @@
 from django.template import Library, Node, TemplateSyntaxError
+from django import template 
+from django.contrib.auth.models import Group 
+
 
 register = Library()
 

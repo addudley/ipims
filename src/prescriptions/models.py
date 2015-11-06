@@ -21,5 +21,11 @@ class Prescription(models.Model):
 	doctor = models.ForeignKey(User)
 	filled_on = models.DateField(blank=True, null=True)
 
+	def is_expired(self):
+		if datetime.date.today() <= self.date + datetime.timedelta(days = 90):
+			return False
+		else:
+			return True 
+
 	def __str__(self):
-		return self.medication
+		return str(self.medication)

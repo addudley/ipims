@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load staticfiles %}
+{% load ipims_tags %}
 {% block content %}
 <h1> {{ patient.get_full_name }} </h1>
 <div class="row">
@@ -60,9 +61,18 @@
 							{% endif %}
 						</div>
 					</div>
+
+					{% if request.user.is_authenticated %}
+					{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
 					<a class="btn btn-default" href="update/">Update Patient Information</a><br/><br/>
+					{% endif %}
+					{% endif %}
+
 				</div>
 			</div>
+
+			{% if request.user.is_authenticated %}
+			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' or request.user|has_group:'lab_technician' %}
 			<div class="row">
 				<div class="col-sm-12">
 					<ul class="list-group">
@@ -76,12 +86,25 @@
 					</ul>
 				</div>
 			</div>
+
+
+			{% if request.user.is_authenticated %}
+			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' %}
 			<a class="btn btn-default" href="health/">Update Current Health Conditions</a>
+			{% endif %}
+			{% endif %}
+			{% endif %}
+			{% endif %}
+			
+
 		</div>
 
-
-
+		<!-- Right page column -->
 		<div class="col-md-7 col-sm-8 col-xs-12">
+
+			<!-- Appointments section -->
+			{% if request.user.is_authenticated %}
+			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<h2>Appointments</h2>
@@ -100,135 +123,180 @@
 									{% for appointment in appointments %}
 									<tr class="clickable-row" data-href='/appointments/{{ appointment.pk }}'>
 										<td> {{ appointment.date }}</td>
-										<td> {{ appointment.doctor }} </td>
-										<td> {{ appointment.health_condition }} </td></tr>
-										{% endfor %}
-										{% else %}
-										<tr><td>No appointments scheduled.</td></tr>
-										{% endif %}
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<a class="btn btn-default" href="/appointments/add/{{ patient.pk }}">Schedule Appointment</a>
-								<a class="btn btn-danger" href="/appointments/emergency/">Emergency Room</a>
-							</div>
+										<td> {{ appointment.doctor.get_full_name }} </td>
+										<td> {{ appointment.health_condition }} </td>
+									</tr>
+									{% endfor %}
+									{% else %}
+									<tr><td>No appointments scheduled.</td></tr>
+									{% endif %}
+								</tbody>
+							</table>
 						</div>
 					</div>
+
+					{% if request.user|has_group:'staff' %}
+					<div class="row">
+						<div class="col-md-12">
+							<a class="btn btn-default" href="/appointments/add/{{ patient.pk }}">Schedule Appointment</a>
+							<a class="btn btn-danger" href="/appointments/emergency/">Emergency Room</a>
+						</div>
+					</div>
+					{% endif %}
+
 				</div>
+			</div>
+			{% endif %}
+			{% endif %}
 
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h2>Medical Records</h2>
 
-						<div class="row">
-							<div class="col-sm-12">
-								<table class="table table-hover">
-									<thead>
-										<tr>
-											<th>Date Created</th>
-											<th>Health Concern</th>
-											<th>Resolved</th>
-										</tr>
-									</thead>
-									<tbody>
-										{% if records %}
-										{% for record in records %}
-										<tr class="clickable-row" data-href='/records/{{ record.pk }}'>
-											<td> {{ record.date_created }}</td>
-											<td> {{ record.health_condition }} </td>
-											<td> {% if record.resolved %} Yes {% else %} No {% endif %}</td></tr>
-											{% endfor %}
-											{% else %}
-											<tr><td>No medical records on file.</td></tr>
-											{% endif %}
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<a class="btn btn-default" href="/records/add/{{ patient.pk }}">Add Medical Record</a>
-								</div>
-							</div>
+			<!-- Medical Records section -->
+			{% if request.user.is_authenticated %}
+			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2>Medical Records</h2>
+					<div class="row">
+						<div class="col-sm-12">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Date Created</th>
+										<th>Health Concern</th>
+										<th>Resolved</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% if records %}
+									{% for record in records %}
+									<tr class="clickable-row" data-href='/records/{{ record.pk }}'>
+										<td> {{ record.date_created }}</td>
+										<td> {{ record.health_condition }} </td>
+										<td> {% if record.resolved %} Yes {% else %} No {% endif %}</td>
+									</tr>
+									{% endfor %}
+									{% else %}
+									<tr><td>No medical records on file.</td></tr>
+									{% endif %}
+								</tbody>
+							</table>
 						</div>
 					</div>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h2>Prescriptions</h2>
 
-						<div class="row">
-							<div class="col-sm-12">
-								<table class="table table-hover">
-									<thead>
-										<tr>
-											<th>Medication</th>
-											<th>Dosage</th>
-											<th>Quantity</th>
-										</tr>
-									</thead>
-									<tbody>
-										{% if prescriptions %}
-										{% for prescription in prescriptions %}
-										<tr class="clickable-row" data-href='/prescriptions/{{ prescription.pk }}'>
-											<td> {{ prescription.medication }}</td>
-											<td> {{ prescription.dosage }} </td>
-											<td> {{ prescription.quantity }} </td></tr>
-											{% endfor %}
-											{% else %}
-											<tr><td>No medication has been prescribed.</td></tr>
-											{% endif %}
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<a class="btn btn-default" href="/prescriptions/prescribe/{{ patient.pk }}">Prescribe Medication</a>
-								</div>
-							</div>
+					{% if request.user.is_authenticated and request.user|has_group:'doctor' %}
+					<div class="row">
+						<div class="col-md-12">
+							<a class="btn btn-default" href="/records/add/{{ patient.pk }}">Add Medical Record</a>
 						</div>
 					</div>
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h2>Lab Reports</h2>
-							<div class="row">
-								<div class="col-sm-12">
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>Request Date</th>
-												<th>Lab Test</th>
-												<th>Status</th>
-											</tr>
-										</thead>
-										<tbody>
-											{% if lab_reports %}
-											{% for lab_report in lab_reports %}
-											<tr class="clickable-row" data-href='/labs/{{ lab_report.pk }}'>
-												<td> {{ lab_report.request_date }}</td>
-												<td> {{ lab_report.lab_test }} </td>
-												<td> {{ lab_report.get_status_display }} </td></tr>
-												{% endfor %}
-												{% else %}
-												<tr><td>No lab report available.</td></tr>
-												{% endif %}
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<a class="btn btn-default" href="/labs/add/{{ patient.pk }}">Request Lab</a>
-									</div>
-								</div>
-							</div>
-						</div>
+					{% endif %}
 
+
+				</div>
+			</div>
+			{% endif %}
+			{% endif %}
+
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2>Prescriptions</h2>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Medication</th>
+										<th>Dosage</th>
+										<th>Quantity</th>
+										<th>Filled</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% if prescriptions %}
+									{% for prescription in prescriptions %}
+									<tr class="clickable-row 
+									{% if prescription.is_expired and not prescription.filled_on %} danger
+									{% elif prescription.filled_on %}
+									{% else %} info
+									{% endif %} " 
+
+									data-href='/prescriptions/{{ prescription.pk }}'>
+										<td> {{ prescription.medication }}</td>
+										<td> {{ prescription.dosage }} </td>
+										<td> {{ prescription.quantity }} </td>
+										<td> {% if prescription.filled_on %}&#x2713;{% else %} -- {% endif %} </td>
+									</tr>
+									{% endfor %}
+									{% else %}
+									<tr><td>No medication has been prescribed.</td></tr>
+									{% endif %}
+								</tbody>
+							</table>
+						</div>
 					</div>
+
+
+					{% if request.user.is_authenticated and request.user|has_group:'doctor' %}
+					<div class="row">
+						<div class="col-md-12">
+							<a class="btn btn-default" href="/prescriptions/prescribe/{{ patient.pk }}">Prescribe Medication</a>
+						</div>
+					</div>
+					{% endif %}
+
+
 				</div>
 			</div>
 
-			{% endblock %}
+
+			<!-- Lab Records / Reports -->
+			{% if request.user.is_authenticated %}
+			{% if request.user|has_group:'doctor' or request.user|has_group:'lab_technician' %}
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2>Lab Reports</h2>
+					<div class="row">
+						<div class="col-sm-12">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Request Date</th>
+										<th>Lab Test</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% if lab_reports %}
+									{% for lab_report in lab_reports %}
+									<tr class="clickable-row" data-href='/labs/{{ lab_report.pk }}'>
+										<td> {{ lab_report.request_date }}</td>
+										<td> {{ lab_report.lab_test }} </td>
+										<td> {{ lab_report.get_status_display }} </td>
+									</tr>
+									{% endfor %}
+									{% else %}
+									<tr><td>No lab report available.</td></tr>
+									{% endif %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					{% if request.user.is_authenticated and request.user|has_group:'doctor' %}
+					<div class="row">
+						<div class="col-md-12">
+							<a class="btn btn-default" href="/labs/add/{{ patient.pk }}">Request Lab</a>
+						</div>
+					</div>
+					{% endif %}
+
+				</div>
+			</div>
+			{% endif %}
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -88,10 +88,10 @@ def patientProfile(request, pk):
 	allergies = patient.allergies.all()
 	medical_history = patient.medical_background_information.all()
 	current_health_condition = {'nausea_level': patient.nausea_level, 'headache_level': patient.headache_level, 'sore_throat_level': patient.sore_throat_level, 'abdominal_pain_level': patient.abdominal_pain_level, 'constipation_level': patient.constipation_level, 'lack_of_appetite_level': patient.lack_of_appetite_level, 'sleepiness_level': patient.sleepiness_level, 'insomnia_level': patient.insomnia_level}
-	appointments = Appointment.objects.filter(patient=pk)
-	prescriptions = Prescription.objects.filter(patient=pk)
-	lab_reports = LabReport.objects.filter(patient=pk)
-	records = Record.objects.filter(patient=pk)
+	appointments = Appointment.objects.filter(patient=pk).order_by('date').reverse()
+	prescriptions = Prescription.objects.filter(patient=pk).order_by('date').reverse()
+	lab_reports = LabReport.objects.filter(patient=pk).order_by('request_date').reverse()
+	records = Record.objects.filter(patient=pk).order_by('date_created').reverse()
 	context = {'patient': patient, 'allergies': allergies, 
 				'medical_history': medical_history, 
 				'current_health_condition': current_health_condition,

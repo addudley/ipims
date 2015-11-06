@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-
+{% load ipims_tags %}
 {% block content %}
 <a class="btn btn-default" href="{% url 'patient_profile' appointment.patient.pk %}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  Back to Profile</a><p></p>
 <div class="row">
@@ -13,10 +13,14 @@
 	    <b>Patient:</b> <a href="{% url 'patient_profile' appointment.patient.pk %}">{{ appointment.patient }}</a><br/>
 	    <b>Date:</b> {{ appointment.date }}<br/>
 	    <b>Health Condition:</b> {{ appointment.health_condition }}<br/>
-	    <b>Doctor:</b> {{ appointment.doctor }}<br/>
+	    <b>Doctor:</b> {{ appointment.doctor.get_full_name }}<br/>
 	  </div>
 	</div>
+
+	{% if request.user.is_authenticated and request.user|has_group:'staff' %}
 	<a class="btn btn-default" href="delete/">Cancel Appointment</a> <a class="btn btn-primary" href="edit/">Edit Appointment</a>
+	{% endif %}
+
 	</div>
 </div>
 {% endblock %}
