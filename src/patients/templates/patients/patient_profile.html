@@ -21,15 +21,44 @@
 							<img src="{% static '/static/images/default_avatar.jpg' %}" class="img-thumbnail" /><br />
 							{% endif %}
 						</div>
-						<div class="col-md-8 col-sm-8">
-							<b>DOB:</b> {{ patient.dob }}<br/>
-							<b>Sex:</b> {{ patient.get_sex_display }}<br/>
-							<b>Race/Ethnicity:</b> {{ patient.get_ethnicity_display }}<br/>
-							<b>SSN:</b> {{ patient.get_ssn }}<br/>
-							<b>Phone:</b> {{ patient.phone_number }}<br/>
-							<b>Email:</b> {{ patient.email }}<br/>
-							<b>Insurance Provider:</b> {{ patient.health_insurance_provider }}<br/>
-							<b>Insurance ID:</b> {{ patient.health_insurance_id }} <br/><br/>
+						<div class="col-md-8 col-sm-8 col-patient-info">
+							<table class="table-patient-info">
+								<tbody>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">DOB:</td>
+										<td class="col-patient-info">{{ patient.dob }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Sex:</td>
+										<td class="col-patient-info">{{ patient.get_sex_display }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Race/Ethnicity:</td>
+										<td class="col-patient-info">{{ patient.get_ethnicity_display }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">SSN:</td>
+										<td class="col-patient-info">{{ patient.get_ssn }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Phone:</td>
+										<td class="col-patient-info">{{ patient.phone_number }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Email:</td>
+										<td class="col-patient-info">{{ patient.email }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Insurance Provider:</td>
+										<td class="col-patient-info">{{ patient.health_insurance_provider }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Insurance ID:</td>
+										<td class="col-patient-info">{{ patient.health_insurance_id }}</td>
+									</tr> <br/>
+							</tbody>
+							</table>
+
 						</div>
 					</div>
 					<br />
@@ -91,7 +120,7 @@
 
 					{% if request.user.is_authenticated %}
 					{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
-					<a class="btn btn-default" href="update/">Update Patient Information</a><br/><br/>
+					<a class="btn btn-default" href="update/">Update Patient Information</a><br/>
 					{% endif %}
 					{% endif %}
 

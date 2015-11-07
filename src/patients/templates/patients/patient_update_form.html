@@ -1,3 +1,5 @@
+<!--Update Patient Health Conditions form-->
+
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load i18n %}
@@ -11,54 +13,63 @@
 				<form method='POST' action='' enctype="multipart/form-data">
 					{% csrf_token %}
 					{{ form|crispy }}
+					<div class="row">
+						<div class="col-sm-8 col-sm-offset-2">
+							<div class="panel panel-default">
+								<div class="panel panel-body">
+									<label>Nausea Level: <span id="id_visible_nausea_level"> {{ form.nausea_level.value }} </span></label>
+									<div class="row slider-row">
+										<div class="col-md-11">
+											<div id="nausea_selector"></div>
+										</div>
+									</div>
 
-					<label>Nausea Level: <span id="id_visible_nausea_level"> {{ form.nausea_level.value }} </span></label>
-					<div class="row slider-row">
-						<div class="col-md-6">
-							<div id="nausea_selector"></div>
+									<label>Headache Level: <span id="id_visible_headache_level"> {{ form.headache_level.value }} </span></label>
+									<div class="row slider-row">
+										<div class="col-md-11">
+											<div id="headache_selector"></div>
+										</div>
+									</div>
+
+									<label>Sore Throat Level: <span id="id_visible_sore_throat_level"> {{ form.sore_throat_level.value }} </span></label>
+									<div class="row slider-row">
+										<div class="col-md-11">
+											<div id="sore_throat_selector"></div>
+										</div>
+									</div>
+
+									<label>Abdominal Pain Level: <span id="id_visible_abdominal_pain_level"> {{ form.abdominal_pain_level.value }} </span></label>
+									<div class="row slider-row">
+										<div class="col-md-11">
+											<div id="abdominal_pain_selector"></div>
+										</div>
+									</div>
+
+									<label>Constipation Level: <span id="id_visible_constipation_level"> {{ form.constipation_level.value }} </span></label>
+									<div class="row slider-row">
+										<div class="col-md-11">
+											<div id="constipation_selector"></div>
+										</div>
+									</div>
+
+									<label>Lack of Appetite Level: <span id="id_visible_lack_of_appetite_level"> {{ form.lack_of_appetite_level.value }} </span></label>
+									<div class="row slider-row">
+										<div class="col-md-11">
+											<div id="lack_of_appetite_selector"></div>
+										</div>
+									</div>
+
+									
+								</div>
+							</div>
+							<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}"/>
 						</div>
 					</div>
-
-					<label>Headache Level: <span id="id_visible_headache_level"> {{ form.headache_level.value }} </span></label>
-					<div class="row slider-row">
-						<div class="col-md-6">
-							<div id="headache_selector"></div>
-						</div>
-					</div>
-
-					<label>Sore Throat Level: <span id="id_visible_sore_throat_level"> {{ form.sore_throat_level.value }} </span></label>
-					<div class="row slider-row">
-						<div class="col-md-6">
-							<div id="sore_throat_selector"></div>
-						</div>
-					</div>
-
-					<label>Abdominal Pain Level: <span id="id_visible_abdominal_pain_level"> {{ form.abdominal_pain_level.value }} </span></label>
-					<div class="row slider-row">
-						<div class="col-md-6">
-							<div id="abdominal_pain_selector"></div>
-						</div>
-					</div>
-
-					<label>Constipation Level: <span id="id_visible_constipation_level"> {{ form.constipation_level.value }} </span></label>
-					<div class="row slider-row">
-						<div class="col-md-6">
-							<div id="constipation_selector"></div>
-						</div>
-					</div>
-					
-					<label>Lack of Appetite Level: <span id="id_visible_lack_of_appetite_level"> {{ form.lack_of_appetite_level.value }} </span></label>
-					<div class="row slider-row">
-						<div class="col-md-6">
-							<div id="lack_of_appetite_selector"></div>
-						</div>
-					</div>
-
-					<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
-				</form>
-			</div>
+				</div>
+			</form>
 		</div>
 	</div>
+</div>
 </div>
 
 <script>
