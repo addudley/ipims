@@ -59,12 +59,12 @@ def calculate_health_condition(self, form):
 	user = self.request.user
 	patient = self.object
 	total = 0
-	current_health_condition_levels = {'nausea_level': patient.nausea_level, 'headache_level': patient.headache_level, 'sore_throat_level': patient.sore_throat_level, 'abdominal_pain_level': patient.abdominal_pain_level, 'constipation_level': patient.constipation_level, 'lack_of_appetite_level': patient.lack_of_appetite_level, 'sleepiness_level': patient.sleepiness_level, 'insomnia_level': patient.insomnia_level}
+	current_health_condition_levels = {'Nausea level': patient.nausea_level, 'Headache level': patient.headache_level, 'Sore Throat level': patient.sore_throat_level, 'Abdominal Pain level': patient.abdominal_pain_level, 'Constipation level': patient.constipation_level, 'Lack of Appetite level': patient.lack_of_appetite_level, 'sleepiness_level': patient.sleepiness_level, 'insomnia_level': patient.insomnia_level}
 	for level in current_health_condition_levels:
 		total += int(current_health_condition_levels[level])
-		if int(current_health_condition_levels[level]) >= 4:
-			notify.send(user, recipient=user, verb='%s\'s %s is %s' % (patient.get_full_name(), level, current_health_condition_levels[level]), level='warning')
-	if total >= 25:
+		if int(current_health_condition_levels[level]) >= 7:
+			notify.send(user, recipient=user, verb='%s %s\'s %s is %s' % (patient.first_name, patient.last_name, level, current_health_condition_levels[level]), level='warning')
+	if total >= 50:
 		notify.send(user, recipient=user, verb='%s\'s health condition is urgent (Level: %s)' % (patient.get_full_name(), total), level='danger')
 
 
@@ -87,7 +87,15 @@ def patientProfile(request, pk):
 	patient = Patient.objects.get(pk=pk)
 	allergies = patient.allergies.all()
 	medical_history = patient.medical_background_information.all()
-	current_health_condition = {'nausea_level': patient.nausea_level, 'headache_level': patient.headache_level, 'sore_throat_level': patient.sore_throat_level, 'abdominal_pain_level': patient.abdominal_pain_level, 'constipation_level': patient.constipation_level, 'lack_of_appetite_level': patient.lack_of_appetite_level, 'sleepiness_level': patient.sleepiness_level, 'insomnia_level': patient.insomnia_level}
+	current_health_condition = {'nausea_level': ['Nauseous', int(patient.nausea_level)], 
+								'headache_level': ['Headache', int(patient.headache_level)], 
+								'sore_throat_level': ['Sore throat', int(patient.sore_throat_level)], 
+								'abdominal_pain_level': ['Abdominal pain', int(patient.abdominal_pain_level)], 
+								'constipation_level': ['Constipated', int(patient.constipation_level)], 
+								'lack_of_appetite_level': ['Lack of appetite', int(patient.lack_of_appetite_level)], 
+								'sleepiness_level': ['Sleepy', int(patient.sleepiness_level)], 
+								'insomnia_level': ['Insomnia', int(patient.insomnia_level)]
+								}
 	appointments = Appointment.objects.filter(patient=pk).order_by('date').reverse()
 	prescriptions = Prescription.objects.filter(patient=pk).order_by('date').reverse()
 	lab_reports = LabReport.objects.filter(patient=pk).order_by('request_date').reverse()

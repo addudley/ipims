@@ -68,15 +68,15 @@ class Patient(models.Model):
 	def get_ssn(self):
 		return 'xxx-xx' + self.ssn[6:]
 
-	DISCOMFORT_LEVELS = (('0', '0'),('1', '1'),('2', '2'),('3', '3'),('4', '4'),('5', '5'))
-	nausea_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Nausea')
-	headache_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Headache')
-	sore_throat_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Sore throat')
-	abdominal_pain_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Abdominal pain')
-	constipation_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Constipation')
-	lack_of_appetite_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Lack of appetite')
-	sleepiness_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Sleepiness')
-	insomnia_level = models.CharField(max_length=1, choices=DISCOMFORT_LEVELS, default=0, verbose_name='Insomnia')
+	DISCOMFORT_LEVELS = (('1', '1'),('2', '2'),('3', '3'),('4', '4'),('5', '5'),('6', '6'),('7', '7'),('8', '8'),('9', '9'),('10', '10'))
+	nausea_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Nausea')
+	headache_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Headache')
+	sore_throat_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Sore throat')
+	abdominal_pain_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Abdominal pain')
+	constipation_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Constipation')
+	lack_of_appetite_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Lack of appetite')
+	sleepiness_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Sleepiness')
+	insomnia_level = models.CharField(max_length=2, choices=DISCOMFORT_LEVELS, default=1, verbose_name='Insomnia')
 	
 	def __str__(self):
 		return self.get_full_name()

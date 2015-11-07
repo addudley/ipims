@@ -76,3 +76,15 @@ div.row-search-bar {
 	border-bottom-width: 1;
 	border-bottom-style: solid;*/
 }
+
+.slider-row{
+	margin-bottom: 30px;
+}
+
+.row-current-health-buttons {
+	margin-bottom: 20px;
+}
+
+.row-current-health-alerts {
+	margin-bottom: 10px;
+}

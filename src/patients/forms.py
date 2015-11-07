@@ -30,17 +30,28 @@ class PatientRegistrationForm(ModelForm):
 			
 
 class CurrentHealthConditionForm(ModelForm):
+	def __init__(self, *args, **kwargs):
+		super(CurrentHealthConditionForm, self).__init__(*args, **kwargs)
+		self.fields['nausea_level'].widget = forms.HiddenInput()
+		self.fields['headache_level'].widget = forms.HiddenInput()
+		self.fields['sore_throat_level'].widget = forms.HiddenInput()
+		self.fields['abdominal_pain_level'].widget = forms.HiddenInput()
+		self.fields['constipation_level'].widget = forms.HiddenInput()
+		self.fields['lack_of_appetite_level'].widget = forms.HiddenInput()
+		self.fields['sleepiness_level'].widget = forms.HiddenInput()
+		self.fields['insomnia_level'].widget = forms.HiddenInput()
+
 	class Meta:
 		model = Patient
 		fields = 'nausea_level', 'headache_level', 'sore_throat_level', 'abdominal_pain_level', 'constipation_level', 'lack_of_appetite_level', 'sleepiness_level', 'insomnia_level'
 
 		widgets = {
-			'nausea_level': RadioSelect,
-			'headache_level': RadioSelect,
-			'sore_throat_level': RadioSelect,
-			'abdominal_pain_level': RadioSelect,
-			'constipation_level': RadioSelect,
-			'lack_of_appetite_level': RadioSelect,
-			'sleepiness_level': RadioSelect,
-			'insomnia_level': RadioSelect,
+			# 'nausea_level': RadioSelect,
+			# 'headache_level': RadioSelect,
+			# 'sore_throat_level': RadioSelect,
+			# 'abdominal_pain_level': RadioSelect,
+			# 'constipation_level': RadioSelect,
+			# 'lack_of_appetite_level': RadioSelect,
+			# 'sleepiness_level': RadioSelect,
+			# 'insomnia_level': RadioSelect,
 		}

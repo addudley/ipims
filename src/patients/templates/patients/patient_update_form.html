@@ -4,17 +4,133 @@
 
 {% block content %}
 <div class="row">
-	<div class="col-md-7">
+	<div class="col-md-6">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h2>Update Patient Information</h2>
+				<h2>Update Patient Health Conditions</h2>
 				<form method='POST' action='' enctype="multipart/form-data">
 					{% csrf_token %}
 					{{ form|crispy }}
+
+					<label>Nausea Level: <span id="id_visible_nausea_level"> {{ form.nausea_level.value }} </span></label>
+					<div class="row slider-row">
+						<div class="col-md-6">
+							<div id="nausea_selector"></div>
+						</div>
+					</div>
+
+					<label>Headache Level: <span id="id_visible_headache_level"> {{ form.headache_level.value }} </span></label>
+					<div class="row slider-row">
+						<div class="col-md-6">
+							<div id="headache_selector"></div>
+						</div>
+					</div>
+
+					<label>Sore Throat Level: <span id="id_visible_sore_throat_level"> {{ form.sore_throat_level.value }} </span></label>
+					<div class="row slider-row">
+						<div class="col-md-6">
+							<div id="sore_throat_selector"></div>
+						</div>
+					</div>
+
+					<label>Abdominal Pain Level: <span id="id_visible_abdominal_pain_level"> {{ form.abdominal_pain_level.value }} </span></label>
+					<div class="row slider-row">
+						<div class="col-md-6">
+							<div id="abdominal_pain_selector"></div>
+						</div>
+					</div>
+
+					<label>Constipation Level: <span id="id_visible_constipation_level"> {{ form.constipation_level.value }} </span></label>
+					<div class="row slider-row">
+						<div class="col-md-6">
+							<div id="constipation_selector"></div>
+						</div>
+					</div>
+					
+					<label>Lack of Appetite Level: <span id="id_visible_lack_of_appetite_level"> {{ form.lack_of_appetite_level.value }} </span></label>
+					<div class="row slider-row">
+						<div class="col-md-6">
+							<div id="lack_of_appetite_selector"></div>
+						</div>
+					</div>
+
 					<input class = "btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+	var values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	$("#nausea_selector").slider({
+		animate: "fast",
+		min: 0,
+		max: values.length - 1,
+		value: {{ form.nausea_level.value }} - 1,
+		slide: function(event, ui) {
+			$("#id_nausea_level").val(values[ui.value]);
+			$("#id_visible_nausea_level").text(values[ui.value]);
+		}
+
+	});
+
+	$("#headache_selector").slider({
+		animate: "fast",
+		min: 0,
+		max: values.length - 1,
+		value: {{ form.headache_level.value }} - 1,
+		slide: function(event, ui) {
+			$("#id_headache_level").val(values[ui.value]);
+			$("#id_visible_headache_level").text(values[ui.value]);
+		}
+
+	});
+
+	$("#sore_throat_selector").slider({
+		animate: "fast",
+		min: 0,
+		max: values.length - 1,
+		value: {{ form.sore_throat_level.value }} - 1,
+		slide: function(event, ui) {
+			$("#id_sore_throat_level").val(values[ui.value]);
+			$("#id_visible_sore_throat_level").text(values[ui.value]);
+		}
+
+	});
+
+	$("#abdominal_pain_selector").slider({
+		animate: "fast",
+		min: 0,
+		max: values.length - 1,
+		value: {{ form.abdominal_pain_level.value }} - 1,
+		slide: function(event, ui) {
+			$("#id_abdominal_pain_level").val(values[ui.value]);
+			$("#id_visible_abdominal_pain_level").text(values[ui.value]);
+		}
+
+	});
+
+	$("#constipation_selector").slider({
+		animate: "fast",
+		min: 0,
+		max: values.length - 1,
+		value: {{ form.constipation_level.value }} - 1,
+		slide: function(event, ui) {
+			$("#id_constipation_level").val(values[ui.value]);
+			$("#id_visible_constipation_level").text(values[ui.value]);
+		}
+	});
+
+	$("#lack_of_appetite_selector").slider({
+		animate: "fast",
+		min: 0,
+		max: values.length - 1,
+		value: {{ form.lack_of_appetite_level.value }} - 1,
+		slide: function(event, ui) {
+			$("#id_lack_of_appetite_level").val(values[ui.value]);
+			$("#id_visible_lack_of_appetite_level").text(values[ui.value]);
+		}
+	});
+</script>
 {% endblock %}

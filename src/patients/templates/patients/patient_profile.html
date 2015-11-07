@@ -32,7 +32,34 @@
 							<b>Insurance ID:</b> {{ patient.health_insurance_id }} <br/><br/>
 						</div>
 					</div>
-					<p></p>
+					<br />
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row row-current-health-alerts">
+								<div class="col-sm-12">
+									{% for key, values in current_health_condition.items %}
+										{% if values.1 >= 5 %}
+										<span class="label 
+										{% if values.1 >= 9 %} label-danger 
+										{% elif values.1 >= 7 %} label-warning
+										{% else %} label-default
+										{% endif %}
+										">{{ values.0 }}</span>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+							<div class="row row-current-health-buttons">
+							<div class="col-sm-12">
+								{% if request.user.is_authenticated %}
+								{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' %}
+								<a class="btn btn-default btn-sm" href="health/">Update Health Status</a>
+								{% endif %}
+								{% endif %}
+							</div>
+						</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-sm-12">
 							<ul class="list-group">
@@ -71,7 +98,7 @@
 				</div>
 			</div>
 
-			{% if request.user.is_authenticated %}
+<!-- 			{% if request.user.is_authenticated %}
 			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' or request.user|has_group:'lab_technician' %}
 			<div class="row">
 				<div class="col-sm-12">
@@ -94,7 +121,7 @@
 			{% endif %}
 			{% endif %}
 			{% endif %}
-			{% endif %}
+			{% endif %} -->
 			
 
 		</div>
