@@ -1,0 +1,54 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load ipims_tags %}			
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2>Prescriptions</h2>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Medication</th>
+										<th>Dosage</th>
+										<th>Quantity</th>
+										<th>Filled</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% if prescriptions %}
+									{% for prescription in prescriptions %}
+									<tr class="clickable-row 
+									{% if prescription.is_expired and not prescription.filled_on %} danger
+									{% elif prescription.filled_on %}
+									{% else %} info
+									{% endif %} " 
+
+									data-href='/prescriptions/{{ prescription.pk }}'>
+										<td> {{ prescription.medication }}</td>
+										<td> {{ prescription.dosage }} </td>
+										<td> {{ prescription.quantity }} </td>
+										<td> {% if prescription.filled_on %}&#x2713;{% else %} -- {% endif %} </td>
+									</tr>
+									{% endfor %}
+									{% else %}
+									<tr><td>No medication has been prescribed.</td></tr>
+									{% endif %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+
+					{% if request.user.is_authenticated and request.user|has_group:'doctor' %}
+					<div class="row">
+						<div class="col-md-12">
+							<a class="btn btn-default" href="/prescriptions/prescribe/{{ patient.pk }}">Prescribe Medication</a>
+						</div>
+					</div>
+					{% endif %}
+
+
+				</div>
+			</div>

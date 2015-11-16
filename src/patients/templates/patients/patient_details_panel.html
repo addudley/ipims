@@ -1,0 +1,121 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load ipims_tags %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Details</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-3">
+							{% if patient.profile_picture %}
+							<img src="{% static patient.profile_picture.url %}" class="img-thumbnail" /><br />
+							{% else %}
+							<img src="{% static '/static/images/default_avatar.jpg' %}" class="img-thumbnail" /><br />
+							{% endif %}
+						</div>
+						<div class="col-md-8 col-sm-8 col-patient-info">
+							<table class="table-patient-info">
+								<tbody>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">DOB:</td>
+										<td class="col-patient-info">{{ patient.dob }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Sex:</td>
+										<td class="col-patient-info">{{ patient.get_sex_display }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Race/Ethnicity:</td>
+										<td class="col-patient-info">{{ patient.get_ethnicity_display }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">SSN:</td>
+										<td class="col-patient-info">{{ patient.get_ssn }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Phone:</td>
+										<td class="col-patient-info">{{ patient.phone_number }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Email:</td>
+										<td class="col-patient-info">{{ patient.email }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Insurance Provider:</td>
+										<td class="col-patient-info">{{ patient.health_insurance_provider }}</td>
+									</tr>
+									<tr class="row-patient-info">
+										<td class="col-patient-info-label">Insurance ID:</td>
+										<td class="col-patient-info">{{ patient.health_insurance_id }}</td>
+									</tr> <br/>
+							</tbody>
+							</table>
+
+						</div>
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="row row-current-health-alerts">
+								<div class="col-sm-12">
+									{% for key, values in current_health_condition.items %}
+										{% if values.1 >= 5 %}
+										<span class="label 
+										{% if values.1 >= 9 %} label-danger 
+										{% elif values.1 >= 7 %} label-warning
+										{% else %} label-default
+										{% endif %}
+										">{{ values.0 }}</span>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+							<div class="row row-current-health-buttons">
+							<div class="col-sm-12">
+								{% if request.user.is_authenticated %}
+								{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' %}
+								<a class="btn btn-default btn-sm" href="health/">Update Health Status</a>
+								{% endif %}
+								{% endif %}
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<ul class="list-group">
+								<li class="list-group-item active">Allergies</li>
+								{% if allergies %}
+								{% for allergy in allergies %}
+								<li class="list-group-item">{{ allergy }}</li>
+								{% endfor %}
+								{% else %}
+								<li class="list-group-item">No known allergies.</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<ul class="list-group">
+								<li class="list-group-item active">Medical History</li>
+								{% if medical_history %}
+								{% for medical_history_item in medical_history %}
+								<li class="list-group-item">{{ medical_history_item }}</li>
+								{% endfor %}
+							</ul>
+							{% else %}
+							<li class="list-group-item">No medical history.</li>
+							{% endif %}
+						</div>
+					</div>
+
+					{% if request.user.is_authenticated %}
+					{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
+					<a class="btn btn-default" href="update/">Update Patient Information</a><br/>
+					{% endif %}
+					{% endif %}
+
+				</div>
+			</div>

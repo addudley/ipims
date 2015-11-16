@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load staticfiles %}
+{% load ipims_tags %}				
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2>Lab Reports</h2>
+					<div class="row">
+						<div class="col-sm-12">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Request Date</th>
+										<th>Lab Test</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% if lab_reports %}
+									{% for lab_report in lab_reports %}
+									<tr class="clickable-row" data-href='/labs/{{ lab_report.pk }}'>
+										<td> {{ lab_report.request_date }}</td>
+										<td> {{ lab_report.lab_test }} </td>
+										<td> {{ lab_report.get_status_display }} </td>
+									</tr>
+									{% endfor %}
+									{% else %}
+									<tr><td>No lab report available.</td></tr>
+									{% endif %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					{% if request.user.is_authenticated and request.user|has_group:'doctor' %}
+					<div class="row">
+						<div class="col-md-12">
+							<a class="btn btn-default" href="/labs/add/{{ patient.pk }}">Request Lab</a>
+						</div>
+					</div>
+					{% endif %}
+
+				</div>
+			</div>

@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% load i18n %}
-
+{% load ipims_tags %}
 {% block content %}
 <a class="btn btn-default" href="{% url 'patient_profile' labreport.patient.pk %}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  Back to Profile</a><p></p>
 <div class="row">
 <div class="col-sm-6">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
+	  	{% if request.user|has_group:'lab_technician' %}
+	    <h3 class="panel-title">Lab Record</h3>
+	    {% else %}
 	    <h3 class="panel-title">Lab Report</h3>
+	    {% endif %}
 	  </div>
 	  <div class="panel-body">
 	    <b>Request date:</b> {{ labreport.request_date }}</a><br/>
@@ -23,11 +27,13 @@
 
 	  </div>
 	</div>
-	{% if labreport.status == 'r'  %}
+	{% if request.user.is_authenticated %}
+	{% if labreport.status == 'r' and request.user|has_group:'doctor' %}
 		<a class="btn btn-default" href="delete/">Cancel Lab Request</a> 
 		<a class="btn btn-primary" href="edit/">Edit Lab Request</a>	
-	{% else %}
-
+	{% elif request.user|has_group:'lab_technician' %}
+		<a class="btn btn-primary" href="update/">Update Lab Record</a>
+	{% endif %}
 	{% endif %}
 	</div>
 	</div>

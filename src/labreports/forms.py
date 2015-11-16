@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 from .models import LabTest, LabReport
+import datetime
 
 class RequestLabForm(forms.Form):
 	def __init__(self, *args, **kwargs):
@@ -34,21 +35,19 @@ class EditLabRequestForm(ModelForm):
 class UpdateLabReportForm(ModelForm):
 	readonly_doctor = forms.CharField(label="Doctor")
 	readonly_lab_test = forms.CharField(label="Lab test")
-	readonly_lab_technician = forms.CharField(label="Lab Technician")
 	class Meta:
 		model = LabReport
-		fields = 'patient', 'request_date', 'readonly_doctor', 'readonly_lab_test', 'lab_test', 'status', 'doctor_notes', 'doctor', 'results' ,'lab_technician', 'update_date'
+		fields = 'patient', 'request_date', 'readonly_doctor', 'readonly_lab_test', 'lab_test', 'status', 'doctor_notes', 'doctor', 'results', 'update_date'
 		widgets={'doctor': forms.HiddenInput(), 
 				'lab_test': forms.HiddenInput(),
-				'lab_technician': forms.HiddenInput()}
+				'lab_technician': forms.HiddenInput(),
+				'update_date': forms.HiddenInput()}
 	def __init__(self, *args, **kwargs):
 		super(UpdateLabReportForm, self).__init__(*args, **kwargs)
 		instance = getattr(self, 'instance', None)
 
 		self.fields['readonly_doctor'].initial = instance.doctor
 		self.fields['readonly_lab_test'].initial = instance.lab_test
-		self.fields['readonly_lab_technician'].initial = instance.lab_technician
-
 		self.fields['patient'].widget.attrs['readonly'] = True
 		self.fields['request_date'].widget.attrs['readonly'] = True
 		self.fields['readonly_doctor'].widget.attrs['readonly'] = True

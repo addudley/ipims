@@ -52,6 +52,7 @@ class EditLabRequestView(UpdateView):
 	template_name = 'labreports/edit_lab_request.html'
 
 	def form_valid(self, form):
+		form.instance.lab_technician = self.request.user
 		self.object = form.save()
 		return HttpResponseRedirect(self.get_success_url())
 
@@ -65,6 +66,9 @@ class UpdateLabReportView(UpdateView):
 	template_name = 'labreports/update_lab_report.html'
 
 	def form_valid(self, form):
+		form.instance.update_date = datetime.datetime.now().date().isoformat()
+		form.instance.lab_technician = self.request.user
+
 		self.object = form.save()
 		return HttpResponseRedirect(self.get_success_url())
 

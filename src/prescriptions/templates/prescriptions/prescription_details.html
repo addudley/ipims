@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load ipims_tags %}
 {% load i18n %}
 
 {% block content %}
@@ -25,8 +26,17 @@
 	</div>
 	{% if prescription.filled_on  %}
 	{% else %}
-	<a class="btn btn-default" href="fill/">Fill</a> 
-	<a class="btn btn-default" href="delete/">Cancel Prescription</a> <a class="btn btn-primary" href="edit/">Edit Prescription</a>	{% endif %}
+	{% if not prescription.is_expired %}
+	{% if request.user.is_authenticated %}
+	{% if request.user|has_group:'pharmacist' %}
+	<a class="btn btn-default" href="fill/">Fill</a>
+	{% endif %}
+	{% if request.user|has_group:'doctor' %}
+	<a class="btn btn-default" href="delete/">Cancel Prescription</a> <a class="btn btn-primary" href="edit/">Edit Prescription</a>	
+	{% endif %}
+	{% endif %}
+	{% endif %}
+	{% endif %}
 	</div>
 </div>
 {% endblock %}
