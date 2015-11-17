@@ -47,11 +47,10 @@
 			{% endif %}
 			{% endif %}
 
-
 			<!-- Medical Records section -->
 			{% if request.user.is_authenticated %}
 			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
-				{% include 'patients/mpatient_medical_records_panel.html' %}
+				{% include 'patients/patient_medical_records_panel.html' %}
 			{% endif %}
 			{% endif %}
 
@@ -60,7 +59,7 @@
 			<!-- Lab Records / Reports -->
 			{% if request.user.is_authenticated %}
 			{% if request.user|has_group:'doctor' or request.user|has_group:'lab_technician' %}
-				{% include 'patients/patient_lab_reports.html' %}
+				{% include 'patients/patient_lab_reports_panel.html' %}
 			{% endif %}
 			{% endif %}
 		</div>

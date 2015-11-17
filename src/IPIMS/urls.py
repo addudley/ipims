@@ -24,6 +24,7 @@ from haystack.views import SearchView
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'default.views.home', name='home'),
+    url(r'^dashboard/$', 'default.views.doctorDashboard', name='doctordashboard'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^patient/', include('patients.urls')),
     url(r'^search/', login_required(SearchView(form_class=SearchForm))),

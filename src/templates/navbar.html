@@ -16,7 +16,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             {% if request.user.is_authenticated and request.user|has_group:'doctor' %}
-            <li><a href="#about">Doctor Dashboard</a></li>
+              <li><a href="/dashboard/">Doctor Dashboard</a></li>
+            {% elif request.user.is_authenticated and request.user|has_group:'lab_technician' %}
+              <li><a href="/labs/dashboard">Lab Dashboard</a></li>
             {% endif %}
             {% if request.user.is_authenticated %}
             <li><a href="/search/">Search for Patient</a></li>

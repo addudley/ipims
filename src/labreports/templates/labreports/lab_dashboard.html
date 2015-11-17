@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load ipims_tags %}
+
+{# Lab Technician Dashboard
+   Used as homepage for lab technicians
+ #}
+{% block content %}
+<div class="row">
+	<div class="col-md-8">
+		<h2 class="page-heading"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>  Lab Dashboard</h1>
+	</div>
+</div>
+	{% if request.user.is_authenticated and request.user|has_group:'lab_technician' %}
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">In Progress</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-12">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Request Date</th>
+											<th>Patient</th>
+											<th>Lab Test</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% if lab_reports_in_progress %}
+										{% for lab_report in lab_reports_in_progress %}
+										<tr class="clickable-row" data-href='/labs/{{ lab_report.pk }}'>
+											<td> {{ lab_report.request_date }}</td>
+											<td><a href="{% url 'patient_profile' lab_report.patient.pk %}">{{ lab_report.patient }}</a></td>
+											<td> {{ lab_report.lab_test }} </td>
+										</tr>
+										{% endfor %}
+										{% else %}
+										<tr><td>No lab report available.</td></tr>
+										{% endif %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Recently Requested</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-12">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Request Date</th>
+											<th>Patient</th>
+											<th>Lab Test</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% if lab_reports_requested %}
+										{% for lab_report in lab_reports_requested %}
+										<tr class="clickable-row" data-href='/labs/{{ lab_report.pk }}'>
+											<td> {{ lab_report.request_date }}</td>
+											<td><a href="{% url 'patient_profile' lab_report.patient.pk %}">{{ lab_report.patient }}</a></td>
+											<td> {{ lab_report.lab_test }} </td>
+										</tr>
+										{% endfor %}
+										{% else %}
+										<tr><td>No lab report available.</td></tr>
+										{% endif %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">Recently Completed</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-12">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Request Date</th>
+											<th>Patient</th>
+											<th>Lab Test</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% if lab_reports_completed %}
+										{% for lab_report in lab_reports_completed %}
+										<tr class="clickable-row" data-href='/labs/{{ lab_report.pk }}'>
+											<td> {{ lab_report.request_date }}</td>
+											<td><a href="{% url 'patient_profile' lab_report.patient.pk %}">{{ lab_report.patient }}</a></td>
+											<td> {{ lab_report.lab_test }} </td>
+										</tr>
+										{% endfor %}
+										{% else %}
+										<tr><td>No lab report available.</td></tr>
+										{% endif %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	{% else %}
+
+	{% endif %}
+
+{% endblock %}

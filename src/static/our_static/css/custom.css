@@ -43,6 +43,19 @@
 	margin-left: 20px
 }
 
+.patient-list {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #d5d5d5;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #d5d5d5;
+	padding-top: 0px
+}
+
+.patient-row {
+}
+
 div.row-search-bar {
 	background-color: #043D5D;
 	margin-top: 30px;
@@ -108,7 +121,6 @@ table.table-patient-info, .table-paitent-info tbody tr td, .table-patient-info t
 }
 
 
-
 .table-patient-info tbody tr td {
 	border-collapse: collapse;
 	border-top-width: 0px;
@@ -134,4 +146,52 @@ table.table-patient-info, .table-paitent-info tbody tr td, .table-patient-info t
 	border-right-width: 0;
 	border-left-width: 0;
 	border-style: solid;
+}
+
+.panel-table {
+	
+}
+
+.alert-danger-custom{
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.bs-callout {
+  margin: 20px 0;
+  padding: 15px 30px 15px 15px;
+  border-left: 5px solid #eee;
+}
+.bs-callout h4 {
+  margin-top: 0;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
+}
+
+/* Themes for different contexts */
+.bs-callout-danger {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
+}
+.bs-callout-warning {
+  background-color: #fefbed;
+  border-color: #f1e7bc;
+}
+.bs-callout-info {
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
+}
+.page-heading {
+	margin-left: -10px;
+	margin-top: -10px;
+	margin-bottom: 20px;
+	border-color: #ddd;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
 }

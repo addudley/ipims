@@ -81,3 +81,12 @@ def delete(request, pk):
 	patient_pk = lab_report.patient.pk
 	lab_report.delete()
 	return HttpResponseRedirect('/patient/' + str(patient_pk))
+
+def labDashboard(request):
+	lab_reports_in_progress = LabReport.objects.filter(status='ip').order_by('update_date').reverse()
+	lab_reports_requested = LabReport.objects.filter(status='r').order_by('request_date')
+	lab_reports_completed = LabReport.objects.filter(status='c').order_by('update_date').reverse()
+	context = {'lab_reports_in_progress': lab_reports_in_progress, 
+				'lab_reports_requested': lab_reports_requested,
+				'lab_reports_completed': lab_reports_completed}
+	return render(request, 'labreports/lab_dashboard.html', context)

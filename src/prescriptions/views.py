@@ -10,30 +10,30 @@ import datetime
 
 # Create your views here.
 def prescribe(request, patient):
+	if request.user.has_perm('prescriptions.add_prescription'):
+		if request.method == 'POST':
+			form = PrescribeForm(request.POST)
 
-	if request.method == 'POST':
-		form = PrescribeForm(request.POST)
+			if form.is_valid():
+				patient_instance = Patient.objects.get(pk=patient)
+				p = Prescription.objects.create(date=form.cleaned_data['date'], 
+					patient=patient_instance, 
+					medication=Medication.objects.get(pk = request.POST.get("medication", "")),
+					dosage=form.cleaned_data['dosage'],
+					quantity=form.cleaned_data['quantity'],
+					doctor=request.user)
+				return HttpResponseRedirect('/prescriptions/' + str(p.pk) )
 
-		if form.is_valid():
-			patient_instance = Patient.objects.get(pk=patient)
-			p = Prescription.objects.create(date=form.cleaned_data['date'], 
-				patient=patient_instance, 
-				medication=Medication.objects.get(pk = request.POST.get("medication", "")),
-				dosage=form.cleaned_data['dosage'],
-				quantity=form.cleaned_data['quantity'],
-				doctor=request.user)
-			return HttpResponseRedirect('/prescriptions/' + str(p.pk) )
-
-		else:
-			return render(request, 'prescriptions/prescribe_form.html', {
-		'form': form,})
-			
-	data = {'patient': Patient.objects.get(pk=patient), 
-			'doctor': request.user, 
-			'date': datetime.datetime.now()}
-	form = PrescribeForm(initial=data)
-
-
+			else:
+				return render(request, 'prescriptions/prescribe_form.html', {
+			'form': form,})
+				
+		data = {'patient': Patient.objects.get(pk=patient), 
+				'doctor': request.user, 
+				'date': datetime.datetime.now()}
+		form = PrescribeForm(initial=data)
+	else:
+		return render(request, 'access_denied.html')
 
 	return render(request, 'prescriptions/prescribe_form.html', {
 		'form': form,
