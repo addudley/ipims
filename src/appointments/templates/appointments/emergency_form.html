@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-
+{% load stat_tags %}
+{% load ipims_tags %}
 {% block content %}
 <div class="row">
 	<div class="col-md-5">
@@ -13,4 +14,27 @@
 		</form>
 	</div>
 </div>
+
+
+<script>
+ 	$(window).load(function() {
+ 		console.log("FIRED")
+ 		$option = $("<option></option>").attr("value", -1).text("Must select health condition first...")
+ 		$("#id_doctor").empty().attr("disabled", true).append($option);
+ 	});
+	$("#id_health_condition").change(function() {
+		$selected_health_condition = $("#id_health_condition option:selected").val() - 1;
+		$option = $("<option></option>").attr("value", -1).text("---------");
+		$("#id_doctor").empty().attr("disabled", false).append($option);
+		{% if er_doctors %}
+				{% for doctor in er_doctors %}
+					console.log('{{ doctor }}')
+					$option = $("<option></option>").attr("value", {{ doctor.pk }}).text("{{doctor.get_full_name}}")
+					$("#id_doctor").append($option);
+				{% endfor %}
+		{% else %}
+		console.log("ERROR: er_doctors = None.")
+		{% endif %}
+	});
+</script>
 {% endblock %}

@@ -33,7 +33,6 @@ class PatientNew(CreateView):
 
 class PatientUpdate(UpdateView):
 	model = Patient
-	template_name_suffix = '_update_form'
 	form_class = PatientRegistrationForm
 	def get_success_url(self):
 		return reverse('patient_profile', kwargs={

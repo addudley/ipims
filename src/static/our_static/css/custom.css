@@ -212,3 +212,8 @@ ul.notifications div {
 	padding-top: 10px;
 	padding-bottom: 0px;
 }
+
+a.alert-link {
+	color:inherit;
+	text-decoration: none;
+}

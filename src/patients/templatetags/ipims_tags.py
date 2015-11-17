@@ -13,3 +13,8 @@ def has_group(user, group_name):
 def has_group(user, hc_pk):
 	health_condition = Group.objects.get(pk=hc_pk)
 	return health_condition
+
+@register.filter(name='get_class')
+def get_class(value):
+	""" Return class name of object passed in from template """
+	return value.__class__.__name__

@@ -73,7 +73,7 @@ class UpdateLabReportView(UpdateView):
 		self.object = form.save()
 		print(self.object.doctor)
 		if self.object.status == 'c':
-			notify.send(self.request.user, recipient=self.object.doctor, verb='%s\'s %s lab report is ready!' % (self.object.patient.get_full_name(), self.object.lab_test), level='success')
+			notify.send(self.request.user, recipient=self.object.doctor, verb='%s\'s %s lab report is ready!' % (self.object.patient.get_full_name_normalized(), self.object.lab_test), level='success', target=self.object)
 
 		return HttpResponseRedirect(self.get_success_url())
 

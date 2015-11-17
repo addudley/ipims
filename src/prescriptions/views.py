@@ -33,7 +33,7 @@ def prescribe(request, patient):
 				'date': datetime.datetime.now()}
 		form = PrescribeForm(initial=data)
 	else:
-		return render(request, 'access_denied.html')
+		return render(request, '403.html')
 
 	return render(request, 'prescriptions/prescribe_form.html', {
 		'form': form,

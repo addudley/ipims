@@ -14,9 +14,11 @@ urlpatterns = [
     	login_required(views.EditAppointment.as_view(success_url="/")), name='schedule_appointment_form'),
 
 	# Add Emergency appointment
-	url(r'^emergency/$', 
-    	login_required(views.EmergencyAppointment.as_view(success_url="/")), name='emergency_form'),
-
+	url(r'^emergency/(?P<patient_pk>[0-9]+)/$', 
+    	login_required(views.emergencyAppointment), name='emergency_form'),
+	# Emergency notification sent successfully
+	url(r'^emergency/success/(?P<pk>[0-9]+)/$', 
+    	login_required(views.emergencyNotificationSent), name='emergency_notification_sent'),
 	# Appointment Details
 	url(r'^(?P<pk>[0-9]+)/$',
 		login_required(views.AppointmentDetails.as_view()),name='appointment_details'),

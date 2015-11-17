@@ -1,12 +1,11 @@
+{% load ipims_tags %}
+
 <div class="alert alert-block alert-{{ notice.level }} alert-dismissible" role="alert">
 <a target="hiddenFrame" href="{% url 'notifications:mark_as_read' notice.slug %}"><button type="button" onClick="document.getElementById('hiddenFrame').src='{% url 'notifications:mark_as_read' notice.slug %}'" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></a></button>
   
   <h4>
     <i class="icon-mail{% if notice.unread %}-alt{% endif %}"></i>
-    {{ notice.verb }}
-    {% if notice.target %}
-      of {{ notice.target }}
-    {% endif %}
+    <a class="alert-link" href="{% if notice.target|get_class == 'LabReport' %}/labs/{{ notice.target.pk }}{% endif %}">{{ notice.verb }}
   </h4>
   
   <p class="sub-heading"> {{ notice.timesince }} ago </p>

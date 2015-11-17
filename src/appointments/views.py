@@ -6,7 +6,8 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.views.generic.list import ListView
 from django.utils import timezone
-
+from django.contrib.auth.models import Group, User
+from notifications import notify
 import datetime
 
 from .models import Appointment, Emergency, HealthCondition
@@ -91,29 +92,85 @@ class EditAppointment(UpdateView):
 			'pk': self.object.pk
 			})
 
-class EmergencyAppointment(CreateView):
-	""" View for Creating an Emergency appointment
+# class EmergencyAppointment(CreateView):
+# 	""" View for Creating an Emergency appointment
 
-	Model: Emergency
+# 	Model: Emergency
+# 	Template: appointments/emergency_form.html
+# 	Form: appointments/forms.py → EmergencyForm
+
+# 	"""
+# 	model = Emergency
+# 	form_class = EmergencyForm
+# 	template_name = 'appointments/emergency_form.html'
+
+# 	def form_valid(self, form):
+# 		'''If the form fields are valid, create Emergency model.
+
+# 		Redirect user 
+
+# 		'''
+# 		self.object = form.save()
+# 		return HttpResponseRedirect(self.get_success_url())
+
+# 	def get_success_url(self):
+# 		return '/appointments/' + str(self.object.pk)
+
+def emergencyAppointment(request, patient_pk):
+	"""View for alerting Emergency Room doctor of incoming patient.
+
 	Template: appointments/emergency_form.html
-	Form: appointments/forms.py → EmergencyForm
-
+	Form: appointments/forms.py → EmergencyForm()
 	"""
-	model = Emergency
-	form_class = EmergencyForm
-	template_name = 'appointments/emergency_form.html'
 
-	def form_valid(self, form):
-		'''If the form fields are valid, create Emergency model.
+	# Get health conditions to send in context for chained selection
+	health_conditions = HealthCondition.objects.all()
+	group = Group.objects.get(name='er_doctor')
+	er_doctors = group.user_set.all()
+	if request.method == 'POST':
+		''' When the user clicks Submit '''
+		# Load data from the form
+		form = EmergencyForm(request.POST)
 
-		Redirect user 
+		if form.is_valid():
+			'''If the data from the form is valid, create a appointment object with the data from the fields.
 
-		'''
-		self.object = form.save()
-		return HttpResponseRedirect(self.get_success_url())
+			Redirect user to the details page for new appointment 
+			'''
+			patient_instance = Patient.objects.get(pk=patient_pk) # get patient object using the patient's primary key (from URL argument)
+			e = Emergency.objects.create(
+				patient=patient_instance, 
+				health_condition=HealthCondition.objects.get(pk = request.POST.get("health_condition", "")), # Sets health condition object using pk from health condition field
+				doctor=form.cleaned_data['doctor'])
+			notify.send(request.user, recipient=e.doctor, verb='New patient admitted to Emergency Room: %s due to %s!' % (e.patient.get_full_name_normalized(), e.health_condition), level='danger', target=e)
+			return HttpResponseRedirect('/appointments/emergency/success/' + str(e.pk)) # FIX - SEND TO ALERT SUCCESS PAGE!
 
-	def get_success_url(self):
-		return '/appointments/' + str(self.object.pk)
+		else:
+			# If the form contains invalid fields, reload form with the same values and display errors.
+			return render(request, 'appointments/emergency_form.html', {
+				'form': form,
+				'patient': Patient.objects.get(pk=patient_pk),
+				'health_conditions': list(health_conditions),
+				'er_doctors': er_doctors
+				})
+			
+
+	''' When form first loads '''
+	# Generate initial field values (They're readonly, so can't be changed by user)
+	data = {'patient': Patient.objects.get(pk=patient_pk)}
+	# Create form
+	form = EmergencyForm(initial=data)
+
+	# Display the Schedule Appointment form.
+	return render(request, 'appointments/emergency_form.html', {
+		'form': form,
+		'patient': Patient.objects.get(pk=patient_pk),
+		'health_conditions': list(health_conditions),
+		'er_doctors': er_doctors
+	})
+
+def emergencyNotificationSent(request, pk):
+	return render(request, 'appointments/emergency_alert_sent.html', {'emergency': Emergency.objects.get(pk=pk)} )
 
 class AppointmentDetails(DetailView):
 	"""View for the Appointment Details

@@ -31,7 +31,14 @@ class EditAppointmentForm(ModelForm):
 		model = Appointment
 		fields = 'patient', 'date', 'health_condition', 'doctor', 'readonly_doctor'
 		widgets = {'patient': forms.HiddenInput(),
-					'doctor': forms.HiddenInput()} # Hide patient form. 
+					'doctor': forms.HiddenInput(),
+					'date': DateTimeWidget(attrs={'id':"yourdatetimeid"}, usel10n = True, bootstrap_version=3, 
+													options= {
+													'format': 'dd/mm/yyyy HH:ii P',
+													'autoclose': True,
+													'showMeridian' : True,
+													'clearBtn': False
+													})} # Hide patient form. 
 	def __init__(self, *args, **kwargs):
 		super(EditAppointmentForm, self).__init__(*args, **kwargs)
 		instance = getattr(self, 'instance', None)
@@ -40,7 +47,15 @@ class EditAppointmentForm(ModelForm):
 		self.fields['readonly_doctor'].widget.attrs['disabled'] = 'disabled' 
 		self.fields['health_condition'].widget.attrs['disabled'] = 'disabled' 
 
-class EmergencyForm(ModelForm):
-	class Meta:
-		model = Emergency
-		fields = '__all__'
+class EmergencyForm(forms.Form):
+	"""Form for alerting emergency room staff of incoming patient """
+	def __init__(self, *args, **kwargs):
+		super(EmergencyForm, self).__init__(*args, **kwargs)
+		# Set patient field to readonly. 
+		self.fields['patient'].widget.attrs['readonly'] = True
+
+	# Declare form fields
+	patient = forms.CharField()
+	health_condition = forms.ModelChoiceField(queryset=HealthCondition.objects.all())
+	doctor = forms.ModelChoiceField(queryset=User.objects.all())
+

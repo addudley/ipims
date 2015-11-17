@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+	<div class="col-xs-12">
+		<div class="alert alert-success alert-danger-custom" role="alert">
+			Emergency Room staff have been notified of {{ emergency.patient.get_full_name_normalized }}'s admittance.
+		</div>
+	</div>
+</div>
+<a class="btn btn-default" href="{% url 'patient_profile' emergency.patient.pk %}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  Back to Profile</a><p></p>
+{% endblock %}

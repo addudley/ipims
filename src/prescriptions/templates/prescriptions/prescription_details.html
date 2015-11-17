@@ -18,6 +18,8 @@
 		<b>Doctor:</b> {{ prescription.doctor }}<br/>
 		<b>Filled on:</b> {% if prescription.filled_on  %}
 		{{ prescription.filled_on }}
+		{% elif prescription.is_expired %}
+		Expired
 		{% else %}
 		--
 		{% endif %}

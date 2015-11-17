@@ -5,7 +5,7 @@ import datetime
 from pytz import timezone
 
 from patients.models import Patient
-from appointments.models import Appointment
+from appointments.models import Appointment, Emergency
 from records.models import Record
 # Create your views here.
 
@@ -16,6 +16,10 @@ def home(request):
 		return HttpResponseRedirect('labs/dashboard/')
 	elif u.groups.filter(name='doctor').exists():
 		return HttpResponseRedirect('dashboard/')
+	elif u.groups.filter(name='pharmacist').exists() or u.groups.filter(name='nurse').exists():
+		return HttpResponseRedirect('/search/')
+	elif u.groups.filter(name='staff').exists():
+		return HttpResponseRedirect('/search/')
 	else:
 		return render(request, 'base.html', {})
 
@@ -25,6 +29,8 @@ def doctorDashboard(request):
 	if u.groups.filter(name='doctor').exists():
 		# Get list of appointments for current doctor
 		appointments = Appointment.objects.filter(doctor=request.user.pk).order_by('date').reverse()
+		emergencies = Emergency.objects.filter(doctor=request.user.pk)
+		
 		appointments_today = [] # list of today's appointments
 		patients = [] # list of patients who have had appointments with current doctor
 		records = Record.objects.filter(doctor=request.user.pk, date_created__gte=datetime.datetime.today().date() - datetime.timedelta(days=7)).order_by('date_created').reverse()
@@ -35,6 +41,11 @@ def doctorDashboard(request):
 			if appointment.patient not in patients:
 				# populate list of doctor's patients
 				patients.append(appointment.patient)
+
+		for emergency in emergencies:
+			if emergency.patient not in patients:
+				# poplate list of er doctor's patients
+				patients.append(emergency.patient)
 
 		# load notifications
 		notifications = u.notifications
