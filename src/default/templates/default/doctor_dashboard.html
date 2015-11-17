@@ -2,76 +2,93 @@
 {% load i18n %}
 {% load staticfiles %}
 {% load ipims_tags %}
-
+{% load notifications_tags %}
 {# Doctor Dashboard
    Used as homepage for doctors
  #}
 {% block content %}
 	{% if request.user.is_authenticated and request.user|has_group:'doctor' %}
+
+		<iframe id="hiddenFrame" name="hiddenFrame" class="hide"></iframe>
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-12">
 				<h2 class="page-heading"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>  Doctor Dashboard</h1>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-xs-11 col-sm-3 col-md-3 col-lg-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">Current Patients</h3>
 					</div>
-					<div>
 						{% if patients %}
 							<table class="table table-hover panel-table">
 							{% for patient in patients %}
 								<tr class="clickable-row" data-href='/patient/{{ patient.pk }}'>
-									<td>
+									<td width="30%">
 											{% if patient.profile_picture %}
-												<img src="{% static patient.profile_picture.url %}" class="img-responsive" /><br />
+												<img src="{% static patient.profile_picture.url %}" class="img-thumbnail" style='width:100%;' /><br />
 											{% else %}
-												<img src="{% static '/static/images/default_avatar.jpg' %}" class="img-responsive" />
+												<img src="{% static '/static/images/default_avatar.jpg' %}" class="img-thumbnail" style='width:100%;'/>
 											{% endif %}
 									</td>
-									<td class="col-md-8">
+									<td width="80%" class="col-md-8">
 										<h4>{{ patient.get_full_name }}</h4>
 									</td>
 								</tr>
 							{% endfor %}
 							</table>
+						{% else %}
+							<div class="panel-body">
+								<div class="alert alert-info">
+									You do not currently have any patients.
+								</div>
+							</div>
 						{% endif %}
 					</div>
 				</div>
-			</div>
 
-			<div class="col-md-5">
+			<div class="col-xs-11 col-sm-9 col-md-9 col-lg-9">
+				{% if notifications.unread %}
+				<div class="row">
+					<div class="col-md-12">
+						{% include 'notifications/embedded_list.html' %}
+					</div>
+				</div>
+				{% endif %}
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h2 class="panel-title">Today's Schedule</h2>
 							</div>
+							{% if appointments_today %}
 							<table class="table table-hover">
 								<thead>
 									<tr>
-										<th>Time</th>
+										<th width="30%">Time</th>
 										<th>Patient</th>
 										<th>Health Concern</th>
 									</tr>
 								</thead>
 								<tbody>
-									{% if appointments_today %}
-									{% for appointment in appointments_today %}
+							{% for appointment in appointments_today %}
 									<tr class="clickable-row" data-href='/appointments/{{ appointment.pk }}'>
 										<td> {{ appointment.date.time }}</td>
 										<td> <a href="/patient/{{ appointment.patient.pk }}">{{ appointment.patient.get_full_name }}</a></td>
 										<td> {{ appointment.health_condition }} </td>
 									</tr>
 									{% endfor %}
-									{% else %}
-									<tr><td>No appointments scheduled.</td></tr>
-									{% endif %}
 								</tbody>
 							</table>
+								{% else %}
+									<div class="panel-body">
+										<div class="alert alert-info">
+											You do not have any appointments scheduled today.
+										</div>
+									</div>
+								{% endif %}
 						</div>
 					</div>
 				</div>
@@ -86,16 +103,16 @@
 										<table class="table table-hover">
 											<thead>
 												<tr>
-													<th>Time</th>
+													<th width="30%">Date</th>
 													<th>Patient</th>
 													<th>Health Concern</th>
 												</tr>
 											</thead>
 											<tbody>
 											{% for record in records %}
-												<tr class="	-row" data-href='/appointments/{{ record.pk }}'>
+												<tr class="clickable-row" data-href='/records/{{ record.pk }}'>
 													<td> {{ record.date_created }}</td>
-													<td> <a href="/patient/{{ appointment.patient.pk }}">{{ record.patient.get_full_name }}</a></td>
+													<td> <a href="/patient/{{ record.patient.pk }}">{{ record.patient.get_full_name }}</a></td>
 													<td> {{ record.health_condition }} </td>
 												</tr>
 											{% endfor %}
@@ -108,8 +125,6 @@
 											</div>
 										</div>
 									{% endif %}
-								</tbody>
-							</table>
 						</div>
 					</div>
 				</div>

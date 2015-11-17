@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from .models import LabReport, LabTest
 from patients.models import Patient
+from django.contrib.auth.models import User
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
+from notifications import notify
 import datetime
 
 from .forms import *
@@ -68,8 +70,11 @@ class UpdateLabReportView(UpdateView):
 	def form_valid(self, form):
 		form.instance.update_date = datetime.datetime.now().date().isoformat()
 		form.instance.lab_technician = self.request.user
-
 		self.object = form.save()
+		print(self.object.doctor)
+		if self.object.status == 'c':
+			notify.send(self.request.user, recipient=self.object.doctor, verb='%s\'s %s lab report is ready!' % (self.object.patient.get_full_name(), self.object.lab_test), level='success')
+
 		return HttpResponseRedirect(self.get_success_url())
 
 	def get_success_url(self):

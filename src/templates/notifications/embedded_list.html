@@ -1,0 +1,13 @@
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+<ul class="notifications">
+  {% if notifications.unread %}
+  {% for notice in notifications.unread %}
+    {% include 'notifications/embedded_notice.html' %}
+  {% endfor %}
+  {% else %}
+  {% endif %}
+</ul>
+{% endblock %}

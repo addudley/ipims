@@ -1,6 +1,7 @@
 <div class="alert alert-block alert-{{ notice.level }} alert-dismissible" role="alert">
 <a href="{% url 'notifications:mark_as_read' notice.slug %}"><button type="button" onClick="location.href='{% url 'notifications:mark_as_read' notice.slug %}'" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></a></button>
   <a href="{% url 'notifications:mark_as_read' notice.slug %}"></a>
+  
   <h4>
     <i class="icon-mail{% if notice.unread %}-alt{% endif %}"></i>
     {{ notice.verb }}
@@ -9,7 +10,7 @@
     {% endif %}
   </h4>
   
-  <p>{{ notice.timesince }} ago</p>
+  <p class="sub-heading"> {{ notice.timesince }} ago </p>
   
   <div class="notice-alert">
     {% for action in notice.data.actions %}

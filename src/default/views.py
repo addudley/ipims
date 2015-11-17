@@ -27,8 +27,7 @@ def doctorDashboard(request):
 		appointments = Appointment.objects.filter(doctor=request.user.pk).order_by('date').reverse()
 		appointments_today = [] # list of today's appointments
 		patients = [] # list of patients who have had appointments with current doctor
-		records = Record.objects.filter(doctor=request.user.pk, date_created__range=[datetime.datetime.today().date() - datetime.timedelta(days=7), datetime.datetime.today().date()]).order_by('date_created').reverse()
-
+		records = Record.objects.filter(doctor=request.user.pk, date_created__gte=datetime.datetime.today().date() - datetime.timedelta(days=7)).order_by('date_created').reverse()
 		for appointment in appointments:
 			if appointment.date.date() == datetime.datetime.now().date():
 				# populate list for todays appointments
@@ -37,7 +36,14 @@ def doctorDashboard(request):
 				# populate list of doctor's patients
 				patients.append(appointment.patient)
 
-		context = {'appointments':appointments, 'appointments_today':appointments_today, 'patients':patients, 'records':records}
+		# load notifications
+		notifications = u.notifications
+
+		context = {'appointments':appointments, 
+					'appointments_today':appointments_today, 
+					'patients':patients, 
+					'records':records,
+					'notifications': notifications}
 		return render(request, 'default/doctor_dashboard.html', context)
 	else:
 		return render(request, 'access_denied.html', {})

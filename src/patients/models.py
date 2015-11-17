@@ -63,7 +63,11 @@ class Patient(models.Model):
 
 	def get_full_name(self):
 		# returns the patient's full name (ex: Doe, John)
-		return '%s, %s' % (self.last_name, self.first_name)
+		return '%s, %s' % (self.last_name, self.first_name)	
+
+	def get_full_name_normalized(self):
+		# returns the patient's full name (John Doe)
+		return '%s %s' % (self.first_name, self.last_name)
 
 	def get_ssn(self):
 		return 'xxx-xx' + self.ssn[6:]

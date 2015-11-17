@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load stat_tags %}
+{% load ipims_tags %}
 
 {% block content %}
 <div class="row">
 	<div class="col-md-5">
 		<div class="panel panel-default">
 			<div class="panel-body">
+
+				<!-- HEADING -->
 				<h2>Edit Appointment</h2>
+
+				<!-- Create a readonly patient field.
+
+				DO NOT IMPLEMENT THIS WAY. THIS WAS MY FIRST FORM AND I DIDN'T KNOW WHAT I WAS DOING ;) 
+				The -->
 				<div class="form-group"><label class="control-label">Patient</label>
 					<div class="controls">
 						{# Display Patient's Name (Read-only) #}

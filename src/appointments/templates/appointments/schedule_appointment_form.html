@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-
+{% load ipims_tags %}
 {% block content %}
+{% load stat_tags %}
+
+{% block extrahead %}
+{{ form.media }}
+{% endblock %}
 <div class="row">
 	<div class="col-md-5">
 		<div class="panel panel-default">
@@ -26,4 +31,30 @@
 		</div>
 	</div>
 </div>
+
+<script>
+ 	$(window).load(function() {
+ 		console.log("FIRED")
+ 		$option = $("<option></option>").attr("value", -1).text("Must select health condition first...")
+ 		$("#id_doctor").empty().attr("disabled", true).append($option);
+ 	});
+	$("#id_health_condition").change(function() {
+		$selected_health_condition = $("#id_health_condition option:selected").val() - 1;
+		$option = $("<option></option>").attr("value", -1).text("---------");
+		$("#id_doctor").empty().attr("disabled", false).append($option);
+		{% if health_conditions_count %}
+		{% for i in health_conditions_count|get_range %}
+			if($selected_health_condition == {{ i }}){
+				{% with h=health_conditions|lookup:i %}
+				{% for doctor in h.doctors.all %}
+					console.log('{{ doctor }}')
+					$option = $("<option></option>").attr("value", {{ doctor.pk }}).text("{{doctor.get_full_name}}")
+					$("#id_doctor").append($option);
+				{% endfor %}
+				{% endwith %}
+			}
+		{% endfor %}
+		{% endif %}
+	});
+</script>
 {% endblock %}

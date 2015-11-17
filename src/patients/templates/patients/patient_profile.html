@@ -4,65 +4,68 @@
 {% load staticfiles %}
 {% load ipims_tags %}
 {% block content %}
-<h1> {{ patient.get_full_name }} </h1>
 <div class="row">
-	<div class="row">
-		<div class="col-md-5 col-sm-8 col-xs-12" >
-		{% include 'patients/patient_details_panel.html' %}
+	<div class="col-md-12">
+		<h1 class="page-heading"> {{ patient.get_full_name }} </h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-5 col-sm-8 col-xs-12" >
+	{% include 'patients/patient_details_panel.html' %}
 
 <!-- 			{% if request.user.is_authenticated %}
-			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' or request.user|has_group:'lab_technician' %}
-			<div class="row">
-				<div class="col-sm-12">
-					<ul class="list-group">
-						<li class="list-group-item active">Current Health Conditions     <a href="health/">update</a></li>
-						<li class="list-group-item">Nausea: {{ current_health_condition.nausea_level }}</li>
-						<li class="list-group-item">Headache: {{ current_health_condition.headache_level }}</li>
-						<li class="list-group-item">Sore throat: {{ current_health_condition.sore_throat_level }}</li>
-						<li class="list-group-item">Abdominal pain: {{ current_health_condition.abdominal_pain_level }}</li>
-						<li class="list-group-item">Constipation: {{ current_health_condition.constipation_level }}</li>
-						<li class="list-group-item">Lack of appetite: {{ current_health_condition.lack_of_appetite_level }}</li>
-					</ul>
-				</div>
+		{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' or request.user|has_group:'lab_technician' %}
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="list-group">
+					<li class="list-group-item active">Current Health Conditions     <a href="health/">update</a></li>
+					<li class="list-group-item">Nausea: {{ current_health_condition.nausea_level }}</li>
+					<li class="list-group-item">Headache: {{ current_health_condition.headache_level }}</li>
+					<li class="list-group-item">Sore throat: {{ current_health_condition.sore_throat_level }}</li>
+					<li class="list-group-item">Abdominal pain: {{ current_health_condition.abdominal_pain_level }}</li>
+					<li class="list-group-item">Constipation: {{ current_health_condition.constipation_level }}</li>
+					<li class="list-group-item">Lack of appetite: {{ current_health_condition.lack_of_appetite_level }}</li>
+				</ul>
 			</div>
-
-
-			{% if request.user.is_authenticated %}
-			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' %}
-			<a class="btn btn-default" href="health/">Update Current Health Conditions</a>
-			{% endif %}
-			{% endif %}
-			{% endif %}
-			{% endif %} -->
-			
 		</div>
 
-		<!-- Right page column -->
-		<div class="col-md-7 col-sm-8 col-xs-12">
 
-			<!-- Appointments section -->
-			{% if request.user.is_authenticated %}
-			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
-				{% include 'patients/patient_appointments_panel.html' %}
-			{% endif %}
-			{% endif %}
+		{% if request.user.is_authenticated %}
+		{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' %}
+		<a class="btn btn-default" href="health/">Update Current Health Conditions</a>
+		{% endif %}
+		{% endif %}
+		{% endif %}
+		{% endif %} -->
+		
+	</div>
 
-			<!-- Medical Records section -->
-			{% if request.user.is_authenticated %}
-			{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
-				{% include 'patients/patient_medical_records_panel.html' %}
-			{% endif %}
-			{% endif %}
+	<!-- Right page column -->
+	<div class="col-md-7 col-sm-8 col-xs-12">
 
-			{% include 'patients/patient_prescriptions_panel.html' %}
+		<!-- Appointments section -->
+		{% if request.user.is_authenticated %}
+		{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
+			{% include 'patients/patient_appointments_panel.html' %}
+		{% endif %}
+		{% endif %}
 
-			<!-- Lab Records / Reports -->
-			{% if request.user.is_authenticated %}
-			{% if request.user|has_group:'doctor' or request.user|has_group:'lab_technician' %}
-				{% include 'patients/patient_lab_reports_panel.html' %}
-			{% endif %}
-			{% endif %}
-		</div>
+		<!-- Medical Records section -->
+		{% if request.user.is_authenticated %}
+		{% if request.user|has_group:'doctor' or request.user|has_group:'nurse' or request.user|has_group:'staff' %}
+			{% include 'patients/patient_medical_records_panel.html' %}
+		{% endif %}
+		{% endif %}
+
+		{% include 'patients/patient_prescriptions_panel.html' %}
+
+		<!-- Lab Records / Reports -->
+		{% if request.user.is_authenticated %}
+		{% if request.user|has_group:'doctor' or request.user|has_group:'lab_technician' %}
+			{% include 'patients/patient_lab_reports_panel.html' %}
+		{% endif %}
+		{% endif %}
 	</div>
 </div>
 

@@ -157,6 +157,8 @@ table.table-patient-info, .table-paitent-info tbody tr td, .table-patient-info t
 	font-weight: bold;
 }
 
+.img-responsive {width: auto;}
+
 
 .bs-callout {
   margin: 20px 0;
@@ -194,4 +196,19 @@ table.table-patient-info, .table-paitent-info tbody tr td, .table-patient-info t
 	border-color: #ddd;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
+}
+
+.sub-heading {
+	font-size: 12px;
+	margin-top: -10px;
+}
+
+ul.notifications {
+	margin-left: -40px;
+}
+
+ul.notifications div {
+	margin-bottom: 4px;
+	padding-top: 10px;
+	padding-bottom: 0px;
 }

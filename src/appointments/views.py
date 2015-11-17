@@ -20,6 +20,10 @@ def scheduleAppointment(request, patient_pk):
 	Template: appointments/schedule_appointment_form.html
 	Form: appointments/forms.py → ScheduleAppointmentForm()
 	"""
+
+	# Get health conditions to send in context for chained selection
+	health_conditions = HealthCondition.objects.all()
+
 	if request.method == 'POST':
 		''' When the user clicks Submit '''
 		# Load data from the form
@@ -41,7 +45,11 @@ def scheduleAppointment(request, patient_pk):
 		else:
 			# If the form contains invalid fields, reload form with the same values and display errors.
 			return render(request, 'appointments/schedule_appointment_form.html', {
-		'form': form,})
+				'form': form,
+				'patient': Patient.objects.get(pk=patient_pk),
+				'health_conditions': list(health_conditions),
+				'health_conditions_count': int(health_conditions.count())
+				})
 			
 
 	''' When form first loads '''
@@ -54,7 +62,9 @@ def scheduleAppointment(request, patient_pk):
 	# Display the Schedule Appointment form.
 	return render(request, 'appointments/schedule_appointment_form.html', {
 		'form': form,
-		'patient': Patient.objects.get(pk=patient_pk)
+		'patient': Patient.objects.get(pk=patient_pk),
+		'health_conditions': list(health_conditions),
+		'health_conditions_count': int(health_conditions.count())
 	})
 
 class EditAppointment(UpdateView):
@@ -135,4 +145,4 @@ def delete(request, id):
 	appointment = get_object_or_404(Appointment, pk=id)
 	patient_id = appointment.patient.pk
 	appointment.delete()
-	return HttpResponseRedirect('/search')
+	return HttpResponseRedirect('/patient/' + str(patient_id))
