@@ -1,5 +1,5 @@
 from patients.models import Patient
-from appointments.models import Appointment
+from appointments.models import Appointment, Emergency
 from records.models import Record
 from datetime import date
 import datetime
@@ -82,22 +82,33 @@ class AdmissionData(object):
 		#get comma seperated values for appointments and hospital admission
 		current_year = datetime.datetime.today().year
 		appointments = Appointment.objects.filter(date__range=[str(current_year) + "-01-01", str(current_year) + "-12-31"])
+		emergencies = Emergency.objects.filter(date__range=[str(current_year) + "-01-01", str(current_year) + "-12-31"])
+		
 		start_date = datetime.date(current_year, 1, 1)
 		end_date = datetime.date(current_year, 12, 31)
 		delta = end_date-start_date
 		print(delta)
 		data = []
-		csv='Appointments\\n'
+
+		csv='Date, Appointments, ER Admittance\\n'
 		# Create a key for each day in current year
 		for i in range(delta.days + 1):
 			date = start_date+datetime.timedelta(days=i)
-			data.append((date.strftime('%m/%d/%y'), 0))
+			data.append((date.strftime('%m/%d/%y'), [0, 0] ))
+
+		# create ordered dictionary from data list.
+		# Dictionaries (hashtables) aren't ordered by default,
+		# So OrderedDict allows us to access dates by key
+		# while also allowing us to loop through the dates in order
 		od = collections.OrderedDict(data)
 		for appointment in appointments:
-			od[appointment.date.date().strftime('%m/%d/%y')] += 1
+			od[appointment.date.date().strftime('%m/%d/%y')][0] += 1
+		for emergency in emergencies:
+			od[emergency.date.date().strftime('%m/%d/%y')][1] += 1
 
 		for date, count in od.items():
-			csv = csv + date + ',' + str(count) + '\\n'
+			csv = csv + date + ',' + str(count[0]) + ',' + str(count[1]) + '\\n'		
+
 		return csv
 
 class HealthOutcomesData(object):

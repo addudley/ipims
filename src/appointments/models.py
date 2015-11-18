@@ -22,6 +22,7 @@ class Emergency(models.Model):
 	Dependencies: HealthCondition
 	"""
 	patient = models.ForeignKey(Patient)
+	date = models.DateTimeField();
 	health_condition = models.ForeignKey('HealthCondition')
 	doctor = models.ForeignKey(User)
 	def __str__(self):

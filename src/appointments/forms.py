@@ -49,13 +49,14 @@ class EditAppointmentForm(ModelForm):
 
 class EmergencyForm(forms.Form):
 	"""Form for alerting emergency room staff of incoming patient """
+
+	# Declare form fields
+	patient = forms.CharField()
+	date = forms.DateTimeField(widget=forms.HiddenInput())
+	health_condition = forms.ModelChoiceField(queryset=HealthCondition.objects.all())
+	doctor = forms.ModelChoiceField(queryset=User.objects.all())
+
 	def __init__(self, *args, **kwargs):
 		super(EmergencyForm, self).__init__(*args, **kwargs)
 		# Set patient field to readonly. 
 		self.fields['patient'].widget.attrs['readonly'] = True
-
-	# Declare form fields
-	patient = forms.CharField()
-	health_condition = forms.ModelChoiceField(queryset=HealthCondition.objects.all())
-	doctor = forms.ModelChoiceField(queryset=User.objects.all())
-

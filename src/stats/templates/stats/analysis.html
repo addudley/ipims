@@ -33,20 +33,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-3">            
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="badge">?</span> Something here 
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">            
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="badge">?</span> And something here 
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="row">
                     {% for i in series_length|get_range %}
@@ -183,59 +169,96 @@
             csv: '{{ admission_csv }}'
         },
 
-        chart: {
-            zoomType: 'x'
-        },
-        title: {
-            text: 'Appointments'
-        },
-        subtitle: {
-            text: document.ontouchstart === undefined ?
-            'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-        },
+title: {
+                text: 'Daily visits at www.highcharts.com'
+            },
+
+            subtitle: {
+                text: 'Source: Google Analytics'
+            },
+
         xAxis: {
             type: 'datetime'
         },
-        yAxis: {
-            title: {
-                text: 'Admission Rates'
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        plotOptions: {
-            area: {
-                fillColor: {
-                    linearGradient: {
-                        x1: 0,
-                        y1: 0,
-                        x2: 0,
-                        y2: 1
+
+            yAxis: [{ // left y axis
+                title: {
+                    text: null
+                },
+                labels: {
+                    align: 'left',
+                    x: 3,
+                    y: 16,
+                    format: '{value:.,0f}'
+                },
+                showFirstLabel: false
+            }, { // right y axis
+                linkedTo: 0,
+                gridLineWidth: 0,
+                opposite: true,
+                title: {
+                    text: null
+                },
+                labels: {
+                    align: 'right',
+                    x: -3,
+                    y: 16,
+                    format: '{value:.,0f}'
+                },
+                showFirstLabel: false
+            }],
+
+            legend: {
+                align: 'left',
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                borderWidth: 0
+            },
+
+            tooltip: {
+                shared: true,
+                crosshairs: true
+            },
+
+            plotOptions: {
+                series: {
+                    cursor: 'pointer',
+                    point: {
+                        events: {
+                            click: function (e) {
+                                hs.htmlExpand(null, {
+                                    pageOrigin: {
+                                        x: e.pageX || e.clientX,
+                                        y: e.pageY || e.clientY
+                                    },
+                                    headingText: this.series.name,
+                                    maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+                                        this.y + ' visits',
+                                    width: 200
+                                });
+                            }
+                        }
                     },
-                    stops: [
-                    [0, Highcharts.getOptions().colors[0]],
-                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                    ]
-                },
-                marker: {
-                    radius: 2
-                },
-                lineWidth: 1,
-                states: {
-                    hover: {
-                        lineWidth: 1
+                    marker: {
+                        lineWidth: 3
                     }
-                },
-                threshold: null
-            }
-        },
+                }
+            },
 
         series: [{
-            type: 'area',
-            name: 'Admission Rates',
-            data: '{{ admission_csv }}'
-        }],
+            lineWidth: 4,
+            marker:{
+                radius: 5
+            },
+            type: 'area'
+        }, { 
+            lineWidth: 2,
+            marker:{
+                radius: 5
+            },
+           color: '#FF3333'
+            }],
         credits: {
            enabled: false,
            text: "test"

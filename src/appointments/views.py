@@ -141,6 +141,7 @@ def emergencyAppointment(request, patient_pk):
 			e = Emergency.objects.create(
 				patient=patient_instance, 
 				health_condition=HealthCondition.objects.get(pk = request.POST.get("health_condition", "")), # Sets health condition object using pk from health condition field
+				date=form.cleaned_data['date'],
 				doctor=form.cleaned_data['doctor'])
 			notify.send(request.user, recipient=e.doctor, verb='New patient admitted to Emergency Room: %s due to %s!' % (e.patient.get_full_name_normalized(), e.health_condition), level='danger', target=e)
 			return HttpResponseRedirect('/appointments/emergency/success/' + str(e.pk)) # FIX - SEND TO ALERT SUCCESS PAGE!
@@ -157,7 +158,7 @@ def emergencyAppointment(request, patient_pk):
 
 	''' When form first loads '''
 	# Generate initial field values (They're readonly, so can't be changed by user)
-	data = {'patient': Patient.objects.get(pk=patient_pk)}
+	data = {'patient': Patient.objects.get(pk=patient_pk), 'date': datetime.datetime.now()}
 	# Create form
 	form = EmergencyForm(initial=data)
 
