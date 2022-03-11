@@ -13,7 +13,7 @@ django-registration-redux==1.2
 django-smart-selects==1.1.1
 elasticsearch==1.7.0
 jsonfield==1.0.3
-Pillow==3.0.0
+Pillow==9.0.1
 python-dateutil==2.4.2
 six==1.10.0
 urllib3==1.12
